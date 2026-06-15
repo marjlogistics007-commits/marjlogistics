@@ -176,6 +176,7 @@ export default function Hero() {
                 src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=600&auto=format&fit=crop"
                 alt="Nature & Travel Journey"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop'; }}
               />
               {/* Overlay gradient */}
               <div style={{

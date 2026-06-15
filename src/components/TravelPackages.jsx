@@ -6,7 +6,7 @@ const packages = [
   {
     id: 1,
     title: 'Kashmir Paradise Tour',
-    image: 'https://images.unsplash.com/photo-1598324422814-29117f66e47a?q=80&w=600&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600&auto=format&fit=crop',
     price: '₹24,999',
     originalPrice: '₹29,999',
     duration: '5 Nights, 6 Days',
@@ -163,6 +163,7 @@ export default function TravelPackages() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
                   onMouseEnter={(e) => { e.target.style.transform = 'scale(1.08)'; }}
                   onMouseLeave={(e) => { e.target.style.transform = 'scale(1)'; }}
+                  onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop'; }}
                 />
                 {/* Tag */}
                 <div style={{
@@ -310,7 +311,7 @@ export default function TravelPackages() {
             >
               {/* Image */}
               <div style={{ position: 'relative', height: '260px' }}>
-                <img src={activePackage.image} alt={activePackage.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={activePackage.image} alt={activePackage.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop'; }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(244,239,230,1) 0%, rgba(244,239,230,0.3) 50%, transparent 100%)' }} />
                 <button
                   onClick={() => setActivePackage(null)}

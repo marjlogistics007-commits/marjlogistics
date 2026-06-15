@@ -158,6 +158,7 @@ export default function Testimonials() {
                     objectFit: 'cover',
                     border: '2px solid rgba(168, 213, 181, 0.25)',
                   }}
+                  onError={(e) => { e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(rev.name)}&background=2D5A3D&color=A8D5B5&size=92`; }}
                 />
                 <div>
                   <h4 style={{
