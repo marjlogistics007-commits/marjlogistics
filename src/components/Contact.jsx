@@ -52,13 +52,18 @@ const handleSubmit = async (e) => {
       body: JSON.stringify(formObject),
     });
 
-    const result = await response.json();
-    if (result.success) {
-      setFormSubmitted(true);
-    }
-  } catch (error) {
-    alert("Error: " + error.message);
-  }
+const result = await response.json();
+
+alert(JSON.stringify(result));
+
+if (result.success) {
+  setFormSubmitted(true);
+} else {
+  alert("Failed: " + result.message);
+}
+} catch (error) {
+  alert("Error: " + error.message);
+}
 };
 
   const handleReset = () => {
