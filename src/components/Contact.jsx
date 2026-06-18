@@ -56,8 +56,6 @@ const result = await response.json();
 
 if (result.success) {
   setFormSubmitted(true);
-} else {
-  alert("Failed: " + result.message);
 }
 } catch (error) {
   alert("Error: " + error.message);
