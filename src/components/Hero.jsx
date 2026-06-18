@@ -173,7 +173,7 @@ export default function Hero() {
               position: 'relative',
             }}>
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZOdA4-JHOsFSV7gt9ryOLKHDKPONFHT8wxA&s"
+                src="https://t4.ftcdn.net/jpg/06/78/77/91/360_F_678779128_fBE2MxGMKeCkbmKTLoQ11s0GG9hof6vR.jpg"
                 alt="Nature & Travel Journey"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop'; }}

@@ -127,28 +127,69 @@ export default function Contact() {
               }}>
                 Main Transit Hub Connectors
               </span>
-              <div style={{ aspectRatio: '4/3', background: '#F4EFE6', borderRadius: '14px', overflow: 'hidden' }}>
-                <svg viewBox="0 0 400 300" style={{ width: '100%', height: '100%' }}>
-                  <path d="M 200,60 L 150,150" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
-                  <path d="M 200,60 L 250,220" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
-                  <path d="M 150,150 L 250,220" stroke="#B56B3F" strokeWidth="1.5" strokeDasharray="5,4" />
-                  <path d="M 200,60 L 320,130" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
-                  <circle cx="200" cy="60" r="7" fill="#1B3A2D" />
-                  <circle cx="150" cy="150" r="7" fill="#4A7C59" />
-                  <circle cx="250" cy="220" r="7" fill="#1B3A2D" />
-                  <circle cx="320" cy="130" r="7" fill="#B56B3F" />
-                  <circle cx="200" cy="60" r="3" fill="#A8D5B5" />
-                  <circle cx="150" cy="150" r="3" fill="#A8D5B5" />
-                  <circle cx="250" cy="220" r="3" fill="#A8D5B5" />
-                  <circle cx="320" cy="130" r="3" fill="#F4EFE6" />
-                  <text x="212" y="63" fill="#1B3A2D" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">DELHI</text>
-                  <text x="96" y="153" fill="#1B3A2D" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">MUMBAI</text>
-                  <text x="260" y="223" fill="#3D2314" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">BANGALORE</text>
-                  <text x="330" y="133" fill="#3D2314" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">KOLKATA</text>
-                </svg>
-              </div>
-            </div>
-          </div>
+            <div style={{ aspectRatio: '4/3', background: '#F4EFE6', borderRadius: '14px', overflow: 'hidden' }}>
+
+          <svg viewBox="0 0 400 300" style={{ width: '100%', height: '100%' }}>
+
+            {/* Connections */}
+              <path d="M 200,60 L 150,150" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
+              <path d="M 150,150 L 250,220" stroke="#B56B3F" strokeWidth="1.5" strokeDasharray="5,4" />
+
+            {/* Delhi to Kolkata */}
+              <path d="M 200,60 L 320,130" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
+
+            {/* Kashmir routes */}
+              <path d="M 200,130 L 200,60" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
+              <path d="M 200,130 L 150,150" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
+              <path d="M 200,130 L 250,220" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
+            {/* Kashmir to Kolkata */}
+              <path d="M 200,130 L 320,130" stroke="#4A7C59" strokeWidth="1.5" strokeDasharray="5,4" />
+
+            {/* Kolkata to Bangalore */}
+              <path d="M 320,130 L 250,220" stroke="#B56B3F" strokeWidth="1.5" strokeDasharray="5,4" />
+
+            {/* City circles */}
+              <circle cx="200" cy="60" r="7" fill="#1B3A2D" />
+              <circle cx="150" cy="150" r="7" fill="#4A7C59" />
+              <circle cx="250" cy="220" r="7" fill="#1B3A2D" />
+              <circle cx="320" cy="130" r="7" fill="#B56B3F" />
+
+            {/* Kashmir circle */}
+              <circle cx="200" cy="130" r="7" fill="#1B3A2D" />
+
+            {/* Inner dots */}
+              <circle cx="200" cy="60" r="3" fill="#A8D5B5" />
+              <circle cx="150" cy="150" r="3" fill="#A8D5B5" />
+              <circle cx="250" cy="220" r="3" fill="#A8D5B5" />
+              <circle cx="320" cy="130" r="3" fill="#F4EFE6" />
+              <circle cx="200" cy="130" r="3" fill="#A8D5B5" />
+
+            {/* Labels */}
+            <text x="212" y="63" fill="#1B3A2D" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">
+              DELHI
+            </text>
+
+            <text x="96" y="153" fill="#1B3A2D" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">
+              MUMBAI
+            </text>
+
+            <text x="260" y="223" fill="#3D2314" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">
+              BANGALORE
+            </text>
+
+            <text x="330" y="133" fill="#3D2314" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">
+              KOLKATA
+            </text>
+
+            {/* Kashmir label */}
+            <text x="215" y="120" fill="#1B3A2D" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">
+              KASHMIR
+            </text>
+
+          </svg>
+        </div>
+      </div>
+    </div>
 
           {/* Right: Contact Form */}
           <div style={{
