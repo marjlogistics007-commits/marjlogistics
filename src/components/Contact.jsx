@@ -53,6 +53,7 @@ const handleSubmit = async (e) => {
     });
 
     const result = await response.json();
+    alert("Vercel test: " + JSON.stringify(result));
 
     if (result.success) {
       setFormSubmitted(true);
