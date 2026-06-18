@@ -25,11 +25,41 @@ export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setFormSubmitted(true);
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.message) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  try {
+    const formObject = {
+    access_key:"cef290be-cb6d-453d-82df-ce7a952e85da",
+     subject: "New Contact Form Submission - Marj Logistics",
+      from_name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formObject),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      setFormSubmitted(true);
+    }
+  } catch (error) {
+    alert("Error: " + error.message);
+  }
+};
 
   const handleReset = () => {
     setFormData({ name: '', email: '', message: '' });
@@ -196,8 +226,8 @@ export default function Contact() {
             background: 'white',
             padding: '44px 40px',
             borderRadius: '28px',
-            border: '1px solid rgba(208, 198, 179, 0.5)',
-            boxShadow: '0 20px 60px rgba(27,58,45,0.07)',
+            border: '1px solid rgba(50, 5, 249, 0.5)',
+            boxShadow: '0 20px 60px rgba(14, 0, 48, 0.07)',
           }}>
             <AnimatePresence mode="wait">
               {!formSubmitted ? (
