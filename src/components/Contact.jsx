@@ -54,8 +54,6 @@ const handleSubmit = async (e) => {
 
 const result = await response.json();
 
-alert(JSON.stringify(result));
-
 if (result.success) {
   setFormSubmitted(true);
 } else {
