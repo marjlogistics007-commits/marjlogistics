@@ -37,6 +37,7 @@ const handleSubmit = async (e) => {
     const formObject = {
     access_key:"cef290be-cb6d-453d-82df-ce7a952e85da",
      subject: "New Contact Form Submission - Marj Logistics",
+      name: formData.name,
       from_name: formData.name,
       email: formData.email,
       message: formData.message,
