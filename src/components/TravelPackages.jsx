@@ -59,6 +59,21 @@ const packages = [
     description: 'Discover the Venice of the East. Sail down the serene backwaters of Alleppey in your own private, air-conditioned premium houseboat.',
     highlights: ['Private Houseboat Cruise', 'Ayurvedic Spa Sessions', 'Kumarakom Bird Sanctuary', 'Traditional Toddy Tasting'],
   },
+ {
+    id: 5,
+    title: 'Leh Ladakh',
+    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=600&auto=format&fit=crop',
+    price: '₹25,500',
+    originalPrice: '₹27,000',
+    duration: '4 Nights, 5 Days',
+    rating: 4.9,
+    reviews: 112,
+    tag: 'Nature & Serenity',
+    tagColor: '#3B5E2E',
+    description: 'Discover the Venice of the East. Sail down the serene backwaters of Alleppey in your own private, air-conditioned premium houseboat.',
+    highlights: ['Private Houseboat Cruise', 'Ayurvedic Spa Sessions', 'Kumarakom Bird Sanctuary', 'Traditional Toddy Tasting'],
+  },
+
 ];
 
 export default function TravelPackages() {
