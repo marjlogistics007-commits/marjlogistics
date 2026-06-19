@@ -43,11 +43,26 @@ export default function Navbar() {
         boxShadow: isScrolled ? '0 4px 30px rgba(27, 58, 45, 0.06)' : 'none',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
         <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           <img src="/logo.jpg" alt="MARJ Logistics Tour and Travel Logo" style={{ height: '52px', width: 'auto', objectFit: 'contain' }} />
         </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        {/* Existing logo/icon */}
+
+        <span
+          style={{
+          fontFamily: "'Cormorant Garamond', serif",
+          fontSize: '1.6rem',
+          fontWeight: 700,
+          color: '#1B3A2D',
+          letterSpacing: '1px'
+        }}
+    >
+      MARJ LOGISTICS
+  </span>
+</div>
 
         {/* Desktop Nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="hidden-mobile">

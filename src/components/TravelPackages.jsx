@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Users, X, Check, Star, ArrowRight } from 'lucide-react';
 
@@ -6,7 +7,7 @@ const packages = [
   {
     id: 1,
     title: 'Kashmir Paradise Tour',
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=600&auto=format&fit=crop',
+    image: 'https://t4.ftcdn.net/jpg/03/62/19/27/360_F_362192710_3iIlgxQS78PoqysUTzdARNYeKFBaFxE9.jpg',
     price: '₹24,999',
     originalPrice: '₹29,999',
     duration: '5 Nights, 6 Days',
@@ -16,12 +17,37 @@ const packages = [
     tagColor: '#2D5A3D',
     description: 'Experience the crown of India. Sail in premium Shikaras on Dal Lake, stay in luxury houseboats, and explore the snow-covered slopes of Gulmarg.',
     highlights: ['Luxury Houseboat Stay', 'Gulmarg Gondola Ride', 'Private Chauffeur Tour', 'Traditional Wazwan Dinner'],
+  itinerary: [
+  {
+    day: 'Day 1 - Arrival in Srinagar',
+    details: 'Meet our representative at Srinagar Airport, transfer to hotel/houseboat, and enjoy an evening Shikara ride on Dal Lake.'
   },
   {
+    day: 'Day 2 - Gulmarg Excursion',
+    details: 'Visit Gulmarg, enjoy Gondola ride, snow activities and panoramic Himalayan views.'
+  },
+  {
+    day: 'Day 3 - Pahalgam Tour',
+    details: 'Explore Betaab Valley, Aru Valley and Lidder River with local sightseeing.'
+  },
+  {
+    day: 'Day 4 - Sonamarg Visit',
+    details: 'Experience the beautiful meadows, glaciers and mountain landscapes of Sonamarg.'
+  },
+  {
+    day: 'Day 5 - Departure',
+    details: 'Transfer to Srinagar Airport with unforgettable memories of Kashmir.'
+  }
+],
+  },
+
+
+
+  {
     id: 2,
-    title: 'Luxury Goa Escape',
-    image: 'https://images.unsplash.com/photo-1540206395-68808572332f?q=80&w=600&auto=format&fit=crop',
-    price: '₹18,499',
+    title: 'Kashmir Heritage Escape',
+    image: 'https://www.shutterstock.com/image-photo/attractions-sonamarg-tourism-summit-activities-260nw-1415515895.jpg',
+    price: '₹20,499',
     originalPrice: '₹22,000',
     duration: '4 Nights, 5 Days',
     rating: 4.8,
@@ -30,11 +56,35 @@ const packages = [
     tagColor: '#B56B3F',
     description: 'Unwind at premium 5-star private beach resorts in North & South Goa. Enjoy sunset cruise packages and guided heritage tour bookings.',
     highlights: ['5-Star Beach Resort', 'Sunset Yacht Charter', 'Private Heritage Tour', 'Scuba & Water Sports'],
+  itinerary: [
+  {
+    day: 'Day 1 - Arrival in Srinagar Airport',
+    details: 'Welcome drink and luxury resort check-in.'
   },
   {
+    day: 'Day 2 - A Tour to Sonamarg',
+    details: 'Visit Glacier, Zojila Pass and Navyug Tunnel, Night Stay at Sonamarg.'
+  },
+  {
+    day: 'Day 3 - Gulmarg Excursion',
+    details: 'Gondola Ride, Skiing and Shiv Shankar Temple, return to Srinagar.'
+  },
+  {
+    day: 'Day 4 - sight seeing with Mughal Gardens',
+    details: 'Explore Mughal gardens, Nishat Garder, Shalimar Garden, Tulip Garden and Botinical Garden, and night shikara ride.'
+  },
+  {
+    day: 'Day 5 - Departure',
+    details: 'Airport transfer after breakfast.'
+  }
+],
+  },
+
+
+  {
     id: 3,
-    title: 'Himalayan Manali Retreat',
-    image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=600&auto=format&fit=crop',
+    title: 'Valley of Dreams Expedition',
+    image: 'https://media-cdn.tripadvisor.com/media/photo-s/1b/b5/cd/62/lidder-valley-pahalgam.jpg',
     price: '₹15,999',
     originalPrice: '₹19,500',
     duration: '5 Nights, 6 Days',
@@ -44,21 +94,70 @@ const packages = [
     tagColor: '#4A7C59',
     description: 'Explore the majestic Solang Valley, drive through the Atal Tunnel, and relax in luxurious cozy wooden boutique villas.',
     highlights: ['Premium Wooden Villa', 'Solang Paragliding', 'Atal Tunnel Excursion', 'Riverside Dinner Setup'],
+  itinerary: [
+  {
+    day: 'Day 1 - Arrival in Manali',
+    details: 'Check-in and explore Mall Road.'
   },
   {
+    day: 'Day 2 - Solang Valley',
+    details: 'Adventure sports, ropeway and mountain activities.'
+  },
+  {
+    day: 'Day 3 - Rohtang Pass',
+    details: 'Snow points, glaciers and scenic photography.'
+  },
+  {
+    day: 'Day 4 - Naggar Castle',
+    details: 'Visit heritage sites and local villages.'
+  },
+  {
+    day: 'Day 5 - Departure',
+    details: 'Return journey with Himalayan memories.'
+  }
+],
+  },
+
+
+  {
     id: 4,
-    title: 'Kerala Backwaters Cruise',
-    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=600&auto=format&fit=crop',
-    price: '₹21,500',
-    originalPrice: '₹26,000',
-    duration: '4 Nights, 5 Days',
+    title: 'A full tour or KASHMIR VALLEY',
+    image: 'https://t4.ftcdn.net/jpg/06/90/19/09/360_F_690190949_Zm2I8RwH3gc0qbVcqiBCpQBbhPY0OpYd.jpg',
+    price: '₹32,500',
+    originalPrice: '₹35,000',
+    duration: '6 Nights, 7 Days',
     rating: 4.9,
     reviews: 112,
     tag: 'Nature & Serenity',
     tagColor: '#3B5E2E',
     description: 'Discover the Venice of the East. Sail down the serene backwaters of Alleppey in your own private, air-conditioned premium houseboat.',
     highlights: ['Private Houseboat Cruise', 'Ayurvedic Spa Sessions', 'Kumarakom Bird Sanctuary', 'Traditional Toddy Tasting'],
+  itinerary: [
+  {
+    day: 'Day 1 - Arrival in Kochi',
+    details: 'Airport pickup and city sightseeing.'
   },
+  {
+    day: 'Day 2 - Munnar Hills',
+    details: 'Visit tea plantations, waterfalls and scenic viewpoints.'
+  },
+  {
+    day: 'Day 3 - Alleppey Houseboat',
+    details: 'Enjoy a luxury backwater cruise with traditional meals.'
+  },
+  {
+    day: 'Day 4 - Kumarakom',
+    details: 'Explore bird sanctuary and village life.'
+  },
+  {
+    day: 'Day 5 - Departure',
+    details: 'Transfer to airport with Kerala memories.'
+  }
+],
+  },
+
+
+
  {
     id: 5,
     title: 'Leh Ladakh',
@@ -72,12 +171,36 @@ const packages = [
     tagColor: '#3B5E2E',
     description: 'Discover the Venice of the East. Sail down the serene backwaters of Alleppey in your own private, air-conditioned premium houseboat.',
     highlights: ['Private Houseboat Cruise', 'Ayurvedic Spa Sessions', 'Kumarakom Bird Sanctuary', 'Traditional Toddy Tasting'],
+  itinerary: [
+  {
+    day: 'Day 1 - Arrival in Leh',
+    details: 'Acclimatization and local market exploration.'
+  },
+  {
+    day: 'Day 2 - Leh Sightseeing',
+    details: 'Visit Shanti Stupa, Leh Palace and Hall of Fame.'
+  },
+  {
+    day: 'Day 3 - Nubra Valley',
+    details: 'Cross Khardung La Pass and enjoy camel safari in Nubra.'
+  },
+  {
+    day: 'Day 4 - Pangong Lake',
+    details: 'Travel to the famous Pangong Lake and enjoy lakeside views.'
+  },
+  {
+    day: 'Day 5 - Departure',
+    details: 'Return to Leh and transfer to airport.'
+  }
+],
   },
 
 ];
 
 export default function TravelPackages() {
   const [activePackage, setActivePackage] = useState(null);
+  const [showItinerary, setShowItinerary] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <section
@@ -229,8 +352,8 @@ export default function TravelPackages() {
                 </div>
 
                 <h3 style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontSize: '1.2rem',
+                  fontFamily: "'Lucida Calligraphy', serif",
+                  fontSize: '1rem',
                   fontWeight: 600,
                   color: '#1B3A2D',
                   margin: 0,
@@ -318,14 +441,14 @@ export default function TravelPackages() {
                 background: 'white',
                 borderRadius: '28px',
                 width: '100%',
-                maxWidth: '640px',
+                maxWidth: '540px',
                 overflow: 'hidden',
                 boxShadow: '0 50px 100px rgba(27,58,45,0.3)',
                 border: '1px solid rgba(208, 198, 179, 0.5)',
               }}
             >
               {/* Image */}
-              <div style={{ position: 'relative', height: '260px' }}>
+              <div style={{ position: 'relative', height: '170px' }}>
                 <img src={activePackage.image} alt={activePackage.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=600&auto=format&fit=crop'; }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(244,239,230,1) 0%, rgba(244,239,230,0.3) 50%, transparent 100%)' }} />
                 <button
@@ -346,14 +469,14 @@ export default function TravelPackages() {
                   <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#4A7C59', fontFamily: "'Inter', sans-serif" }}>
                     Featured Package
                   </span>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 700, color: '#1B3A2D', margin: '4px 0 0' }}>
+                  <h3 style={{ fontFamily: "'Monotype Corsiva', serif", fontSize: '2rem', fontWeight: 700, color: '#1B3A2D', margin: '4px 0 0' }}>
                     {activePackage.title}
                   </h3>
                 </div>
               </div>
 
               {/* Content */}
-              <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <div style={{ padding: '28px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {/* Meta */}
                 <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.82rem', color: '#4A4035', fontFamily: "'Inter', sans-serif" }}>
@@ -419,11 +542,167 @@ export default function TravelPackages() {
                   <a href="#booking" onClick={() => setActivePackage(null)} className="btn-earth">
                     Book Journey Now
                   </a>
+
+         <button
+  onClick={() => setShowItinerary(true)}
+  className="btn-earth"
+>
+  Check Itinerary
+</button>
                 </div>
               </div>
             </motion.div>
           </div>
         )}
+
+              <AnimatePresence>
+        {showItinerary && activePackage && (
+          <div
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: '#F4EFE6',
+                zIndex: 9999
+              }}
+            >
+            <div
+             style={{
+  background: '#F4EFE6',
+  width: '100%',
+  height: '100vh',
+  overflowY: 'auto',
+  borderRadius: '0',
+  padding: '40px'
+}}
+            >
+              <button
+                onClick={() => setShowItinerary(false)}
+                className="btn-earth"
+              >
+                ← Back to Package
+              </button>
+
+              <h1>{activePackage.title}</h1>
+
+           <img
+  src={activePackage.image}
+  alt={activePackage.title}
+  style={{
+    width: '100%',
+    maxWidth: '700px',
+    height: '350px',
+    objectFit: 'cover',
+    borderRadius: '15px',
+    marginTop: '20px',
+    display: 'block'
+  }}
+/>
+
+              <h2 style={{
+  marginTop: '30px',
+  color: '#1B3A2D',
+  fontSize: '2rem'
+}}>
+  Tour Overview
+</h2>
+
+<p style={{
+  lineHeight: '1.8',
+  color: '#555',
+  fontSize: '1rem'
+}}>
+  {activePackage.description}
+</p>
+
+<h2 style={{
+  marginTop: '40px',
+  color: '#1B3A2D',
+  fontSize: '2rem'
+}}>
+  Detailed Itinerary
+</h2>
+
+<div style={{ marginTop: '20px' }}>
+
+  <div style={{
+    padding: '20px',
+    background: '#fff',
+    borderRadius: '15px',
+    marginBottom: '15px'
+  }}>
+<h2
+  style={{
+    marginTop: '40px',
+    marginBottom: '25px',
+    fontFamily: "'Cormorant Garamond', serif",
+    fontSize: '2.2rem',
+    fontWeight: 700,
+    color: '#1B3A2D',
+    textAlign: 'center'
+  }}
+>
+</h2>
+  
+{activePackage.itinerary?.map((item, index) => (
+  <div
+    key={index}
+    style={{
+      background: '#FFFFFF',
+      padding: '24px',
+      borderRadius: '18px',
+      marginBottom: '18px',
+      border: '1px solid rgba(45,90,61,0.12)',
+      boxShadow: '0 8px 20px rgba(0,0,0,0.05)'
+    }}
+  >
+    <div
+      style={{
+        display: 'inline-block',
+        background: '#2D5A3D',
+        color: '#fff',
+        padding: '6px 14px',
+        borderRadius: '30px',
+        fontSize: '0.8rem',
+        fontWeight: 600,
+        marginBottom: '14px',
+        fontFamily: "'Inter', Monotype Corsiva"
+      }}
+    >
+      Day {index + 1}
+    </div>
+
+    <h3
+      style={{
+        margin: '0 0 10px 0',
+        color: '#1B3A2D',
+        fontSize: '1.4rem',
+        fontWeight: 700,
+        fontFamily: "'Cormorant Garamond', Monotype Corsiva"
+      }}
+    >
+      {item.day}
+    </h3>
+
+    <p
+      style={{
+        margin: 0,
+        lineHeight: '1.9',
+        color: '#6B6258',
+        fontSize: '1.5rem',
+        fontFamily: "'Monotype Corsiva', Monotype Sorsiva"
+      }}
+    >
+      {item.details}
+    </p>
+  </div>
+))}
+  </div>
+
+</div>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
       </AnimatePresence>
 
       <style>{`
