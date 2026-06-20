@@ -141,7 +141,7 @@ export default function TourPackagesPage() {
 <div
   style={{
     minHeight:"100vh",
-    padding:"120px 20px",
+    padding:"80px 20px",
     background:"#F4EFE6"
   }}
 >
@@ -163,12 +163,24 @@ style={{
 
       <div
         style={{
-          maxWidth:"1200px",
+          maxWidth:"800px",
           margin:"auto",
           display:"grid",
-          gap:"40px"
+          gridTemplateColumns:"repeat(2, 1fr)",
+          gap:"30px"
         }}
       >
+
+        <div
+  className="tour-grid"
+  style={{
+    maxWidth:"1200px",
+    margin:"auto",
+    display:"grid",
+    gridTemplateColumns:"repeat(2, 1fr)",
+    gap:"30px"
+  }}
+></div>
 
 
       {packages.map((pkg,index)=>(
@@ -189,7 +201,7 @@ style={{
             src={pkg.image}
             alt={pkg.title}
             style={{
-              width:"60%",
+              width:"100%",
               height:"200px",
               objectFit:"cover",
               borderRadius:"20px"

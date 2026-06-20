@@ -312,3 +312,9 @@ h1, h2, h3, h4, h5, h6 {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 5 C20 5 5 20 5 30 C5 40 20 55 30 55 C30 55 55 45 55 30 C55 15 40 5 30 5Z' fill='none' stroke='rgba(90,122,64,0.06)' stroke-width='1'/%3E%3C/svg%3E");
   background-size: 60px 60px;
 }
+
+@media (max-width: 768px) {
+  .tour-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
