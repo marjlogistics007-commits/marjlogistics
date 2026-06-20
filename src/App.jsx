@@ -12,6 +12,7 @@ import BookingForm from './components/BookingForm';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import TourPackagesPage from './pages/TourPackagesPage';
 
 function App() {
   
@@ -46,9 +47,15 @@ function App() {
         }
       />
 
+      <Route
+  path="/packages"
+  element={<TourPackagesPage />}
+/>
+
     </Routes>
 
   </BrowserRouter>
+
 );
 }
 

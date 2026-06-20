@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Users, X, Check, Star, ArrowRight } from 'lucide-react';
 
@@ -17,28 +16,7 @@ const packages = [
     tagColor: '#2D5A3D',
     description: 'Experience the crown of India. Sail in premium Shikaras on Dal Lake, stay in luxury houseboats, and explore the snow-covered slopes of Gulmarg.',
     highlights: ['Luxury Houseboat Stay', 'Gulmarg Gondola Ride', 'Private Chauffeur Tour', 'Traditional Wazwan Dinner'],
-  itinerary: [
-  {
-    day: 'Day 1 - Arrival in Srinagar',
-    details: 'Meet our representative at Srinagar Airport, transfer to hotel/houseboat, and enjoy an evening Shikara ride on Dal Lake.'
-  },
-  {
-    day: 'Day 2 - Gulmarg Excursion',
-    details: 'Visit Gulmarg, enjoy Gondola ride, snow activities and panoramic Himalayan views.'
-  },
-  {
-    day: 'Day 3 - Pahalgam Tour',
-    details: 'Explore Betaab Valley, Aru Valley and Lidder River with local sightseeing.'
-  },
-  {
-    day: 'Day 4 - Sonamarg Visit',
-    details: 'Experience the beautiful meadows, glaciers and mountain landscapes of Sonamarg.'
-  },
-  {
-    day: 'Day 5 - Departure',
-    details: 'Transfer to Srinagar Airport with unforgettable memories of Kashmir.'
-  }
-],
+
   },
 
 
@@ -199,8 +177,7 @@ const packages = [
 
 export default function TravelPackages() {
   const [activePackage, setActivePackage] = useState(null);
-  const [showItinerary, setShowItinerary] = useState(false);
-  const navigate = useNavigate();
+ 
 
   return (
     <section
@@ -352,7 +329,7 @@ export default function TravelPackages() {
                 </div>
 
                 <h3 style={{
-                  fontFamily: "'Lucida Calligraphy', serif",
+                  fontFamily: "'Lucida Calligraphy'",
                   fontSize: '1rem',
                   fontWeight: 600,
                   color: '#1B3A2D',
@@ -543,166 +520,13 @@ export default function TravelPackages() {
                     Book Journey Now
                   </a>
 
-         <button
-  onClick={() => setShowItinerary(true)}
-  className="btn-earth"
->
-  Check Itinerary
-</button>
+
                 </div>
               </div>
             </motion.div>
           </div>
         )}
 
-              <AnimatePresence>
-        {showItinerary && activePackage && (
-          <div
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: '#F4EFE6',
-                zIndex: 9999
-              }}
-            >
-            <div
-             style={{
-  background: '#F4EFE6',
-  width: '100%',
-  height: '100vh',
-  overflowY: 'auto',
-  borderRadius: '0',
-  padding: '40px'
-}}
-            >
-              <button
-                onClick={() => setShowItinerary(false)}
-                className="btn-earth"
-              >
-                ← Back to Package
-              </button>
-
-              <h1>{activePackage.title}</h1>
-
-           <img
-  src={activePackage.image}
-  alt={activePackage.title}
-  style={{
-    width: '100%',
-    maxWidth: '700px',
-    height: '350px',
-    objectFit: 'cover',
-    borderRadius: '15px',
-    marginTop: '20px',
-    display: 'block'
-  }}
-/>
-
-              <h2 style={{
-  marginTop: '30px',
-  color: '#1B3A2D',
-  fontSize: '2rem'
-}}>
-  Tour Overview
-</h2>
-
-<p style={{
-  lineHeight: '1.8',
-  color: '#555',
-  fontSize: '1rem'
-}}>
-  {activePackage.description}
-</p>
-
-<h2 style={{
-  marginTop: '40px',
-  color: '#1B3A2D',
-  fontSize: '2rem'
-}}>
-  Detailed Itinerary
-</h2>
-
-<div style={{ marginTop: '20px' }}>
-
-  <div style={{
-    padding: '20px',
-    background: '#fff',
-    borderRadius: '15px',
-    marginBottom: '15px'
-  }}>
-<h2
-  style={{
-    marginTop: '40px',
-    marginBottom: '25px',
-    fontFamily: "'Cormorant Garamond', serif",
-    fontSize: '2.2rem',
-    fontWeight: 700,
-    color: '#1B3A2D',
-    textAlign: 'center'
-  }}
->
-</h2>
-  
-{activePackage.itinerary?.map((item, index) => (
-  <div
-    key={index}
-    style={{
-      background: '#FFFFFF',
-      padding: '24px',
-      borderRadius: '18px',
-      marginBottom: '18px',
-      border: '1px solid rgba(45,90,61,0.12)',
-      boxShadow: '0 8px 20px rgba(0,0,0,0.05)'
-    }}
-  >
-    <div
-      style={{
-        display: 'inline-block',
-        background: '#2D5A3D',
-        color: '#fff',
-        padding: '6px 14px',
-        borderRadius: '30px',
-        fontSize: '0.8rem',
-        fontWeight: 600,
-        marginBottom: '14px',
-        fontFamily: "'Inter', Monotype Corsiva"
-      }}
-    >
-      Day {index + 1}
-    </div>
-
-    <h3
-      style={{
-        margin: '0 0 10px 0',
-        color: '#1B3A2D',
-        fontSize: '1.4rem',
-        fontWeight: 700,
-        fontFamily: "'Cormorant Garamond', Monotype Corsiva"
-      }}
-    >
-      {item.day}
-    </h3>
-
-    <p
-      style={{
-        margin: 0,
-        lineHeight: '1.9',
-        color: '#6B6258',
-        fontSize: '1.5rem',
-        fontFamily: "'Monotype Corsiva', Monotype Sorsiva"
-      }}
-    >
-      {item.details}
-    </p>
-  </div>
-))}
-  </div>
-
-</div>
-            </div>
-          </div>
-        )}
-      </AnimatePresence>
       </AnimatePresence>
 
       <style>{`

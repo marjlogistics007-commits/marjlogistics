@@ -29,7 +29,7 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        backgroundColor: '#F4EFE6',
+        backgroundColor: '#f4eede',
       }}
     >
       {/* Organic background blobs */}
@@ -79,7 +79,7 @@ export default function Hero() {
                 color: '#2D5A3D',
               }}>
                 <Leaf size={12} />
-                Trusted Logistics & Travel Partner
+                Trusted Couriers & Travel Partner
               </span>
             </motion.div>
 
@@ -192,7 +192,7 @@ export default function Hero() {
                 <h3 style={{
                   fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600,
                   color: 'white', margin: '6px 0 8px',
-                }}>Scenic Kerala Backwaters</h3>
+                }}>Scenic Shikara Ride</h3>
                 <p style={{
                   fontFamily: "'Inter', sans-serif", fontSize: '0.72rem',
                   color: 'rgba(244,239,230,0.85)', lineHeight: 1.5, margin: 0,

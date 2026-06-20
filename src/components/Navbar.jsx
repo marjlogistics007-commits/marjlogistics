@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, Leaf, Globe2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const menuItems = [
   { name: 'Services', href: '#services' },
   { name: 'About', href: '#about' },
-  { name: 'Tour Packages', href: '#tours' },
+  { name: 'Tour Packages', href: '/packages' },
   { name: 'Logistics', href: '#logistics' },
   { name: 'FAQs', href: '#faq' },
   { name: 'Contact', href: '#contact' },
@@ -67,26 +68,43 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="hidden-mobile">
           {menuItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '0.72rem',
-                fontWeight: 600,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: '#3D2314',
-                textDecoration: 'none',
-                position: 'relative',
-                paddingBottom: '4px',
-                transition: 'color 0.2s',
-              }}
-              onMouseEnter={(e) => { e.target.style.color = '#2D5A3D'; }}
-              onMouseLeave={(e) => { e.target.style.color = '#3D2314'; }}
-            >
-              {item.name}
-            </a>
+            item.href.startsWith('/') ? (
+  <Link
+    key={item.name}
+    to={item.href}
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      fontSize: '0.72rem',
+      fontWeight: 600,
+      letterSpacing: '0.15em',
+      textTransform: 'uppercase',
+      color: '#3D2314',
+      textDecoration: 'none',
+      position: 'relative',
+      paddingBottom: '4px',
+    }}
+  >
+    {item.name}
+  </Link>
+) : (
+  <a
+    key={item.name}
+    href={item.href}
+    style={{
+      fontFamily: "'Inter', sans-serif",
+      fontSize: '0.72rem',
+      fontWeight: 600,
+      letterSpacing: '0.15em',
+      textTransform: 'uppercase',
+      color: '#3D2314',
+      textDecoration: 'none',
+      position: 'relative',
+      paddingBottom: '4px',
+    }}
+  >
+    {item.name}
+  </a>
+)
           ))}
           <a href="#booking" className="btn-earth" style={{ padding: '11px 26px', fontSize: '0.68rem' }}>
             Get Started <ArrowRight size={14} />
