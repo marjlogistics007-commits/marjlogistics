@@ -12,7 +12,7 @@ import BookingForm from './components/BookingForm';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import TourPackagesPage from './pages/TourPackagesPage';
+import TourPackagesPage from './Pages/TourPackagesPage';
 
 function App() {
   
