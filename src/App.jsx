@@ -13,6 +13,8 @@ import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TourPackagesPage from './Pages/TourPackagesPage';
+import ScrollToHash from './components/ScrollToHash';
+
 
 function App() {
   
@@ -52,6 +54,12 @@ function App() {
   element={<TourPackagesPage />}
 />
 
+
+<ScrollToHash />
+
+<Routes>
+  ...
+</Routes>
     </Routes>
 
   </BrowserRouter>
