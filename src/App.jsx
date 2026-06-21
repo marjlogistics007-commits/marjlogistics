@@ -20,6 +20,7 @@ function App() {
   
   return (
   <BrowserRouter>
+  <ScrollToHash />
 
     <Routes>
 
@@ -55,11 +56,8 @@ function App() {
 />
 
 
-<ScrollToHash />
 
-<Routes>
-  ...
-</Routes>
+
     </Routes>
 
   </BrowserRouter>
