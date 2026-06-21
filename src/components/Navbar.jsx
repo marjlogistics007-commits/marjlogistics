@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 
 
 const menuItems = [
-  { name: 'Services', href: '#services' },
-  { name: 'About', href: '#about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'About', href: '/#about' },
   { name: 'Tour Packages', href: '/packages' },
-  { name: 'Logistics', href: '#logistics' },
-  { name: 'FAQs', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Logistics', href: '/#logistics' },
+  { name: 'FAQs', href: '/#faq' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
