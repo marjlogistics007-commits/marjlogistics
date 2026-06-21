@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, Leaf, Globe2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+
 const menuItems = [
   { name: 'Services', href: '#services' },
   { name: 'About', href: '#about' },
@@ -142,22 +143,22 @@ export default function Navbar() {
             }}
           >
             <div style={{ padding: '24px 32px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              {menuItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                    fontSize: '1.5rem',
-                    fontWeight: 500,
-                    color: '#1B3A2D',
-                    textDecoration: 'none',
-                  }}
-                >
-                  {item.name}
-                </a>
-              ))}
+           {menuItems.map((item) => (
+  <Link
+    key={item.name}
+    to={item.href}
+    onClick={() => setIsOpen(false)}
+    style={{
+      fontFamily: "'Cormorant Garamond', serif",
+      fontSize: '1.5rem',
+      fontWeight: 500,
+      color: '#1B3A2D',
+      textDecoration: 'none',
+    }}
+  >
+    {item.name}
+  </Link>
+))}
               <a href="#booking" onClick={() => setIsOpen(false)} className="btn-earth" style={{ textAlign: 'center', justifyContent: 'center' }}>
                 Book a Service
               </a>
