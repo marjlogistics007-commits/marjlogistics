@@ -3,8 +3,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, Users, X, Check, Star, ArrowRight } from 'lucide-react';
 
 const packages = [
+
+
   {
     id: 1,
+    title: 'Scenic Shikara Ride',
+    image: 'https://t4.ftcdn.net/jpg/06/78/77/91/360_F_678779128_fBE2MxGMKeCkbmKTLoQ11s0GG9hof6vR.jpg',
+    price: '₹20,999',
+    originalPrice: '₹21,999',
+    duration: '3 Nights, 4 Days',
+    rating: 4.9,
+    reviews: 120,
+    tag: 'Most Popular',
+    tagColor: '#2D5A3D',
+    description: 'Experience the crown of India. Sail in premium Shikaras on Dal Lake, stay in luxury houseboats, and explore the snow-covered slopes of Gulmarg.',
+    highlights: ['Luxury Houseboat Stay', 'Famous Dal-Lake Shikara Ride', 'Gulmarg Gondola Ride', 'Private Chauffeur Tour'],
+  },
+
+
+  {
+    id: 2,
     title: 'Kashmir Paradise Tour',
     image: 'https://t4.ftcdn.net/jpg/03/62/19/27/360_F_362192710_3iIlgxQS78PoqysUTzdARNYeKFBaFxE9.jpg',
     price: '₹24,999',
@@ -16,13 +34,12 @@ const packages = [
     tagColor: '#2D5A3D',
     description: 'Experience the crown of India. Sail in premium Shikaras on Dal Lake, stay in luxury houseboats, and explore the snow-covered slopes of Gulmarg.',
     highlights: ['Luxury Houseboat Stay', 'Gulmarg Gondola Ride', 'Private Chauffeur Tour', 'Traditional Wazwan Dinner'],
-
   },
 
 
 
   {
-    id: 2,
+    id: 3,
     title: 'Kashmir Heritage Escape',
     image: 'https://www.shutterstock.com/image-photo/attractions-sonamarg-tourism-summit-activities-260nw-1415515895.jpg',
     price: '₹20,499',
@@ -34,33 +51,11 @@ const packages = [
     tagColor: '#B56B3F',
     description: 'Unwind at premium 5-star private beach resorts in North & South Goa. Enjoy sunset cruise packages and guided heritage tour bookings.',
     highlights: ['5-Star Beach Resort', 'Sunset Yacht Charter', 'Private Heritage Tour', 'Scuba & Water Sports'],
-  itinerary: [
-  {
-    day: 'Day 1 - Arrival in Srinagar Airport',
-    details: 'Welcome drink and luxury resort check-in.'
-  },
-  {
-    day: 'Day 2 - A Tour to Sonamarg',
-    details: 'Visit Glacier, Zojila Pass and Navyug Tunnel, Night Stay at Sonamarg.'
-  },
-  {
-    day: 'Day 3 - Gulmarg Excursion',
-    details: 'Gondola Ride, Skiing and Shiv Shankar Temple, return to Srinagar.'
-  },
-  {
-    day: 'Day 4 - sight seeing with Mughal Gardens',
-    details: 'Explore Mughal gardens, Nishat Garder, Shalimar Garden, Tulip Garden and Botinical Garden, and night shikara ride.'
-  },
-  {
-    day: 'Day 5 - Departure',
-    details: 'Airport transfer after breakfast.'
-  }
-],
   },
 
 
   {
-    id: 3,
+    id: 4,
     title: 'Valley of Dreams Expedition',
     image: 'https://media-cdn.tripadvisor.com/media/photo-s/1b/b5/cd/62/lidder-valley-pahalgam.jpg',
     price: '₹15,999',
@@ -72,33 +67,11 @@ const packages = [
     tagColor: '#4A7C59',
     description: 'Explore the majestic Solang Valley, drive through the Atal Tunnel, and relax in luxurious cozy wooden boutique villas.',
     highlights: ['Premium Wooden Villa', 'Solang Paragliding', 'Atal Tunnel Excursion', 'Riverside Dinner Setup'],
-  itinerary: [
-  {
-    day: 'Day 1 - Arrival in Manali',
-    details: 'Check-in and explore Mall Road.'
-  },
-  {
-    day: 'Day 2 - Solang Valley',
-    details: 'Adventure sports, ropeway and mountain activities.'
-  },
-  {
-    day: 'Day 3 - Rohtang Pass',
-    details: 'Snow points, glaciers and scenic photography.'
-  },
-  {
-    day: 'Day 4 - Naggar Castle',
-    details: 'Visit heritage sites and local villages.'
-  },
-  {
-    day: 'Day 5 - Departure',
-    details: 'Return journey with Himalayan memories.'
-  }
-],
   },
 
 
   {
-    id: 4,
+    id: 5,
     title: 'A full tour or KASHMIR VALLEY',
     image: 'https://t4.ftcdn.net/jpg/06/90/19/09/360_F_690190949_Zm2I8RwH3gc0qbVcqiBCpQBbhPY0OpYd.jpg',
     price: '₹32,500',
@@ -110,34 +83,12 @@ const packages = [
     tagColor: '#3B5E2E',
     description: 'Discover the Venice of the East. Sail down the serene backwaters of Alleppey in your own private, air-conditioned premium houseboat.',
     highlights: ['Private Houseboat Cruise', 'Ayurvedic Spa Sessions', 'Kumarakom Bird Sanctuary', 'Traditional Toddy Tasting'],
-  itinerary: [
-  {
-    day: 'Day 1 - Arrival in Kochi',
-    details: 'Airport pickup and city sightseeing.'
-  },
-  {
-    day: 'Day 2 - Munnar Hills',
-    details: 'Visit tea plantations, waterfalls and scenic viewpoints.'
-  },
-  {
-    day: 'Day 3 - Alleppey Houseboat',
-    details: 'Enjoy a luxury backwater cruise with traditional meals.'
-  },
-  {
-    day: 'Day 4 - Kumarakom',
-    details: 'Explore bird sanctuary and village life.'
-  },
-  {
-    day: 'Day 5 - Departure',
-    details: 'Transfer to airport with Kerala memories.'
-  }
-],
   },
 
 
 
  {
-    id: 5,
+    id: 6,
     title: 'Leh Ladakh',
     image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=600&auto=format&fit=crop',
     price: '₹25,500',
@@ -149,28 +100,6 @@ const packages = [
     tagColor: '#3B5E2E',
     description: 'Discover the Venice of the East. Sail down the serene backwaters of Alleppey in your own private, air-conditioned premium houseboat.',
     highlights: ['Private Houseboat Cruise', 'Ayurvedic Spa Sessions', 'Kumarakom Bird Sanctuary', 'Traditional Toddy Tasting'],
-  itinerary: [
-  {
-    day: 'Day 1 - Arrival in Leh',
-    details: 'Acclimatization and local market exploration.'
-  },
-  {
-    day: 'Day 2 - Leh Sightseeing',
-    details: 'Visit Shanti Stupa, Leh Palace and Hall of Fame.'
-  },
-  {
-    day: 'Day 3 - Nubra Valley',
-    details: 'Cross Khardung La Pass and enjoy camel safari in Nubra.'
-  },
-  {
-    day: 'Day 4 - Pangong Lake',
-    details: 'Travel to the famous Pangong Lake and enjoy lakeside views.'
-  },
-  {
-    day: 'Day 5 - Departure',
-    details: 'Return to Leh and transfer to airport.'
-  }
-],
   },
 
 ];

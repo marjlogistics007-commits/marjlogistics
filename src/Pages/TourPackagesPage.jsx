@@ -1,4 +1,82 @@
+<section
+  style={{
+    height: '70vh',
+    backgroundImage: 'url(https://images.unsplash.com/photo-1595815771614-ade5019c1c6f?q=80&w=1600&auto=format&fit=crop)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+  }}
+>
+  <div
+    style={{
+      position: 'absolute',
+      inset: 0,
+      background: 'rgba(0,0,0,0.45)',
+    }}
+  />
+
+  <div
+    style={{
+      position: 'relative',
+      zIndex: 2,
+      color: 'white',
+      maxWidth: '800px',
+      padding: '20px',
+    }}
+  >
+    <h1
+      style={{
+        fontSize: '4rem',
+        marginBottom: '20px',
+        fontFamily: "'Cormorant Garamond', serif",
+      }}
+    >
+      Luxury Kashmir Experiences
+    </h1>
+
+    <p
+      style={{
+        fontSize: '1.2rem',
+        lineHeight: 1.8,
+      }}
+    >
+      Curated journeys through Srinagar, Gulmarg, Sonamarg and Pahalgam.
+    </p>
+  </div>
+</section>
+
 const packages = [
+
+
+  {
+    title: "Scenic Shikara Ride",
+
+    image:
+      "https://t4.ftcdn.net/jpg/06/78/77/91/360_F_678779128_fBE2MxGMKeCkbmKTLoQ11s0GG9hof6vR.jpg",
+    description:
+      "Complete Kashmir experience with Shikara Ride at famous Dal Lake.",
+    highlights: [
+      "Srinagar",
+      "Gulmarg",
+      "Mughal Gardens",
+      "Pahalgam"
+    ],
+
+    itinerary: [
+      "Srinagar arrival",
+      "Explore Srinagar",
+      "Visit Gulmarg",
+      "Discover Mughal Gardens",
+      "Explore Pahalgam",
+      "Return journey"
+    ]
+  },
+
+  
   {
     title: "Kashmir Paradise Tour",
     image:
@@ -139,11 +217,11 @@ export default function TourPackagesPage() {
   return (
 
 <div
-  style={{
-    minHeight:"100vh",
-    padding:"80px 20px",
-    background:"#F4EFE6"
-  }}
+style={{
+  minHeight: "100vh",
+  padding: "80px 20px",
+  background: "linear-gradient(180deg, #F8F5EF 0%, #F1EBDF 50%, #E8DFCF 100%)"
+}}
 >
 
 <h1
@@ -163,7 +241,7 @@ style={{
 
       <div
         style={{
-          maxWidth:"800px",
+          maxWidth:"1000px",
           margin:"auto",
           display:"grid",
           gridTemplateColumns:"repeat(2, 1fr)",
@@ -188,24 +266,24 @@ style={{
 
         <div
           key={index}
-          style={{
-            background:"#fff",
-            borderRadius:"25px",
-            padding:"22px",
-            boxShadow:"0 15px 35px rgba(0,0,0,0.08)"
-          }}
+     style={{
+  background: '#aafedc',
+  borderRadius: '24px',
+  overflow: 'hidden',
+  boxShadow: '0 20px 50px rgba(0,0,0,0.08)',
+  border: '1px solid rgba(0,0,0,0.05)',
+}}
         >
 
 
           <img
             src={pkg.image}
             alt={pkg.title}
-            style={{
-              width:"100%",
-              height:"200px",
-              objectFit:"cover",
-              borderRadius:"20px"
-            }}
+       style={{
+  width: '100%',
+  height: '280px',
+  objectFit: 'cover',
+}}
           />
 
 
@@ -219,7 +297,20 @@ style={{
     letterSpacing:"0.5px"
 }}
 >
-{pkg.title}
+  <div style={{ display: 'flex', gap: '10px', marginBottom: '16px' }}>
+  <span>{pkg.duration}</span>
+  <span>Best Seller</span>
+</div>
+<h3
+  style={{
+    fontSize: '2rem',
+    fontFamily: "'Cormorant Garamond', serif",
+    color: '#1B3A2D',
+    padding: '24px',
+  }}
+>
+  {pkg.title}
+</h3>
 </h2>
 
 
@@ -229,34 +320,35 @@ style={{
   fontFamily:"'Lora', serif",
   lineHeight:"2",
   fontSize:"1.15rem",
-  marginTop:"18px"
+  marginTop:"18px",
+  padding: '24px',
 }}
 >
 {pkg.description}
-</p>
-
-
-          <h3
+<div
   style={{
-    color:"#B08D57",
-    fontFamily:"'Cormorant Garamond', serif",
-    fontSize:"2rem",
-    marginTop:"35px",
-    fontWeight:700
+    padding: '0 28px',
+    marginBottom: '24px',
+    display: 'grid',
+    gap: '10px',
   }}
 >
-  Highlights
-</h3>
-
-          <ul>
-            {pkg.highlights.map((item,i)=>(
-
-              <li key={i}>{item}</li>
-
-            ))}
-          </ul>
-
-
+  {pkg.highlights?.map((item) => (
+    <div
+      key={item}
+      style={{
+        background: '#F8F5EF',
+        padding: '10px 14px',
+        borderRadius: '12px',
+        color: '#1B3A2D',
+        fontWeight: '500',
+      }}
+    >
+      ✓ {item}
+    </div>
+  ))}
+</div>
+</p>
 
 <h3
   style={{
@@ -264,7 +356,8 @@ style={{
     fontFamily:"'Cormorant Garamond', serif",
     fontSize:"2rem",
     marginTop:"35px",
-    fontWeight:700
+    fontWeight:700,
+    padding: '24px', 
   }}
 >
   Itinerary
@@ -279,7 +372,7 @@ style={{
       fontFamily:"'Lora', serif",
       fontSize:"1.08rem",
       lineHeight:"1.9",
-      padding:"14px 0",
+      padding:"14px 14px",
       margin:"0",
       borderBottom:"1px solid rgba(176,141,87,0.25)"
     }}
@@ -288,7 +381,8 @@ style={{
       style={{
         color:"#B08D57",
         fontFamily:"'Cormorant Garamond', serif",
-        fontSize:"1.4rem"
+        fontSize:"1.1rem",
+        padding: '24px', 
       }}
     >
       Day {i+1}:
@@ -297,7 +391,6 @@ style={{
   </p>
 
 ))}
-
 
         </div>
 
