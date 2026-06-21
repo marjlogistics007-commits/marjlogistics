@@ -306,8 +306,11 @@ useEffect(() => {
   >
     Privacy Policy
   </a>
-  , Terms & Conditions, cancellation policy, and consent to be contacted via
-  phone, WhatsApp, SMS, or email regarding my booking.
+<span>
+I agree to the Privacy Policy, Terms & Conditions, and Cancellation &
+Refund Policy and consent to be contacted via phone, WhatsApp, SMS,
+or email regarding my booking.
+</span>
 </span>
     </label>
   </div>
