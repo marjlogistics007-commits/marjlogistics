@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Calendar, User, Phone, MapPin, Truck, Plane, Train, Compass, CheckCircle } from 'lucide-react';
+import { useEffect } from "react";
+
 
 const servicesList = [
   { id: 'courier', name: 'Courier Service', icon: Truck },
@@ -41,6 +43,18 @@ export default function BookingForm() {
     name: '', phone: '', origin: '', destination: '', date: '', weight: '1', travelers: '1',
   });
   const [showSuccess, setShowSuccess] = useState(false);
+useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get("service");
+
+  if (
+    service &&
+    ["courier", "flight", "train", "tour"].includes(service)
+  ) {
+    setServiceType(service);
+  }
+}, []);
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -241,20 +255,67 @@ export default function BookingForm() {
               )}
             </div>
 
-            {/* Submit */}
-            <div style={{
-              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-              paddingTop: '28px', marginTop: '28px',
-              borderTop: '1px solid rgba(208, 198, 179, 0.5)',
-              flexWrap: 'wrap', gap: '16px',
-            }}>
-              <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: '#B5ADA0', maxWidth: '320px', margin: 0 }}>
-                * By submitting, you agree to our service terms. We'll confirm within 15 minutes.
-              </p>
-              <button type="submit" className="btn-earth">
-                Confirm Booking Request
-              </button>
-            </div>
+         {/* Submit */}
+<div
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: '28px',
+    marginTop: '28px',
+    borderTop: '1px solid rgba(208, 198, 179, 0.5)',
+    flexWrap: 'wrap',
+    gap: '16px',
+  }}
+>
+  <div style={{ maxWidth: '420px' }}>
+    <p
+      style={{
+        fontFamily: "'Inter', sans-serif",
+        fontSize: '0.75rem',
+        color: '#B5ADA0',
+        margin: '0 0 12px 0',
+      }}
+    >
+      * By submitting, you agree to our service terms. We'll confirm within 15 minutes.
+    </p>
+
+    <label
+      style={{
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: '10px',
+        fontSize: '13px',
+        color: '#6B6258',
+        cursor: 'pointer',
+      }}
+    >
+      <input type="checkbox" required />
+
+  <span>
+  I agree to the{" "}
+  <a
+    href="/privacy-policy"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      color: "#B56B3F",
+      fontWeight: "600",
+      textDecoration: "none",
+    }}
+  >
+    Privacy Policy
+  </a>
+  , Terms & Conditions, cancellation policy, and consent to be contacted via
+  phone, WhatsApp, SMS, or email regarding my booking.
+</span>
+    </label>
+  </div>
+
+  <button type="submit" className="btn-earth">
+    Confirm Booking Request
+  </button>
+</div>
           </form>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 <section
   style={{
     height: '70vh',
@@ -30,7 +32,7 @@
   >
     <h1
       style={{
-        fontSize: '4rem',
+        fontSize: "clamp(2.2rem, 6vw, 4rem)",
         marginBottom: '20px',
         fontFamily: "'Cormorant Garamond', serif",
       }}
@@ -65,15 +67,19 @@ const packages = [
       "Mughal Gardens",
       "Pahalgam"
     ],
-
-    itinerary: [
-      "Srinagar arrival",
-      "Explore Srinagar",
-      "Visit Gulmarg",
-      "Discover Mughal Gardens",
-      "Explore Pahalgam",
-      "Return journey"
-    ]
+itinerary: [
+  "✈️ Day 1: Arrival in Srinagar, airport pickup, luxury hotel check-in, evening Shikara ride on Dal Lake and overnight stay.",
+  
+  "🌷 Day 2: Full-day sightseeing of Mughal Gardens, Pari Mahal, Shankaracharya Temple and local Srinagar markets.",
+  
+  "🚡 Day 3: Excursion to Gulmarg, Gondola ride, snow activities (seasonal), scenic mountain views and leisure time.",
+  
+  "🏔️ Day 4: Journey to Pahalgam via saffron fields and apple orchards, followed by visits to Betaab Valley and Aru Valley.",
+  
+  "📸 Day 5: Explore Sonamarg, enjoy glacier views, river landscapes and photography opportunities before returning to Srinagar.",
+  
+  "👋 Day 6: Breakfast, last-minute shopping for Kashmiri handicrafts and transfer to Srinagar Airport for departure."
+]
   },
 
   
@@ -92,14 +98,19 @@ const packages = [
       "Traditional Wazwan Dinner"
     ],
 
-    itinerary: [
-      "Arrival in Srinagar and Dal Lake Shikara experience",
-      "Srinagar gardens and local sightseeing",
-      "Gulmarg mountain adventure and Gondola ride",
-      "Sonamarg valley exploration",
-      "Pahalgam scenic tour",
-      "Departure with unforgettable memories"
-    ]
+itinerary: [
+  "✈️ Day 1: Arrive at Srinagar Airport and receive a warm traditional welcome. Transfer to your luxury hotel or houseboat and enjoy a serene Shikara ride on the enchanting Dal Lake during sunset.",
+
+  "🌷 Day 2: Discover the beauty of Srinagar with visits to Nishat Bagh, Shalimar Bagh, Chashme Shahi and the historic Shankaracharya Temple, followed by shopping in the vibrant local markets.",
+
+  "🚡 Day 3: Embark on an unforgettable journey to Gulmarg. Experience the world-famous Gondola ride, admire breathtaking Himalayan views and enjoy snow activities during the winter season.",
+
+  "🏔️ Day 4: Explore the picturesque valley of Sonamarg, known as the 'Meadow of Gold'. Enjoy scenic landscapes, glacier views, riverside photography and optional pony rides.",
+
+  "🌲 Day 5: Travel to Pahalgam through saffron fields and apple orchards. Visit Betaab Valley, Aru Valley and Lidder River while soaking in Kashmir's natural beauty.",
+
+  "👋 Day 6: Enjoy a leisurely breakfast, capture final memories, shop for authentic Kashmiri handicrafts and transfer to Srinagar Airport for your departure."
+]
   },
 
 
@@ -119,14 +130,19 @@ const packages = [
       "Local Cuisine"
     ],
 
-    itinerary: [
-      "Arrival and heritage introduction",
-      "Historic Srinagar sightseeing",
-      "Cultural village experience",
-      "Local market exploration",
-      "Traditional Kashmiri dinner",
-      "Departure"
-    ]
+itinerary: [
+  "✈️ Day 1: Arrive in Srinagar and check into your heritage-style accommodation. Enjoy an evening stroll along Dal Lake and experience the city's timeless charm.",
+
+  "🏛️ Day 2: Explore the historic heart of Srinagar, including Jamia Masjid, Shah-e-Hamdan Shrine and the old city's traditional wooden architecture.",
+
+  "🎭 Day 3: Immerse yourself in authentic Kashmiri culture through local crafts, carpet weaving demonstrations and interactions with skilled artisans.",
+
+  "🛍️ Day 4: Visit traditional bazaars and handicraft centers renowned for Pashmina shawls, papier-mâché art and hand-knotted carpets.",
+
+  "🍽️ Day 5: Enjoy a curated Kashmiri culinary experience featuring traditional Wazwan dishes and local delicacies prepared by expert chefs.",
+
+  "👋 Day 6: Relax with a leisurely breakfast before your airport transfer, taking home unforgettable memories of Kashmir's rich heritage."
+]
   },
 
 
@@ -146,14 +162,19 @@ const packages = [
       "Peaceful Stay"
     ],
 
-    itinerary: [
-      "Arrival in Kashmir",
-      "Lake and city exploration",
-      "Gulmarg adventure",
-      "Pahalgam valley visit",
-      "Relaxation day",
-      "Departure"
-    ]
+itinerary: [
+  "✈️ Day 1: Arrive in Srinagar and settle into your luxury accommodation. Enjoy a peaceful evening overlooking Dal Lake and the surrounding mountains.",
+
+  "🌄 Day 2: Discover Kashmir's breathtaking landscapes through guided nature walks, lakeside exploration and scenic countryside drives.",
+
+  "🏔️ Day 3: Venture into Gulmarg's alpine meadows, enjoy panoramic mountain views and experience the region's natural beauty.",
+
+  "🌲 Day 4: Explore Pahalgam's pristine valleys, pine forests and riverside trails while capturing stunning photographs along the way.",
+
+  "📸 Day 5: Visit hidden viewpoints, untouched landscapes and charming villages perfect for photography and peaceful relaxation.",
+
+  "👋 Day 6: Enjoy your final morning in paradise before departing with unforgettable memories of Kashmir's dreamlike scenery."
+]
   },
 
 
@@ -173,14 +194,19 @@ const packages = [
       "Pahalgam"
     ],
 
-    itinerary: [
-      "Srinagar arrival",
-      "Explore Srinagar",
-      "Visit Gulmarg",
-      "Discover Sonamarg",
-      "Explore Pahalgam",
-      "Return journey"
-    ]
+itinerary: [
+  "✈️ Day 1: Arrive in Srinagar, transfer to your hotel and enjoy a relaxing Shikara ride across the beautiful Dal Lake.",
+
+  "🌷 Day 2: Explore Srinagar's iconic attractions including Mughal Gardens, Pari Mahal, Hazratbal Shrine and bustling local markets.",
+
+  "🚡 Day 3: Visit Gulmarg and experience the famous Gondola ride, offering spectacular views of snow-capped Himalayan peaks.",
+
+  "🏔️ Day 4: Journey to Sonamarg, the Meadow of Gold, and admire glaciers, rivers and breathtaking mountain landscapes.",
+
+  "🌲 Day 5: Explore Pahalgam, including Betaab Valley, Aru Valley and Lidder River, surrounded by Kashmir's most picturesque scenery.",
+
+  "👋 Day 6: Complete your Kashmir adventure with souvenir shopping and a comfortable transfer to Srinagar Airport."
+]
   },
 
 
@@ -200,207 +226,235 @@ const packages = [
       "Adventure Experience"
     ],
 
-    itinerary: [
-      "Arrival in Leh",
-      "Leh sightseeing",
-      "Nubra Valley journey",
-      "Pangong Lake visit",
-      "Local exploration",
-      "Departure"
-    ]
+itinerary: [
+  "✈️ Day 1: Arrive in Leh and acclimatize to the high-altitude environment while enjoying the stunning mountain scenery surrounding the town.",
+
+  "🏛️ Day 2: Visit Leh Palace, Shanti Stupa, Hall of Fame Museum and local monasteries while learning about Ladakh's unique culture and history.",
+
+  "🏜️ Day 3: Journey through Khardung La Pass, one of the world's highest motorable roads, to reach the beautiful Nubra Valley.",
+
+  "🐪 Day 4: Explore Nubra Valley's sand dunes, enjoy a camel safari and visit ancient monasteries nestled among dramatic landscapes.",
+
+  "🌊 Day 5: Travel to the world-famous Pangong Lake, marvel at its crystal-clear waters and enjoy unforgettable lakeside views.",
+
+  "👋 Day 6: Return to Leh, explore local markets and transfer to the airport with memories of one of India's most extraordinary destinations."
+]
   }
 ];
 
 
 export default function TourPackagesPage() {
 
-  return (
-
-<div
-style={{
-  minHeight: "100vh",
-  padding: "80px 20px",
-  background: "linear-gradient(180deg, #F8F5EF 0%, #F1EBDF 50%, #E8DFCF 100%)"
-}}
->
-
-<h1
-style={{
-  textAlign:"center",
-  color:"#1B3A2D",
-  fontFamily:"'Cormorant Garamond', serif",
-  fontSize:"4rem",
-  fontWeight:700,
-  letterSpacing:"1px",
-  marginBottom:"60px"
-}}
->
-  Luxury Kashmir Packages
-</h1>
-
-
-      <div
-        style={{
-          maxWidth:"1000px",
-          margin:"auto",
-          display:"grid",
-          gridTemplateColumns:"repeat(2, 1fr)",
-          gap:"30px"
-        }}
-      >
-
-        <div
-  className="tour-grid"
-  style={{
-    maxWidth:"1200px",
-    margin:"auto",
-    display:"grid",
-    gridTemplateColumns:"repeat(2, 1fr)",
-    gap:"30px"
-  }}
-></div>
-
-
-      {packages.map((pkg,index)=>(
-
-
-        <div
-          key={index}
-     style={{
-  background: '#aafedc',
-  borderRadius: '24px',
-  overflow: 'hidden',
-  boxShadow: '0 20px 50px rgba(0,0,0,0.08)',
-  border: '1px solid rgba(0,0,0,0.05)',
-}}
-        >
-
-
-          <img
-            src={pkg.image}
-            alt={pkg.title}
-       style={{
-  width: '100%',
-  height: '280px',
-  objectFit: 'cover',
-}}
-          />
-
-
-<h2
-style={{
-    color:"#1B3A2D",
-    fontFamily:"'Cormorant Garamond', serif",
-    fontSize:"2rem",
-    fontWeight:700,
-    marginTop:"30px",
-    letterSpacing:"0.5px"
-}}
->
-  <div style={{ display: 'flex', gap: '10px', marginBottom: '16px' }}>
-  <span>{pkg.duration}</span>
-  <span>Best Seller</span>
-</div>
-<h3
-  style={{
-    fontSize: '2rem',
-    fontFamily: "'Cormorant Garamond', serif",
-    color: '#1B3A2D',
-    padding: '24px',
-  }}
->
-  {pkg.title}
-</h3>
-</h2>
-
-
-<p
-style={{
-  color:"#5E564C",
-  fontFamily:"'Lora', serif",
-  lineHeight:"2",
-  fontSize:"1.15rem",
-  marginTop:"18px",
-  padding: '24px',
-}}
->
-{pkg.description}
-<div
-  style={{
-    padding: '0 28px',
-    marginBottom: '24px',
-    display: 'grid',
-    gap: '10px',
-  }}
->
-  {pkg.highlights?.map((item) => (
-    <div
-      key={item}
+ return (
+  <div
+    style={{
+      minHeight: "80vh",
+      padding: "80px 20px",
+      background:
+        "linear-gradient(180deg, #F8F5EF 0%, #F1EBDF 50%, #E8DFCF 100%)",
+    }}
+  >
+    <h1
       style={{
-        background: '#F8F5EF',
-        padding: '10px 14px',
-        borderRadius: '12px',
-        color: '#1B3A2D',
-        fontWeight: '500',
+        textAlign: "center",
+        color: "#05f77e",
+        fontFamily: "'Cormorant Garamond', serif",
+        fontSize: "4rem",
+        fontWeight: 700,
+        marginBottom: "60px",
       }}
     >
-      ✓ {item}
+      Luxury Kashmir Packages
+    </h1>
+
+    <div
+      style={{
+        maxWidth: "1200px",
+        margin: "auto",
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit,minmax(420px,1fr))",
+        gap: "30px",
+      }}
+    >
+      {packages.map((pkg, index) => (
+        <div
+          key={index}
+          style={{
+            background: "#FFFFFF",
+            borderRadius: "30px",
+            overflow: "hidden",
+            boxShadow: "0 25px 60px rgba(252, 3, 3, 0.08)",
+            border: "1px solid rgba(176, 87, 87, 0.15)",
+          }}
+        >
+          {/* Image Section */}
+          <div
+            style={{
+              position: "relative",
+              height: "320px",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src={pkg.image}
+              alt={pkg.title}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,.75), transparent)",
+              }}
+            />
+
+            <div
+              style={{
+                position: "absolute",
+                bottom: "20px",
+                left: "20px",
+                color: "white",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "14px",
+                  letterSpacing: "1px",
+                  marginBottom: "8px",
+                }}
+              >
+                ✨ Premium Experience
+              </div>
+
+              <h2
+                style={{
+                  margin: 0,
+                  fontSize: "clamp(1.5rem, 5vw, 2rem)",
+                  fontFamily: "'Cormorant Garamond', serif",
+                  color: "white"
+                }}
+              >
+                {pkg.title}
+              </h2>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div style={{ padding: "30px" }}>
+            <p
+              style={{
+                color: "#fc8d06",
+                fontFamily: "'Lora', serif",
+                lineHeight: "1.9",
+                fontSize: "1.05rem",
+                marginBottom: "25px",
+              }}
+            >
+              {pkg.description}
+            </p>
+
+            {/* Highlights */}
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "10px",
+                marginBottom: "30px",
+              }}
+            >
+              {pkg.highlights?.map((item) => (
+                <span
+                  key={item}
+                  style={{
+                    background: "#F7F3EC",
+                    color: "#1B3A2D",
+                    padding: "10px 16px",
+                    borderRadius: "50px",
+                    fontSize: "14px",
+                    border: "1px solid #E8DFCF",
+                  }}
+                >
+                  ✦ {item}
+                </span>
+              ))}
+            </div>
+
+            {/* Itinerary */}
+            <h3
+              style={{
+                color: "#B08D57",
+                marginBottom: "20px",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "2rem",
+              }}
+            >
+              Itinerary
+            </h3>
+
+         <div>
+  {pkg.itinerary.map((day, i) => (
+    <div
+      key={i}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        marginBottom: "16px",
+        padding: "12px 16px",
+        background: "#F8F5EF",
+        borderRadius: "12px",
+      }}
+    >
+      <span style={{ fontSize: "20px" }}>📍</span>
+
+      <span
+        style={{
+          color: "#4F463A",
+          lineHeight: "1.8",
+        }}
+      >
+        {day}
+      </span>
     </div>
   ))}
 </div>
-</p>
+            </div>
 
-<h3
+            {/* Buttons */}
+            <div
+              style={{
+                display: "flex",
+                gap: "12px",
+                marginTop: "30px",
+              }}
+            >
+    <Link to="/?service=tour#booking"
   style={{
-    color:"#B08D57",
-    fontFamily:"'Cormorant Garamond', serif",
-    fontSize:"2rem",
-    marginTop:"35px",
-    fontWeight:700,
-    padding: '24px', 
-  }}
->
-  Itinerary
-</h3>
-
-{pkg.itinerary.map((day,i)=>(
-
-  <p
-    key={i}
-    style={{
-      color:"#4F463A",
-      fontFamily:"'Lora', serif",
-      fontSize:"1.08rem",
-      lineHeight:"1.9",
-      padding:"14px 14px",
-      margin:"0",
-      borderBottom:"1px solid rgba(176,141,87,0.25)"
+    flex: 1,
+    padding: "14px",
+    borderRadius: "12px",
+    border: "none",
+    background: "linear-gradient(135deg,#B08D57,#D4AF37)",
+    color: "white",
+    cursor: "pointer",
+    fontWeight: "600",
+    textAlign: "center",
+    textDecoration: "none",
     }}
-  >
-    <b
-      style={{
-        color:"#B08D57",
-        fontFamily:"'Cormorant Garamond', serif",
-        fontSize:"1.1rem",
-        padding: '24px', 
-      }}
-    >
-      Day {i+1}:
-    </b>{" "}
-    {day}
-  </p>
-
-))}
-
-        </div>
-
-
+        >
+          Book Now
+          </Link>
+            </div>
+          </div>
+        
       ))}
-
-
-      </div>
-
-
     </div>
-  );
+  </div>
+);
 }

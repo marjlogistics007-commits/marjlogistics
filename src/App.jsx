@@ -14,7 +14,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import TourPackagesPage from './Pages/TourPackagesPage';
 import ScrollToHash from './components/ScrollToHash';
-
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
 
 function App() {
   
@@ -55,7 +55,7 @@ function App() {
   element={<TourPackagesPage />}
 />
 
-
+<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
 
     </Routes>

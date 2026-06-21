@@ -3,6 +3,10 @@
 
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ============================================================
    NATURE & EARTH DESIGN SYSTEM
    Color Palette inspired by forest, stone, soil, and growth
