@@ -142,7 +142,7 @@ export default function TravelPackages() {
               margin: 0,
               lineHeight: 1.15,
             }}>
-              Featured <em style={{ fontWeight: 400, color: '#B56B3F' }}>Travel Packages</em>
+              Featured <em style={{ fontWeight: 400, color: '#B56B3F' }}>Tour Packages</em>
             </h2>
             <p style={{
               fontFamily: "'Inter', sans-serif",
