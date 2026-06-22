@@ -247,8 +247,8 @@ export default function Hero() {
 
             {/* Floating card: Live Tracker */}
             <motion.div
-              animate={{ y: [0, 14, 0] }}
-              transition={{ duration: 7, ease: 'easeInOut', repeat: Infinity }}
+              animate={{ y: [0, -80, 0] }}
+              transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
               style={{
                 position: 'absolute', bottom: '10px', right: '-20px',
                 background: 'rgba(27, 58, 45, 0.9)',
@@ -256,14 +256,14 @@ export default function Hero() {
                 border: '1px solid rgba(74, 124, 89, 0.35)',
                 borderRadius: '24px',
                 padding: '20px',
-                width: '220px',
+                width: '250px',
                 boxShadow: '0 20px 50px rgba(27,58,45,0.25)',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#A8D5B5', display: 'block', animation: 'pulse 2s infinite' }} />
-                  <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(244,239,230,0.7)' }}>Live Tracking</span>
+                  <span style={{ width: '18px', height: '10px', borderRadius: '50%', background: '#A8D5B5', display: 'block', animation: 'pulse 2s infinite' }} />
+                  <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(246, 246, 248, 0.7)' }}>DTDC Tracking</span>
                 </div>
                 <span style={{ fontSize: '0.6rem', fontWeight: 600, color: '#A8D5B5', background: 'rgba(168,213,181,0.15)', padding: '3px 8px', borderRadius: '9999px' }}>In Transit</span>
               </div>
@@ -273,18 +273,18 @@ export default function Hero() {
                 </div>
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
-                    <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'white' }}>ID #MARJ-749</span>
+                    <span style={{ fontSize: '1.7rem', fontWeight: 700, color: 'white' }}>ID: NF-1913</span>
                   </div>
-                  <p style={{ fontSize: '0.62rem', color: 'rgba(244,239,230,0.6)', margin: '3px 0 0', lineHeight: 1.4 }}>Mumbai Hub → Bangalore Hub</p>
+                  <p style={{ fontSize: '0.62rem', color: 'rgba(244,239,230,0.6)', margin: '3px 0 0', lineHeight: 1.4 }}>Kashmir Hub → Delhi Hub</p>
                 </div>
               </div>
               <div style={{ marginTop: '14px', height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '9999px', overflow: 'hidden' }}>
                 <div style={{ width: '65%', height: '100%', background: 'linear-gradient(90deg, #4A7C59, #A8D5B5)', borderRadius: '9999px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '6px' }}>
-                <span style={{ fontSize: '0.58rem', color: 'rgba(244,239,230,0.5)' }}>Mumbai</span>
+                <span style={{ fontSize: '0.58rem', color: 'rgba(244,239,230,0.5)' }}>Kashmir</span>
                 <span style={{ fontSize: '0.58rem', color: '#A8D5B5', fontWeight: 600 }}>65%</span>
-                <span style={{ fontSize: '0.58rem', color: 'rgba(244,239,230,0.5)' }}>Bangalore</span>
+                <span style={{ fontSize: '0.58rem', color: 'rgba(244,239,230,0.5)' }}>Delhi</span>
               </div>
             </motion.div>
           </motion.div>
