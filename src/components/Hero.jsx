@@ -247,7 +247,7 @@ export default function Hero() {
 
             {/* Floating card: Live Tracker */}
             <motion.div
-              animate={{ y: [0, -80, 0] }}
+              animate={{ y: [0, -90, 0] }}
               transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
               style={{
                 position: 'absolute', bottom: '10px', right: '-20px',
@@ -256,7 +256,7 @@ export default function Hero() {
                 border: '1px solid rgba(74, 124, 89, 0.35)',
                 borderRadius: '24px',
                 padding: '20px',
-                width: '250px',
+                width: '260px',
                 boxShadow: '0 20px 50px rgba(27,58,45,0.25)',
               }}
             >
@@ -273,7 +273,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
-                    <span style={{ fontSize: '1.7rem', fontWeight: 700, color: 'white' }}>ID: NF-1913</span>
+                    <span style={{ fontSize: '2.5rem', fontWeight: 700, color: 'white' }}>NF-1913</span>
                   </div>
                   <p style={{ fontSize: '0.62rem', color: 'rgba(244,239,230,0.6)', margin: '3px 0 0', lineHeight: 1.4 }}>Kashmir Hub → Delhi Hub</p>
                 </div>
