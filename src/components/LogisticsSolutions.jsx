@@ -9,27 +9,54 @@ export default function LogisticsSolutions() {
   const [weight, setWeight] = useState(2);
   const [speed, setSpeed] = useState('express');
 
-  const handleTrackSubmit = (e) => {
-    e.preventDefault();
-    if (!trackingId.trim()) return;
-    setTrackingResult({
-      id: trackingId.toUpperCase(),
-      status: 'In Transit',
-      eta: 'Tomorrow, by 6:00 PM',
-      steps: [
-        { title: 'Package Picked Up', desc: 'Indira Gandhi Cargo Terminal, Delhi', time: 'June 13, 04:30 PM', done: true },
-        { title: 'Sorted & Dispatched', desc: 'MARJ North Hub Consolidation Center', time: 'June 13, 09:15 PM', done: true },
-        { title: 'In Transit', desc: 'Express transport route to destination hub', time: 'June 14, 02:40 AM', done: true },
-        { title: 'Out for Delivery', desc: 'Courier agent assigned at local delivery station', time: 'Pending', done: false },
-      ],
-    });
+  const [length, setLength] = useState('');
+  const [width, setWidth] = useState('');
+  const [height, setHeight] = useState('');
+
+const handleTrackSubmit = (e) => {
+  e.preventDefault();
+
+  if (!trackingId.trim()) return;
+
+  window.open(
+    `https://www.dtdc.com/track-your-shipment/`,
+    "_blank"
+  );
+};
+
+const calculateEstimate = () => {
+  const actualWeight = Number(weight) || 0;
+
+  const l = Number(length) || 0;
+  const w = Number(width) || 0;
+  const h = Number(height) || 0;
+
+  const volumetricWeight = (l * w * h) / 5000;
+
+  const chargeableWeight = Math.max(
+    actualWeight,
+    volumetricWeight
+  );
+
+  const rates = {
+    standard: 80,
+    express: 150,
+    'same-day': 320,
   };
 
-  const calculateEstimate = () => {
-    const rates = { standard: 80, express: 150, 'same-day': 320 };
-    return (rates[speed] || 150) * weight;
-  };
+  return {
+    amount:
+      Math.ceil(chargeableWeight) *
+      (rates[speed] || 150),
 
+    actualWeight,
+    volumetricWeight:
+      volumetricWeight.toFixed(2),
+
+    chargeableWeight:
+      chargeableWeight.toFixed(2),
+  };
+};
   const calculateETA = () => {
     if (speed === 'standard') return '3 - 5 Business Days';
     if (speed === 'express') return '1 - 2 Business Days';
@@ -167,6 +194,7 @@ export default function LogisticsSolutions() {
               </button>
             </div>
 
+
             <div style={{ padding: '32px' }}>
               {/* Tracking Tab */}
               {activeTab === 'track' && (
@@ -178,7 +206,7 @@ export default function LogisticsSolutions() {
                         type="text"
                         value={trackingId}
                         onChange={(e) => setTrackingId(e.target.value)}
-                        placeholder="Enter ID (e.g. MARJ-749)"
+                        placeholder="Enter DTDC Tracking Number"
                         className="earth-input"
                         style={{ paddingLeft: '40px' }}
                       />
@@ -203,6 +231,7 @@ export default function LogisticsSolutions() {
                     >
                       Track
                     </button>
+                    
                   </form>
 
                   <AnimatePresence mode="wait">
@@ -289,6 +318,53 @@ export default function LogisticsSolutions() {
               {/* Calculator Tab */}
               {activeTab === 'calculate' && (
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+
+                {/* Package Dimensions */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <label
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: '0.85rem',
+                  fontWeight: 500,
+                  color: '#1B3A2D'
+                }}
+              >
+                  Package Dimensions (in)
+                </label>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(3, 1fr)',
+                  gap: '10px'
+                }}
+              >
+              <input
+                type="number"
+                placeholder="Length"
+                value={length}
+                onChange={(e) => setLength(e.target.value)}
+                className="earth-input"
+              />
+
+              <input
+                type="number"
+                placeholder="Width"
+                value={width}
+                onChange={(e) => setWidth(e.target.value)}
+                className="earth-input"
+              />
+
+              <input
+                type="number"
+                placeholder="Height"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                className="earth-input"
+              />
+            </div>
+          </div>
+                  
                   {/* Weight slider */}
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -370,11 +446,34 @@ export default function LogisticsSolutions() {
                         Estimated Fare
                       </span>
                       <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '2rem', fontWeight: 700, color: '#1B3A2D', lineHeight: 1, marginTop: '6px' }}>
-                        ₹{calculateEstimate()}
+                       ₹{calculateEstimate().amount}
                       </div>
                       <div style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', color: '#7A6E62', marginTop: '4px' }}>
                         Surcharges & taxes included.
                       </div>
+
+                    <div
+                      style={{
+                      marginTop: '10px',
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: '0.7rem',
+                      color: '#7A6E62',
+                      lineHeight: '1.8'
+                    }}
+                  >
+                  <div>
+                    Actual Weight: {calculateEstimate().actualWeight} kg
+                  </div>
+
+                  <div>
+                   Volumetric Weight: {calculateEstimate().volumetricWeight} kg
+                  </div>
+
+                  <div>
+                    Chargeable Weight: {calculateEstimate().chargeableWeight} kg
+                  </div>
+                  </div>
+
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <span style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#7A6E62' }}>
