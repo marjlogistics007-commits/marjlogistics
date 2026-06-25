@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function CustomItinerary() {
+
 const [form, setForm] = useState({
   name: "",
   contact: "",
@@ -37,20 +38,31 @@ ${form.activities}
       `https://wa.me/917889306316?text=${encodeURIComponent(message)}`,
       "_blank"
     );
+
+    // optional: clear form after sending
+    setForm({
+      name: "",
+      contact: "",
+      destination: "",
+      days: "",
+      travelers: "",
+      budget: "",
+      activities: "",
+    });
   };
 
-  setForm({
-  name: "",
-  contact: "",
-  destination: "",
-  days: "",
-  travelers: "",
-  budget: "",
-  activities: "",
-});
 
   return (
-    <div style={{ maxWidth: "800px", margin: "80px auto", padding: "20px", fontFamily: "'Inter', sans-serif", fontSize: '2.1rem',}}>
+    <div 
+      style={{
+        maxWidth: "800px",
+        margin: "80px auto",
+        padding: "20px",
+        fontFamily: "'Inter', sans-serif",
+        fontSize: "2.1rem",
+      }}
+    >
+
       <h1>Create Your Custom Itinerary</h1>
 
       <input
@@ -67,8 +79,8 @@ ${form.activities}
         placeholder="Contact Number"
         value={form.contact}
         onChange={handleChange}
-    />
-      
+      />
+
       <input
         className="earth-input"
         name="destination"
@@ -115,8 +127,9 @@ ${form.activities}
         style={{ marginTop: "20px" }}
         onClick={sendWhatsApp}
       >
-        Send 
+        Send
       </button>
+
     </div>
   );
 }
