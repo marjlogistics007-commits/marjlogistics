@@ -36,7 +36,7 @@ export default function Navbar() {
         zIndex: 50,
         transition: 'all 0.35s ease',
         padding: isScrolled ? '8px 0' : '05px 0',
-        background: 'linear-gradient(90deg, #d6eadf, rgba(27, 58, 45, 0.9)',
+        background: 'linear-gradient(0deg, #f4eede , rgba(27, 58, 45, 0.9)',
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
         borderBottom: isScrolled ? '1px solid rgba(208, 198, 179, 0.5)' : 'none',
@@ -80,7 +80,7 @@ style={{
   <span
     style={{
       fontFamily: "'COPPERPLATE GOTHIC LIG'",
-      fontSize: '1.8rem',
+      fontSize: '2rem',
       fontWeight: 700,
       color: '#1B3A2D',
       letterSpacing: '1px'
@@ -111,7 +111,7 @@ className="hidden-mobile"
       fontWeight: 600,
       letterSpacing: '0.15em',
       textTransform: 'uppercase',
-      color: '#d8f8df',
+      color: '#d8f8e1',
       textDecoration: 'none',
       position: 'relative',
       paddingBottom: '4px',

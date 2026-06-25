@@ -8,7 +8,7 @@ const services = [
     description: 'Ultra-fast parcel shipping and document delivery with real-time tracking across 19,000+ pin codes in India.',
     details: 'Our courier network provides secure door-to-door delivery, live tracking, express options, bulk corporate shipping, fragile item handling, and dedicated customer support for every shipment.',
     icon: Truck,
-    accent: '#2D5A3D',
+    accent: 'rgba(27, 58, 45, 0.9)',
     bg: 'rgba(45,90,61,0.06)',
   },
   {
@@ -16,7 +16,7 @@ const services = [
     description: 'Curated holiday plans, romantic retreats, and adventure tours complete with premium accommodations.',
     details: 'MARJ Travel Packages are designed around your journey. From peaceful holidays to adventure trips and family vacations, we arrange destinations, stays, transport, and travel planning to make your experience smooth and memorable.',
     icon: Compass,
-    accent: '#B56B3F',
+    accent: 'rgba(27, 58, 45, 0.9)',
     bg: 'rgba(181,107,63,0.06)',
   },
   {
@@ -24,7 +24,7 @@ const services = [
     description: 'Search, compare, and book domestic & international flights at best rates with 24/7 seat assistance.',
     details: 'MARJ Flight Booking helps you find suitable domestic and international flights with fare comparison, schedule guidance, booking support, and assistance throughout your travel planning process.',
     icon: Plane,
-    accent: '#4A7C59',
+    accent: 'rgba(27, 58, 45, 0.9)',
     bg: 'rgba(74,124,89,0.06)',
   },
   {
@@ -32,7 +32,7 @@ const services = [
     description: 'Hassle-free IRCTC e-ticket reservations, seat availability lookup, and direct PNR status alerts.',
     details: 'MARJ Train Booking offers convenient railway travel assistance with reservation support, route planning, ticket guidance, seat availability checks, and journey coordination for stress-free travel.',
     icon: Train,
-    accent: '#7A4428',
+    accent: 'rgba(27, 58, 45, 0.9)',
     bg: 'rgba(122,68,40,0.06)',
   },
   {
@@ -40,7 +40,7 @@ const services = [
     description: 'Premium sleeper and AC bus bookings connecting remote routes with verified luxury fleet operators.',
     details: 'MARJ Bus Booking connects you with comfortable travel options including AC, sleeper, and premium buses. Get route assistance, timing options, and booking support for safe and convenient journeys.',
     icon: Bus,
-    accent: '#3B5E2E',
+    accent: 'rgba(27, 58, 45, 0.9)',
     bg: 'rgba(59,94,46,0.06)',
   },
   {
@@ -48,7 +48,7 @@ const services = [
     description: 'Bulk enterprise shipping, custom supply chain consulting, express air cargo, and dedicated warehouse support.',
     details: 'MARJ Business Logistics delivers customized solutions for companies including bulk transportation, supply chain coordination, cargo movement, warehouse support, and efficient delivery management.',
     icon: Briefcase,
-    accent: '#7A6E62',
+    accent: 'rgba(27, 58, 45, 0.9)',
     bg: 'rgba(122,110,98,0.06)',
   },
 ];
