@@ -211,7 +211,7 @@ export default function Hero() {
                 border: '1px solid rgba(208, 198, 179, 0.8)',
                 borderRadius: '24px',
                 padding: '20px',
-                width: '220px',
+                width: '250px',
                 boxShadow: '0 20px 50px rgba(27,58,45,0.12)',
               }}
             >
@@ -220,7 +220,7 @@ export default function Hero() {
                   <Navigation size={12} color="#4A7C59" />
                   <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#7A6E62' }}>Boarding Pass</span>
                 </div>
-                <span style={{ fontSize: '0.6rem', fontWeight: 600, color: '#2D5A3D', background: 'rgba(27,58,45,0.08)', padding: '3px 8px', borderRadius: '9999px' }}>First Class</span>
+                <span style={{ fontSize: '0.7rem', fontWeight: 600, color: '#2D5A3D', background: 'rgba(27,58,45,0.08)', padding: '12x 18px', borderRadius: '9999px' }}>First Class</span>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderTop: '1px solid #D0C6B3', borderBottom: '1px solid #D0C6B3' }}>
                 <div>
@@ -275,7 +275,7 @@ export default function Hero() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
                     <span style={{ fontSize: '2.5rem', fontWeight: 700, color: 'white' }}>NF-1913</span>
                   </div>
-                  <p style={{ fontSize: '0.62rem', color: 'rgba(244,239,230,0.6)', margin: '3px 0 0', lineHeight: 1.4 }}>Kashmir Hub → Delhi Hub</p>
+                  <p style={{ fontSize: '0.9rem', color: 'rgba(244,239,230,0.6)', margin: '3px 0 0', lineHeight: 1.4 }}>Kashmir → Delhi Hub</p>
                 </div>
               </div>
               <div style={{ marginTop: '14px', height: '4px', background: 'rgba(255,255,255,0.1)', borderRadius: '9999px', overflow: 'hidden' }}>

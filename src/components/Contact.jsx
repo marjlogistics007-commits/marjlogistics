@@ -213,7 +213,7 @@ if (result.success) {
             </text>
 
             {/* Kashmir label */}
-            <text x="215" y="120" fill="#1B3A2D" fontSize="10" fontWeight="bold" fontFamily="Inter, sans-serif">
+            <text x="215" y="120" fill="#1B3A2D" fontSize="16" fontWeight="bold" fontFamily="Inter, sans-serif">
               NF 1913
             </text>
 
