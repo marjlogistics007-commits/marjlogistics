@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import TourPackagesPage from './Pages/TourPackagesPage';
 import ScrollToHash from './components/ScrollToHash';
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import AutoMusic from './components/AutoMusic';
 
 function App() {
   
@@ -30,6 +31,11 @@ function App() {
           <div style={{ backgroundColor: '#F4EFE6', color: '#3D2314', minHeight: '100vh' }}>
 
             <Navbar />
+
+            <Navbar />
+<AutoMusic />
+
+
 
             <main>
               <Hero />
