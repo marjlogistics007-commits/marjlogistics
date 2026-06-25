@@ -35,51 +35,83 @@ export default function Navbar() {
         width: '100%',
         zIndex: 50,
         transition: 'all 0.35s ease',
-        padding: isScrolled ? '12px 0' : '20px 0',
-        background: isScrolled
-          ? 'rgba(244, 239, 230, 0.92)'
-          : 'transparent',
+        padding: isScrolled ? '8px 0' : '05px 0',
+        background: 'linear-gradient(90deg, #fefdfd, #0c08f8)',
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
         borderBottom: isScrolled ? '1px solid rgba(208, 198, 179, 0.5)' : 'none',
         boxShadow: isScrolled ? '0 4px 30px rgba(27, 58, 45, 0.06)' : 'none',
       }}
     >
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Logo */}
-        <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="/logo.jpg" alt="MARJ Logistics Tour and Travel Logo" style={{ height: '52px', width: 'auto', objectFit: 'contain' }} />
-        </a>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-        {/* Existing logo/icon */}
+      
+<div 
+style={{
+  width: '100%',
+  padding: '0 30px',
+  display:'flex',
+  alignItems:'center',
+  justifyContent:'space-between'
+}}
+>
 
-        <span
-          style={{
-          fontFamily: "'Cormorant Garamond', serif",
-          fontSize: '1.6rem',
-          fontWeight: 700,
-          color: '#1B3A2D',
-          letterSpacing: '1px'
-        }}
-    >
-      MARJ LOGISTICS
+{/* Logo + Title */}
+<div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
+
+  <a 
+    href="#" 
+    style={{ 
+      display: 'flex',
+      alignItems: 'center',
+      textDecoration: 'none'
+    }}
+  >
+    <img 
+      src="/logo.jpg"
+      alt="MARJ Logistics Tour and Travel Logo"
+      style={{
+        height: '52px',
+        width: 'auto',
+        objectFit: 'contain'
+      }}
+    />
+  </a>
+
+
+  <span
+    style={{
+      fontFamily: "'COPPERPLATE GOTHIC LIG'",
+      fontSize: '1.8rem',
+      fontWeight: 700,
+      color: '#1B3A2D',
+      letterSpacing: '1px'
+    }}
+  >
+    MARJ LOGISTICS
   </span>
-</div>
+  </div>
 
         {/* Desktop Nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '36px' }} className="hidden-mobile">
+       <div 
+style={{
+ display:'flex',
+ alignItems:'center',
+ gap:'36px',
+ marginLeft:'auto'
+}}
+className="hidden-mobile"
+>
           {menuItems.map((item) => (
             item.href.startsWith('/') ? (
   <Link
     key={item.name}
     to={item.href}
     style={{
-      fontFamily: "'Inter', sans-serif",
-      fontSize: '0.72rem',
+      fontFamily: "'Times New Roman'",
+      fontSize: '0.6rem',
       fontWeight: 600,
       letterSpacing: '0.15em',
       textTransform: 'uppercase',
-      color: '#3D2314',
+      color: '#d8f8df',
       textDecoration: 'none',
       position: 'relative',
       paddingBottom: '4px',

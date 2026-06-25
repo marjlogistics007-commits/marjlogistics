@@ -300,6 +300,7 @@ export default function Hero() {
           50% { opacity: 0.5; transform: scale(1.3); }
         }
       `}</style>
+      
     </section>
   );
 }
