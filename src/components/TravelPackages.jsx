@@ -128,8 +128,24 @@ export default function TravelPackages() {
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', position: 'relative' }}>
         {/* Header */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '64px', flexWrap: 'wrap', gap: '24px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '520px' }}>
+        <div
+  style={{
+    marginBottom: '64px',
+    display: 'flex',
+    justifyContent: 'center',
+  }}
+>
+          <div
+  style={{
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
+    maxWidth: '800px',
+    margin: '0 auto',
+    textAlign: 'center',
+    alignItems: 'center',
+  }}
+>
             <span className="section-badge">
               <span style={{ display: 'inline-block', width: '24px', height: '1.5px', background: '#4A7C59' }} />
               Curated Expeditions
@@ -154,19 +170,6 @@ export default function TravelPackages() {
               Handpicked itineraries curated by local guides. Complete packages covering airport transport, luxury resorts, and custom activities.
             </p>
           </div>
-          <a href="#booking" style={{
-            display: 'inline-flex', alignItems: 'center', gap: '6px',
-            fontFamily: "'Inter', sans-serif",
-            fontSize: '0.72rem',
-            fontWeight: 600,
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            color: '#4A7C59',
-            textDecoration: 'none',
-          }}>
-            Request Custom Itinerary
-            <ArrowRight size={14} />
-          </a>
         </div>
 
         {/* Cards */}
@@ -325,6 +328,34 @@ export default function TravelPackages() {
             </motion.div>
           ))}
         </div>
+
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '48px',
+          }}
+        >
+          <a
+            href="/custom-itinerary"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontFamily: "'Inter', sans-serif",
+              fontSize: '0.72rem',
+              fontWeight: 600,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              color: '#4A7C59',
+              textDecoration: 'none',
+            }}
+          >
+            Request Custom Itinerary
+            <ArrowRight size={14} />
+          </a>
+        </div>
+
       </div>
 
       {/* Modal */}

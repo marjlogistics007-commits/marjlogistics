@@ -1,56 +1,5 @@
 import { Link } from "react-router-dom";
 
-<section
-  style={{
-    height: '70vh',
-    backgroundImage: 'url(https://images.unsplash.com/photo-1595815771614-ade5019c1c6f?q=80&w=1600&auto=format&fit=crop)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  }}
->
-  <div
-    style={{
-      position: 'absolute',
-      inset: 0,
-      background: 'rgba(0,0,0,0.45)',
-    }}
-  />
-
-  <div
-    style={{
-      position: 'relative',
-      zIndex: 2,
-      color: 'white',
-      maxWidth: '800px',
-      padding: '20px',
-    }}
-  >
-    <h1
-      style={{
-        fontSize: "clamp(2.2rem, 6vw, 4rem)",
-        marginBottom: '20px',
-        fontFamily: "'Cormorant Garamond', serif",
-      }}
-    >
-      Luxury Kashmir Experiences
-    </h1>
-
-    <p
-      style={{
-        fontSize: '1.2rem',
-        lineHeight: 1.8,
-      }}
-    >
-      Curated journeys through Srinagar, Gulmarg, Sonamarg and Pahalgam.
-    </p>
-  </div>
-</section>
-
 const packages = [
 
 
@@ -243,9 +192,13 @@ itinerary: [
 ];
 
 
+
+
 export default function TourPackagesPage() {
 
  return (
+
+  
   <div
     style={{
       minHeight: "80vh",
@@ -272,37 +225,46 @@ export default function TourPackagesPage() {
         maxWidth: "1200px",
         margin: "auto",
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fit,minmax(420px,1fr))",
+        gridTemplateColumns: "repeat(auto-fit,minmax(400px,1fr))",
         gap: "30px",
       }}
     >
       {packages.map((pkg, index) => (
-        <div
-          key={index}
-          style={{
-            background: "#FFFFFF",
-            borderRadius: "30px",
-            overflow: "hidden",
-            boxShadow: "0 25px 60px rgba(252, 3, 3, 0.08)",
-            border: "1px solid rgba(176, 87, 87, 0.15)",
-          }}
-        >
+    <div
+  key={index}
+  style={{
+    background: "rgba(255,255,255,0.95)",
+    backdropFilter: "blur(20px)",
+    borderRadius: "36px",
+    boxShadow: "0 20px 80px rgba(0,0,0,0.08)",
+    border: "1px solid rgba(255,255,255,0.7)",
+    overflow: "hidden",
+    display: "flex",
+    flexDirection: "column",
+    height: "100%",
+transition: "all .35s ease",
+cursor: "pointer",
+
+  }}
+>
           {/* Image Section */}
           <div
             style={{
               position: "relative",
-              height: "320px",
+              height: "380px",
               overflow: "hidden",
             }}
           >
             <img
               src={pkg.image}
               alt={pkg.title}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
+            style={{
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  transform: "scale(1.08)",
+  transition: "transform 8s ease",
+}}
             />
 
             <div
@@ -313,6 +275,7 @@ export default function TourPackagesPage() {
                   "linear-gradient(to top, rgba(0,0,0,.75), transparent)",
               }}
             />
+            
 
             <div
               style={{
@@ -335,7 +298,8 @@ export default function TourPackagesPage() {
               <h2
                 style={{
                   margin: 0,
-                  fontSize: "clamp(1.5rem, 5vw, 2rem)",
+                  fontSize: "clamp(2rem, 5vw, 2.8rem)",
+                  fontWeight: 700,
                   fontFamily: "'Cormorant Garamond', serif",
                   color: "white"
                 }}
@@ -345,19 +309,26 @@ export default function TourPackagesPage() {
             </div>
           </div>
 
-          {/* Content */}
-          <div style={{ padding: "30px" }}>
-            <p
-              style={{
-                color: "rgba(27, 58, 45, 0.9)",
-                fontFamily: "'Lora', serif",
-                lineHeight: "1.9",
-                fontSize: "1.05rem",
-                marginBottom: "25px",
-              }}
-            >
-              {pkg.description}
-            </p>
+       
+{/* Content */}
+<div
+  style={{
+    padding: "30px",
+    display: "flex",
+    flexDirection: "column",
+    flex: 1,
+  }}
+>
+          <p
+  style={{
+    fontSize: "1.05rem",
+    lineHeight: "1.9",
+    color: "#5C5246",
+    marginBottom: "24px",
+  }}
+>
+  {pkg.description}
+</p>
 
             {/* Highlights */}
             <div
@@ -385,30 +356,36 @@ export default function TourPackagesPage() {
               ))}
             </div>
 
-            {/* Itinerary */}
-            <h3
-              style={{
-                color: "#419252",
-                marginBottom: "20px",
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "2rem",
-              }}
-            >
-              Itinerary
-            </h3>
+           
+{/* Itinerary */}
+<h3
+  style={{
+    color: "#419252",
+    marginBottom: "20px",
+    fontFamily: "'Cormorant Garamond', serif",
+    fontSize: "2rem",
+  }}
+>
+  Itinerary
+</h3>
 
-         <div>
+<div>
   {pkg.itinerary.map((day, i) => (
     <div
       key={i}
       style={{
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-start",
         gap: "12px",
         marginBottom: "16px",
         padding: "12px 16px",
-        background: "#F8F5EF",
-        borderRadius: "12px",
+  background: "rgba(255,255,255,0.7)",
+backdropFilter: "blur(10px)",
+border: "1px solid rgba(27,58,45,0.08)",
+borderLeft: "4px solid #1B3A2D",
+borderRadius: "18px",
+padding: "18px",
+boxShadow: "0 8px 20px rgba(0,0,0,0.04)",
       }}
     >
       <span style={{ fontSize: "20px" }}>📍</span>
@@ -425,6 +402,7 @@ export default function TourPackagesPage() {
   ))}
 </div>
             </div>
+            
 
             {/* Buttons */}
             <div
@@ -455,6 +433,23 @@ export default function TourPackagesPage() {
         
       ))}
     </div>
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginTop: "50px",
+    marginBottom: "30px",
+  }}
+>
+  <Link
+    to="/custom-itinerary"
+    className="btn-earth"
+  >
+    Request Custom Itinerary
+  </Link>
+</div>
+
   </div>
+
 );
 }

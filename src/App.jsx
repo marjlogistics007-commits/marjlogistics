@@ -16,6 +16,8 @@ import TourPackagesPage from './Pages/TourPackagesPage';
 import ScrollToHash from './components/ScrollToHash';
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import AutoMusic from './components/AutoMusic';
+import CustomItinerary from "./Pages/CustomItinerary";
+import { Link } from "react-router-dom";
 
 function App() {
   
@@ -25,12 +27,12 @@ function App() {
 
     <Routes>
 
+          <Route path="/custom-itinerary" element={<CustomItinerary />} />
+
       <Route
         path="/"
         element={
           <div style={{ backgroundColor: '#F4EFE6', color: '#3D2314', minHeight: '100vh' }}>
-
-            <Navbar />
 
             <Navbar />
 <AutoMusic />
