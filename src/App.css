@@ -1,15 +1,1 @@
 /* Cleared for Tailwind CSS integration */
-:root {
-  --primary: #163A2D;
-  --secondary: #2E6B55;
-  --accent: #C9A227;
-  --light: #F8F6F0;
-  --text: #1A1A1A;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--light);
-  color: var(--text);
-}

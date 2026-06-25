@@ -5,15 +5,21 @@ function AutoMusic() {
     const audio = new Audio("/music.mp3");
     audio.loop = true;
 
-    const startMusic = () => {
-      audio.play().catch(() => {});
-      document.removeEventListener("click", startMusic);
+    const toggleMusic = () => {
+      if (audio.paused) {
+        audio.play().catch(() => {});
+      } else {
+        audio.pause();
+        audio.currentTime = 0; // starts from beginning next time
+      }
     };
 
-    document.addEventListener("click", startMusic);
+    document.addEventListener("click", toggleMusic);
 
     return () => {
-      document.removeEventListener("click", startMusic);
+      document.removeEventListener("click", toggleMusic);
+      audio.pause();
+      audio.currentTime = 0;
     };
   }, []);
 

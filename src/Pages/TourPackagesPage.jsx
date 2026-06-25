@@ -257,7 +257,7 @@ export default function TourPackagesPage() {
     <h1
       style={{
         textAlign: "center",
-        color: "#05f77e",
+        color: "rgba(29, 58, 46, 0.9)",
         fontFamily: "'Cormorant Garamond', serif",
         fontSize: "4rem",
         fontWeight: 700,
@@ -349,7 +349,7 @@ export default function TourPackagesPage() {
           <div style={{ padding: "30px" }}>
             <p
               style={{
-                color: "#fc8d06",
+                color: "rgba(27, 58, 45, 0.9)",
                 fontFamily: "'Lora', serif",
                 lineHeight: "1.9",
                 fontSize: "1.05rem",
@@ -388,7 +388,7 @@ export default function TourPackagesPage() {
             {/* Itinerary */}
             <h3
               style={{
-                color: "#B08D57",
+                color: "#419252",
                 marginBottom: "20px",
                 fontFamily: "'Cormorant Garamond', serif",
                 fontSize: "2rem",
@@ -440,7 +440,7 @@ export default function TourPackagesPage() {
     padding: "14px",
     borderRadius: "12px",
     border: "none",
-    background: "linear-gradient(135deg,#B08D57,#D4AF37)",
+    background: "rgba(27, 58, 45, 0.9)",
     color: "white",
     cursor: "pointer",
     fontWeight: "600",

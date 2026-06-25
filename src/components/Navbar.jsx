@@ -36,7 +36,7 @@ export default function Navbar() {
         zIndex: 50,
         transition: 'all 0.35s ease',
         padding: isScrolled ? '8px 0' : '05px 0',
-        background: 'linear-gradient(90deg, #fefdfd, #0c08f8)',
+        background: 'linear-gradient(90deg, #a4c9b5, rgba(27, 58, 45, 0.9)',
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
         borderBottom: isScrolled ? '1px solid rgba(208, 198, 179, 0.5)' : 'none',

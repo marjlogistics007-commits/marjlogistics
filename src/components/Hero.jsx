@@ -265,10 +265,10 @@ export default function Hero() {
                   <span style={{ width: '18px', height: '10px', borderRadius: '50%', background: '#A8D5B5', display: 'block', animation: 'pulse 2s infinite' }} />
                   <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(246, 246, 248, 0.7)' }}>DTDC Tracking</span>
                 </div>
-                <span style={{ fontSize: '0.6rem', fontWeight: 600, color: '#A8D5B5', background: 'rgba(168,213,181,0.15)', padding: '3px 8px', borderRadius: '9999px' }}>In Transit</span>
+                <span style={{ fontSize: '0.6rem', fontWeight: 600, color: '#A8D5B5', background: 'rgba(213, 181, 168, 0.15)', padding: '3px 8px', borderRadius: '9999px' }}>In Transit</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <div style={{ width: '38px', height: '38px', borderRadius: '12px', background: 'rgba(168,213,181,0.15)', border: '1px solid rgba(168,213,181,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '38px', height: '38px', borderRadius: '12px', background: 'rgba(209, 168, 213, 0.15)', border: '1px solid rgba(213, 209, 168, 0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Package size={18} color="#A8D5B5" />
                 </div>
                 <div>
