@@ -223,7 +223,7 @@ export default function Footer() {
           flexWrap: 'wrap', gap: '16px',
         }}>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'rgba(244, 239, 230, 0.4)', margin: 0 }}>
-            © {currentYear} MARJ LOGISTICS. All rights reserved.
+            © {currentYear} MARJ LOGISTICS PVT LTD. All rights reserved.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             {socialLinks.map((social) => (
