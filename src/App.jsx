@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -20,6 +20,8 @@ import CustomItinerary from "./Pages/CustomItinerary";
 import { Link } from "react-router-dom";
 
 function App() {
+
+  const [serviceType, setServiceType] = useState("tour");
   
   return (
   <BrowserRouter>
@@ -44,10 +46,10 @@ function App() {
               <Services />
               <About />
               <WhyChooseUs />
-              <TravelPackages />
+              <TravelPackages setServiceType={setServiceType} />
               <LogisticsSolutions />
               <Testimonials />
-              <BookingForm />
+              <BookingForm serviceType={serviceType} setServiceType={setServiceType}/>
               <FAQ />
               <Contact />
             </main>
