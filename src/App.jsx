@@ -18,6 +18,7 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import AutoMusic from './components/AutoMusic';
 import CustomItinerary from "./Pages/CustomItinerary";
 import { Link } from "react-router-dom";
+import Gallery from "./Pages/Gallery";
 
 function App() {
 
@@ -46,10 +47,10 @@ function App() {
               <Services />
               <About />
               <WhyChooseUs />
-              <TravelPackages setServiceType={setServiceType} />
+              <TravelPackages />
               <LogisticsSolutions />
               <Testimonials />
-              <BookingForm serviceType={serviceType} setServiceType={setServiceType}/>
+              <BookingForm />
               <FAQ />
               <Contact />
             </main>
@@ -67,6 +68,8 @@ function App() {
 
 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
+
+<Route path="/gallery" element={<Gallery />} />
 
     </Routes>
 

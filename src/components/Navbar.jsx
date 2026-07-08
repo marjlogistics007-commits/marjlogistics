@@ -11,6 +11,7 @@ const menuItems = [
   { name: 'Logistics', href: '/#logistics' },
   { name: 'FAQs', href: '/#faq' },
   { name: 'Contact', href: '/#contact' },
+  { name: "Gallery", href: "/gallery",}
 ];
 
 export default function Navbar() {

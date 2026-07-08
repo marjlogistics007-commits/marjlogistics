@@ -31,6 +31,7 @@ const footerLinks = {
 const socialLinks = [
   {
     label: 'Facebook',
+    url: 'https://www.facebook.com',
     icon: (
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
         <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
@@ -229,7 +230,9 @@ export default function Footer() {
             {socialLinks.map((social) => (
               <a
                 key={social.label}
-                href="#"
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 style={{
                   width: '34px', height: '34px', borderRadius: '10px',
