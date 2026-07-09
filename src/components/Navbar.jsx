@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 
 const menuItems = [
-  { name: 'Services', href: '/#services' },
   { name: 'About', href: '/#about' },
+  { name: 'Services', href: '/#services' },
   { name: 'Tour Packages', href: '/packages' },
   { name: 'Logistics', href: '/#logistics' },
+  { name: "Gallery", href: "/gallery",},
   { name: 'FAQs', href: '/#faq' },
   { name: 'Contact', href: '/#contact' },
-  { name: "Gallery", href: "/gallery",}
 ];
 
 export default function Navbar() {
@@ -141,9 +141,7 @@ className="hidden-mobile"
   </a>
 )
           ))}
-          <a href="#booking" className="btn-earth" style={{ padding: '11px 26px', fontSize: '0.68rem' }}>
-            Get Started <ArrowRight size={14} />
-          </a>
+        
         </div>
 
         {/* Mobile Toggle */}

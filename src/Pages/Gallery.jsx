@@ -492,27 +492,34 @@ export default function Gallery() {
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-3xl border border-white/20 bg-white/10 backdrop-blur-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)]"
       >
-        <div className="grid lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
 
           {/* LEFT IMAGE */}
-<div className="flex items-center justify-center h-full min-h-[700px] overflow-hidden rounded-l-3xl bg-white/5">
-  <img
-    src={selectedItem.image}
-    alt={selectedItem.title}
-    className="w-[95%] h-[95%] object-contain transition duration-700 hover:scale-105"
-  />
+<div
+  className="flex items-center justify-center overflow-hidden bg-white/5"
+  style={{
+    minHeight: window.innerWidth < 1024 ? "260px" : "700px",
+  }}
+>
+<img
+  src={selectedItem.image}
+  alt={selectedItem.title}
+  className="w-full h-full object-cover transition duration-700 hover:scale-105"
+/>
 </div>
           {/* RIGHT DETAILS */}
-          <div className="p-8 lg:p-10 flex flex-col bg-white/5 backdrop-blur-xl h-[85vh] overflow-y-auto scrollbar-hide">
+          <div
+           className="p-8 lg:p-10 flex flex-col bg-white/5 backdrop-blur-xl h-[85vh] overflow-y-auto scrollbar-hide">
+
+
             <span className="inline-block w-fit rounded-full border border-white/30 bg-white/15 backdrop-blur-md px-4 py-2 text-sm font-semibold text-white">
               {selectedItem.category}
             </span>
-
-            <h2 className="text-4xl font-bold text-white mb-5">
+<h2 className="text-2xl lg:text-4xl font-bold text-white mb-5">
               {selectedItem.title}
             </h2>
 
-            <p className="text-white/80 text-lg leading-8 mb-8">
+            <p className="text-white/80 text-base lg:text-lg leading-7 mb-8 text-justify">
               {selectedItem.description}
             </p>
 
