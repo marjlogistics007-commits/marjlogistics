@@ -5,25 +5,36 @@ export default function PrivacyPolicy() {
         maxWidth: "1000px",
         margin: "0 auto",
         padding: "80px 20px",
-        lineHeight: "1.8",
+        lineHeight: "2.0",
         color: "#333",
+        textAlign: "justify",
+        fontFamily: "'Lora', serif",
+        fontSize: "10px",
       }}
     >
       <h1
         style={{
           fontFamily: "'Times New Roman'",
           color: "#1B3A2D",
+          textAlign: "center",
           marginBottom: "30px",
         }}
       >
         Privacy Policy
       </h1>
 
-      <p>
-        Last Updated: June 2026
-      </p>
+         <h1
+        style={{
+          fontFamily: "'Times New Roman'",
+          color: "#1B3A2D",
+          textAlign: "center",
+          fontSize: "20px",
+          marginBottom: "30px",
+        }}
+      >
+        Information we Collect
+      </h1>
 
-      <h2>Information We Collect</h2>
       <p>
         When you submit a booking request for tour packages, flight tickets,
         train tickets, courier services, or other travel-related services,

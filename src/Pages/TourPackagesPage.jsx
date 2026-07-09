@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+const currentYear = new Date().getFullYear();
+
 const packages = [
 
 
@@ -200,12 +202,11 @@ export default function TourPackagesPage() {
 
   
   <div
-    style={{
-      minHeight: "80vh",
-      padding: "80px 20px",
-      background:
-        "linear-gradient(180deg, #F8F5EF 0%, #F1EBDF 50%, #E8DFCF 100%)",
-    }}
+  style={{
+    minHeight: "80vh",
+    padding: "80px 10px 100",
+  }}
+
   >
     <h1
       style={{
@@ -438,7 +439,7 @@ boxShadow: "0 8px 20px rgba(0,0,0,0.04)",
     display: "flex",
     justifyContent: "center",
     marginTop: "50px",
-    marginBottom: "30px",
+    marginBottom: "50px",
   }}
 >
   <Link
@@ -449,7 +450,50 @@ boxShadow: "0 8px 20px rgba(0,0,0,0.04)",
   </Link>
 </div>
 
-  </div>
+  {/* Bottom Copyright Bar */}
+  
+
+<div
+  style={{
+    marginTop: "60px",
+    padding: "10px 20px",
+    borderTop: "1px solid rgba(27,58,45,0.12)",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "12px",
+    background: '#1B3A2D',
+    marginBottom: "0px",
+    paddingBottom: "0px",
+  }}
+>
+  <p
+    style={{
+      margin: 0,
+      color: "#fefdf9",
+      fontSize: "14px",
+      fontWeight: 500,
+    }}
+  >
+    © {currentYear} MARJ LOGISTICS PVT LTD. All rights reserved.
+  </p>
+
+  <Link
+    to="/privacy-policy"
+    style={{
+      color: "#fefdf9",
+      textDecoration: "none",
+      fontSize: "14px",
+      fontWeight: 500,
+    }}
+  >
+    Privacy Policy
+  </Link>
+</div>
+</div>
 
 );
 }
+
+

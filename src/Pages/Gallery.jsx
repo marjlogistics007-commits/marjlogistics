@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 
+
 export default function Gallery() {
   const galleryItems = [
     {
@@ -104,7 +105,7 @@ export default function Gallery() {
       height: "550px",
       borderRadius: "50%",
       background: "rgba(5, 247, 102, 0.1)",
-      filter: "blur(1800px)",
+      filter: "blur(2500px)",
       top: "-120px",
       right: "-120px",
     }}
@@ -551,14 +552,46 @@ export default function Gallery() {
   )}
 </AnimatePresence>
 
-
-      {/* Bottom Space */}
+{/* Bottom Copyright Bar */}
 
 <div
   style={{
-    height: "50px",
+    marginTop: "60px",
+    padding: "22px 40px",
+    borderTop: "1px solid rgba(27,58,45,0.12)",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "12px",
+    background: '#1B3A2D',
   }}
-/>
+>
+  <p
+    style={{
+      margin: 0,
+      color: "#fefdf9",
+      fontSize: "14px",
+      fontWeight: 500,
+    }}
+  >
+    © {2026} MARJ LOGISTICS PVT LTD. All rights reserved.
+  </p>
+
+  <Link
+    to="/privacy-policy"
+    style={{
+      color: "#fefdf9",
+      textDecoration: "none",
+      fontSize: "14px",
+      fontWeight: 500,
+    }}
+  >
+    Privacy Policy
+  </Link>
+</div>
     </section>
-  );
+  )
 }
+    
+  

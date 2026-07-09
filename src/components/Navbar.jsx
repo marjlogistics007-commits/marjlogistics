@@ -37,7 +37,7 @@ export default function Navbar() {
         zIndex: 50,
         transition: 'all 0.35s ease',
         padding: isScrolled ? '8px 0' : '05px 0',
-        background: 'linear-gradient(0deg, #f4eede , rgba(27, 58, 45, 0.9)',
+        background: 'linear-gradient(0deg, #f4eede , rgba(27, 58, 45, 0.9))',
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
         borderBottom: isScrolled ? '1px solid rgba(208, 198, 179, 0.5)' : 'none',
@@ -83,8 +83,9 @@ style={{
       fontFamily: "'COPPERPLATE GOTHIC LIG'",
       fontSize: '2rem',
       fontWeight: 700,
-      color: '#3a1b1b',
-      letterSpacing: '1px'
+      color: '#1B3A2D',
+      letterSpacing: '1px',
+      className: "logo-text"
     }}
   >
     MARJ LOGISTICS
@@ -149,11 +150,19 @@ className="hidden-mobile"
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          style={{
-            background: 'none', border: 'none', cursor: 'pointer',
-            color: '#1B3A2D', padding: '8px', borderRadius: '8px',
-            display: 'none',
-          }}
+        style={{
+  width: "46px",
+  height: "46px",
+  borderRadius: "14px",
+  border: "1px solid rgba(27,58,45,.12)",
+  background: "rgba(255,255,255,.65)",
+  backdropFilter: "blur(12px)",
+  color: "#1B3A2D",
+  cursor: "pointer",
+  display: "none",
+  justifyContent: "center",
+  alignItems: "center",
+}}
           className="show-mobile"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -169,10 +178,13 @@ className="hidden-mobile"
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             style={{
-              background: 'rgba(244, 239, 230, 0.97)',
+              background: 'rgba(255,255,255,.88)',
               backdropFilter: 'blur(20px)',
-              borderTop: '1px solid rgba(208, 198, 179, 0.5)',
+              border: '1px solid rgba(255,255,255,.35)',
               overflow: 'hidden',
+borderRadius: '24px',
+margin: '14px',
+boxShadow:'0 20px 60px rgba(0,0,0,.15)',
             }}
           >
             <div style={{ padding: '24px 32px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -217,16 +229,31 @@ className="hidden-mobile"
         )}
       </AnimatePresence>
 
-      <style>{`
-        @media (min-width: 1024px) {
-          .hidden-mobile { display: flex !important; }
-          .show-mobile { display: none !important; }
-        }
-        @media (max-width: 1023px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: block !important; }
-        }
-      `}</style>
+<style>{`
+  .hidden-mobile{
+    display:flex;
+  }
+
+  .show-mobile{
+    display:none;
+  }
+
+  @media (max-width:1023px){
+
+    .hidden-mobile{
+      display:none !important;
+    }
+
+    .show-mobile{
+      display:flex !important;
+      align-items:center;
+    }
+
+    .logo-text{
+      display:none;
+    }
+  }
+`}</style>
     </motion.nav>
   );
 }
