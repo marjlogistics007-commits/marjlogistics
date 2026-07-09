@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Calendar, User, Phone, MapPin, Truck, Plane, Train, Compass, CheckCircle } from 'lucide-react';
-import { useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Calendar,
+  User,
+  Phone,
+  MapPin,
+  Truck,
+  Plane,
+  Train,
+  Compass,
+  CheckCircle,
+} from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const servicesList = [
   { id: 'courier', name: 'Courier Service', icon: Truck },
@@ -38,13 +47,23 @@ const labelStyle = {
 };
 
 export default function BookingForm() {
-  const [serviceType, setServiceType] = useState('courier');
+  const location = useLocation();
+
+  const [serviceType, setServiceType] = useState("courier");
+
   const [formData, setFormData] = useState({
-    name: '', phone: '', origin: '', destination: '', date: '', weight: '1', travelers: '1',
+    name: "",
+    phone: "",
+    origin: "",
+    destination: "",
+    date: "",
+    weight: "1",
+    travelers: "1",
   });
+
   const [showSuccess, setShowSuccess] = useState(false);
-useEffect(() => {
-  const params = new URLSearchParams(window.location.search);
+  useEffect(() => {
+  const params = new URLSearchParams(location.search);
   const service = params.get("service");
 
   if (
@@ -53,7 +72,9 @@ useEffect(() => {
   ) {
     setServiceType(service);
   }
-}, []);
+}, [location]);
+
+
 
 
   const handleInputChange = (e) => {

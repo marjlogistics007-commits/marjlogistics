@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 export default function Gallery() {
   const galleryItems = [
@@ -8,7 +10,7 @@ export default function Gallery() {
       title: "Gulmarg Tour",
       category: "Tour",
       image: "/gallery/Gallery1.jpg",
-      description:"Experience the breathtaking beauty of Gulmarg with snow-covered mountains, gondola rides, and unforgettable adventures."
+      description: "'**Gulmarg – The Meadow of Flowers**' Nestled in the heart of the majestic Pir Panjal Range of the Himalayas, Gulmarg is one of the most breathtaking hill destinations in Kashmir. Located approximately 50 kilometers from Srinagar, this picturesque town is renowned for its lush green meadows, snow-covered mountains, dense pine forests, and unforgettable panoramic views. The name 'Gulmarg translates' to 'Meadow of Flowers' and during the spring and summer seasons, the valley truly lives up to its name as colorful wildflowers blanket the landscape. Gulmarg is a year-round destination that offers a unique experience in every season. During winter, it transforms into India's premier skiing and snowboarding destination, attracting adventure enthusiasts and professional athletes from around the world. Thick blankets of snow create a magical landscape perfect for skiing, snowmobiling, snow trekking, sledging, and other exciting winter sports. In contrast, spring and summer bring blooming meadows, pleasant weather, and refreshing mountain air, making it an ideal retreat for nature lovers, photographers, honeymooners, and families. One of Gulmarg's most iconic attractions is the world-famous Gulmarg Gondola, one of the highest cable car rides on Earth. This spectacular two-phase gondola transports visitors from Gulmarg to Kongdoori and then to Apharwat Peak, offering mesmerizing views of snow-covered mountains, deep valleys, and dense forests throughout the journey. At Apharwat Peak, visitors can enjoy snow activities almost throughout the year while witnessing breathtaking Himalayan landscapes. Apart from adventure activities, Gulmarg is home to the historic St. Mary's Church, the Maharani Temple, scenic golf courses, beautiful walking trails, and countless viewpoints that showcase the natural beauty of Kashmir. The Gulmarg Golf Course, one of the highest golf courses in the world, offers an extraordinary experience surrounded by stunning mountain scenery. Visitors can indulge in a variety of activities, including gondola rides, horse riding, ATV rides, skiing, snowboarding, trekking, nature walks, photography, shopping for traditional Kashmiri handicrafts, and tasting authentic Kashmiri cuisine. Every corner of Gulmarg provides an opportunity to create unforgettable memories with family and friends. Our Gulmarg tour package is carefully designed to provide a comfortable, safe, and memorable travel experience. We offer reliable transportation, experienced local drivers, flexible itineraries, sightseeing assistance, and dedicated customer support to ensure a hassle-free journey from start to finish. Whether you are planning a romantic honeymoon, a family vacation, an adventure-filled holiday, or a peaceful escape into nature, Gulmarg promises an unforgettable experience filled with beauty, serenity, and adventure. Discover the timeless charm of Kashmir's most celebrated hill station and let the enchanting landscapes of Gulmarg leave you with memories that will last a lifetime."
     },
     
     {
@@ -57,7 +59,7 @@ export default function Gallery() {
   return (
  <section
   style={{
-    background: "#191a1971",
+    background: '#f6ecd5',
     minHeight: "100vh",
   }}
 >
@@ -288,7 +290,7 @@ export default function Gallery() {
       style={{
         maxWidth: "760px",
         margin: "0 auto",
-        color: "#f8f9fb",
+        color: "#0b6d18",
         lineHeight: "1.9",
         fontSize: "18px",
       }}
@@ -473,122 +475,79 @@ export default function Gallery() {
 
 <AnimatePresence>
   {selectedItem && (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        onClick={() => setSelectedItem(null)}
-        style={{
-          position: "fixed",
-          inset: 0,
-          background: "rgba(0,0,0,.75)",
-          backdropFilter: "blur(8px)",
-          zIndex: 1000,
-        }}
-      />
-
-      <motion.div
-  style={{
-    position: "fixed",
-    inset: 0,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: "30px",
-    zIndex: 1001,
-  }}
->
-  <motion.div
-    initial={{ opacity: 0, scale: 0.9, y: 40 }}
-    animate={{ opacity: 1, scale: 1, y: 0 }}
-    exit={{ opacity: 0, scale: 0.9, y: 40 }}
-    transition={{ duration: 0.35 }}
-    style={{
-  width: "min(900px,92vw)",
-maxHeight: "90vh",
-background: "#fff",
-borderRadius: "26px",
-overflow: "hidden",
-display: "flex",
-flexDirection: "column",
-    }}
-  >
-    <img
-      src={selectedItem.image}
-      alt={selectedItem.title}
-      style={{
-        width: "100%",
-        height: "320px",
-        objectFit: "cover",
-      }}
-    />
-
-    <div
-      style={{
-        padding: "35px",
-        maxHeight: "calc(90vh - 320px)",
-        overflowY: "auto",
-      }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
+      onClick={() => setSelectedItem(null)}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4"
     >
-      <span
-        style={{
-          display: "inline-block",
-          background: "#EAF8EF",
-          color: "#235b3b",
-          padding: "8px 18px",
-          borderRadius: "999px",
-          fontWeight: 600,
-          marginBottom: "18px",
-        }}
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0, y: 30 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.9, opacity: 0, y: 30 }}
+        transition={{ duration: 0.3 }}
+        onClick={(e) => e.stopPropagation()}
+        className="w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-3xl border border-white/20 bg-white/10 backdrop-blur-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)]"
       >
-        {selectedItem.category}
-      </span>
+        <div className="grid lg:grid-cols-2">
 
-      <h2
-        style={{
-          fontSize: "40px",
-          color: "#173B27",
-          marginBottom: "20px",
-        }}
-      >
-        {selectedItem.title}
-      </h2>
+          {/* LEFT IMAGE */}
+<div className="flex items-center justify-center h-full min-h-[700px] overflow-hidden rounded-l-3xl bg-white/5">
+  <img
+    src={selectedItem.image}
+    alt={selectedItem.title}
+    className="w-[95%] h-[95%] object-contain transition duration-700 hover:scale-105"
+  />
+</div>
+          {/* RIGHT DETAILS */}
+          <div className="p-8 lg:p-10 flex flex-col bg-white/5 backdrop-blur-xl h-[85vh] overflow-y-auto scrollbar-hide">
+            <span className="inline-block w-fit rounded-full border border-white/30 bg-white/15 backdrop-blur-md px-4 py-2 text-sm font-semibold text-white">
+              {selectedItem.category}
+            </span>
 
-      <p
-  style={{
-    color: "#666",
-    lineHeight: "1.9",
-    fontSize: "17px",
-    textAlign: "justify",
-    textJustify: "inter-word",
-    marginTop: "10px",
-    whiteSpace: "normal",
-  }}
->
-  {selectedItem.description}
-</p>
+            <h2 className="text-4xl font-bold text-white mb-5">
+              {selectedItem.title}
+            </h2>
 
-      <button
-        onClick={() => setSelectedItem(null)}
-        style={{
-          width: "100%",
-          padding: "16px",
-          borderRadius: "999px",
-          border: "none",
-          background: "#1f633d",
-          color: "#fff",
-          cursor: "pointer",
-          fontWeight: 600,
-          fontSize: "16px",
-        }}
-      >
-        Close
-      </button>
-    </div>
-  </motion.div>
-</motion.div>
-    </>
+            <p className="text-white/80 text-lg leading-8 mb-8">
+              {selectedItem.description}
+            </p>
+
+            {selectedItem.features && (
+              <div className="space-y-3 mb-8">
+                {selectedItem.features.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-green-600"></div>
+                    <span className="text-white/90">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-auto flex gap-4">
+            <Link
+              to="/?service=tour#booking"
+              onClick={() => setSelectedItem(null)}
+              className="rounded-xl border border-green-400/40 bg-green-500/30 backdrop-blur-md px-6 py-3 text-white transition hover:bg-green-500/50"
+            >
+              Book Now
+            </Link>
+
+              <button
+                onClick={() => setSelectedItem(null)}
+                className="rounded-xl border border-white/20 bg-white/10 backdrop-blur-md px-6 py-3 text-white transition hover:bg-white/20"
+              >
+                Close
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </motion.div>
+    </motion.div>
   )}
 </AnimatePresence>
 
