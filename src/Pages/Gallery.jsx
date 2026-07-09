@@ -490,15 +490,24 @@ export default function Gallery() {
         exit={{ scale: 0.9, opacity: 0, y: 30 }}
         transition={{ duration: 0.3 }}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-6xl max-h-[90vh] overflow-hidden rounded-3xl border border-white/20 bg-white/10 backdrop-blur-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)]"
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-2">
+        className="w-full max-w-6xl rounded-3xl border border-white/20 bg-white/10 backdrop-blur-3xl shadow-[0_25px_80px_rgba(0,0,0,0.45)] overflow-hidden"
+style={{
+  maxHeight: "90vh",
+}}
+>
+      
+        <div
+  className="grid lg:grid-cols-2"
+  style={{
+    maxHeight: "90vh",
+  }}
+>
 
           {/* LEFT IMAGE */}
 <div
   className="flex items-center justify-center overflow-hidden bg-white/5"
   style={{
-    minHeight: window.innerWidth < 1024 ? "260px" : "700px",
+    height: window.innerWidth < 1024 ? "220px" : "700px",
   }}
 >
 <img
@@ -509,7 +518,11 @@ export default function Gallery() {
 </div>
           {/* RIGHT DETAILS */}
           <div
-           className="p-8 lg:p-10 flex flex-col bg-white/5 backdrop-blur-xl h-[85vh] overflow-y-auto scrollbar-hide">
+  className="p-6 lg:p-10 flex flex-col bg-white/5 backdrop-blur-xl overflow-y-auto scrollbar-hide"
+  style={{
+    maxHeight: window.innerWidth < 1024 ? "50vh" : "85vh",
+  }}
+> 
 
 
             <span className="inline-block w-fit rounded-full border border-white/30 bg-white/15 backdrop-blur-md px-4 py-2 text-sm font-semibold text-white">
