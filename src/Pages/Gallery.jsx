@@ -548,13 +548,7 @@ style={{
             )}
 
             <div className="mt-auto flex gap-4">
-            <Link
-              to="/?service=tour#booking"
-              onClick={() => setSelectedItem(null)}
-              className="rounded-xl border border-green-400/40 bg-green-500/30 backdrop-blur-md px-6 py-3 text-white transition hover:bg-green-500/50"
-            >
-              Book Now
-            </Link>
+       
 
               <button
                 onClick={() => setSelectedItem(null)}
@@ -577,7 +571,7 @@ style={{
 <div
   style={{
     marginTop: "60px",
-    padding: "22px 40px",
+    padding: "10px 40px",
     borderTop: "1px solid rgba(27,58,45,0.12)",
     display: "flex",
     justifyContent: "space-between",
