@@ -165,7 +165,7 @@ export default function Gallery() {
         fontWeight: 600,
       }}
     >
-      ✦ Marj Logistics & Travel
+      ✦ Marj Logistics ✦ 
     </div>
 
     {/* Heading */}
