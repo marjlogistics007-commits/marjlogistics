@@ -83,7 +83,7 @@ style={{
       fontFamily: "'COPPERPLATE GOTHIC LIG'",
       fontSize: '2rem',
       fontWeight: 700,
-      color: '#1B3A2D',
+      color: '#3a1b1b',
       letterSpacing: '1px'
     }}
   >

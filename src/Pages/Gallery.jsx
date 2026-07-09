@@ -153,10 +153,10 @@ export default function Gallery() {
         gap: "10px",
         padding: "10px 22px",
         borderRadius: "999px",
-        background: "rgba(111,255,170,.15)",
+        background: "rgba(122, 250, 175, 0.15)",
         border: "1px solid rgba(111,255,170,.35)",
-        color: "#1b4a30",
-        fontSize: "14px",
+        color: '#1B3A2D',
+        fontSize: "20px",
         letterSpacing: "3px",
         textTransform: "uppercase",
         marginBottom: "28px",
@@ -170,7 +170,7 @@ export default function Gallery() {
 
     <h1
       style={{
-        fontSize: "clamp(3rem,7vw,5.5rem)",
+        fontSize: "clamp(1rem,7vw,3.5rem)",
         lineHeight: "1.05",
         fontWeight: 800,
         marginBottom: "24px",
@@ -258,8 +258,8 @@ export default function Gallery() {
         alignItems: "center",
         padding: "10px 24px",
         borderRadius: "999px",
-        background: "#EAF8EF",
-        color: "#1f5b3a",
+        background: "#e8fbef",
+        color: '#1B3A2D',
         fontWeight: 600,
         letterSpacing: "2px",
         textTransform: "uppercase",
@@ -273,7 +273,7 @@ export default function Gallery() {
     <h2
       style={{
         fontSize: "clamp(2.8rem,6vw,4.3rem)",
-        color: "#173B27",
+        color: '#1B3A2D',
         fontWeight: 800,
         lineHeight: 1.1,
         marginBottom: "18px",
@@ -453,7 +453,7 @@ export default function Gallery() {
 
       border: "1px solid rgba(255,255,255,.25)",
 
-      color: "#fff",
+      color: '#1B3A2D',
 
       fontWeight: 600,
 
