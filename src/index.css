@@ -355,3 +355,27 @@ body::-webkit-scrollbar {
     transform: scale(1);
   }
 }
+
+@keyframes scrollBounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(10px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.08);
+  }
+
+  to {
+    transform: scale(1.18);
+  }
+}

@@ -398,7 +398,7 @@ export default function TourPackagesPage() {
   }}
 >
   <img
-    src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?fm=jpg&q=100&w=3840"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPode3fNs25_qaah-zVbWCs1ux7kmxayw8aRtb6lM_eQ&s=10"
     alt="Kashmir"
     style={{
       position: "absolute",
