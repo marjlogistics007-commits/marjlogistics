@@ -366,39 +366,35 @@ itinerary: [
   }
 ];
 
-
-
-
 export default function TourPackagesPage() {
 
   const isMobile = window.innerWidth < 768;
 
   return (
-
-  
-  <div
+<div
   style={{
-    minHeight: "80vh",
-    padding: "80px 10px 100",
+    minHeight: "50vh",
+    background: "#F8F5EF",
   }}
+>
 
-  >
-   {/* Premium Hero Section */}
+{/* ================= ULTRA PREMIUM HERO ================= */}
+
 <div
   style={{
     position: "relative",
-    height: isMobile ? "65vh" : "80vh",
-    minHeight: isMobile ? "420px" : "650px",
-    borderRadius: isMobile ? "20px" : "40px",
+    height: isMobile ? "48vh" : "55vh",
+    minHeight: isMobile ? "420px" : "480px",
     overflow: "hidden",
-    marginBottom: "80px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    borderRadius: isMobile ? "24px" : "40px",
+    marginBottom: "60px",
+    background: "#000",
   }}
 >
+  {/* Background */}
+
   <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPode3fNs25_qaah-zVbWCs1ux7kmxayw8aRtb6lM_eQ&s=10"
+    src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=2400&q=100"
     alt="Kashmir"
     style={{
       position: "absolute",
@@ -406,207 +402,429 @@ export default function TourPackagesPage() {
       width: "100%",
       height: "100%",
       objectFit: "cover",
-      animation: "heroZoom 30s ease-in-out infinite",
-      transformOrigin: "center center",
-      willChange: "transform",
-      filter: "contrast(1.08) saturate(1.12) brightness(1.02)",
+      transform: "scale(1.20)",
+      filter: "brightness(.82) saturate(1.2)",
+      animation: "heroZoom 35s ease-in-out infinite alternate",
     }}
   />
+
+  {/* Luxury Overlay */}
 
   <div
     style={{
       position: "absolute",
       inset: 0,
-      background:
-        "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45))",
+      background: `
+      linear-gradient(
+      480deg,
+      rgba(0,0,0,.18) 0%,
+      rgba(0,0,0,.32) 25%,
+      rgba(0,0,0,.55) 55%,
+      rgba(0,0,0,.82) 100%
+      )
+      `,
     }}
   />
+
+  {/* Golden Light */}
+
+  <div
+    style={{
+      position: "absolute",
+      width: "700px",
+      height: "700px",
+      borderRadius: "50%",
+      background:
+        "radial-gradient(circle,rgba(255,220,140,.28),transparent 60%)",
+      top: "-180px",
+      right: "-120px",
+      filter: "blur(15px)",
+    }}
+  />
+
+  {/* Floating Blur */}
+
+  <div
+    style={{
+      position: "absolute",
+      width: "520px",
+      height: "520px",
+      borderRadius: "50%",
+      background:
+        "radial-gradient(circle,rgba(255, 60, 60, 0.15),transparent 70%)",
+      bottom: "-200px",
+      left: "-140px",
+      filter: "blur(40px)",
+    }}
+  />
+
+  {/* Main Content */}
+
   <div
     style={{
       position: "relative",
+      zIndex: 10,
+      maxWidth: "1350px",
+      margin: "0 auto",
+      height: "100%",
+      display: "grid",
+      gridTemplateColumns: isMobile ? "1fr" : "1.1fr .9fr",
+      alignItems: "center",
+      padding: isMobile ? "20px" : "28px 40px",
+      gap: "30px",
+    }}
+  >
+    {/* LEFT */}
+
+    <div>
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "10px",
+          padding: "10px 22px",
+          borderRadius: "999px",
+          background: "rgba(255,255,255,.12)",
+          backdropFilter: "blur(20px)",
+          border: "1px solid rgba(255,255,255,.18)",
+          color: "#fff",
+          fontSize: "13px",
+          letterSpacing: "2px",
+          marginBottom: "20px",
+        }}
+      >
+        ✨ PREMIUM KASHMIR EXPERIENCES
+      </div>
+
+      <h1
+        style={{
+          margin: 0,
+          color: "#fcfaf9",
+          fontFamily: "'Cormorant Garamond', serif",
+          fontWeight: "600",
+          lineHeight: 1,
+          letterSpacing: "-3px",
+          fontSize: isMobile ? "2.2rem" : "4rem",
+          textShadow: "0 20px 45px rgba(0,0,0,.45)",
+        }}
+      >
+        Kashmir
+        <br />
+        Beyond
+        <br />
+        Imagination
+      </h1>
+
+      <p
+        style={{
+          color: "rgba(255,255,255,.92)",
+          fontSize: isMobile ? "1rem" : "1.25rem",
+          lineHeight: "2",
+          maxWidth: "620px",
+          marginTop: "22px",
+        }}
+      >
+        Curated luxury holidays featuring premium hotels, elegant
+        houseboats, private sightseeing, breathtaking Himalayan
+        landscapes, and unforgettable memories crafted exclusively
+        for discerning travelers.
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "18px",
+          marginTop: "45px",
+        }}
+      >
+      </div>
+    </div>
+
+    {/* RIGHT */}
+
+    <div
+      style={{
+        display: isMobile ? "none" : "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "320px",
+          background: "rgba(255,255,255,.10)",
+          backdropFilter: "blur(24px)",
+          border: "1px solid rgba(255,255,255,.18)",
+          borderRadius: "35px",
+          padding: "26px",
+          boxShadow: "0 30px 60px rgba(0,0,0,.35)",
+        }}
+      >
+        <img
+          src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=100"
+          alt=""
+          style={{
+            width: "100%",
+            height: "180px",
+            objectFit: "cover",
+            borderRadius: "22px",
+          }}
+        />
+
+        <h3
+          style={{
+            color: "#fff",
+            marginTop: "25px",
+            marginBottom: "5px",
+            fontSize: "28px",
+            fontFamily:
+              "'Cormorant Garamond', serif",
+          }}
+        >
+          Luxury Escape
+        </h3>
+
+        <p
+          style={{
+            color: "rgba(255,255,255,.82)",
+            lineHeight: "1.8",
+            marginBottom: "25px",
+          }}
+        >
+          Premium hotels, luxury transport, private guides,
+          unforgettable Himalayan scenery and personalized travel.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "18px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                color: "#fff",
+                fontSize: "30px",
+                fontWeight: "700",
+              }}
+            >
+              5000+
+            </div>
+
+            <div
+              style={{
+                color: "rgba(255,255,255,.7)",
+              }}
+            >
+              Happy Guests
+            </div>
+          </div>
+
+          <div>
+            <div
+              style={{
+                color: "#fff",
+                fontSize: "30px",
+                fontWeight: "700",
+              }}
+            >
+              4.9★
+            </div>
+
+            <div
+              style={{
+                color: "rgba(255,255,255,.7)",
+              }}
+            >
+              Guest Rating
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+{/* ================= PREMIUM QUICK FACTS ================= */}
+
+<div
+  style={{
+    maxWidth: "1400px",
+    margin: "0 auto 100px",
+    padding: isMobile ? "0 10px" : "0 20px",
+  }}
+>
+  {/* Section Heading */}
+
+  <div
+    style={{
       textAlign: "center",
-      color: "#fff",
-      maxWidth: "900px",
-      padding: isMobile ? "20px 15px" : "20px",
-      zIndex: 2,
+      marginBottom: "55px",
     }}
   >
     <div
       style={{
         display: "inline-block",
-        padding: "8px 20px",
+        padding: "10px 22px",
         borderRadius: "999px",
-        background: "rgba(255,255,255,.18)",
-        backdropFilter: "blur(12px)",
-        marginBottom: "25px",
+        background: "#EDF5F0",
+        color: "#1B3A2D",
+        fontSize: "13px",
         letterSpacing: "2px",
-        fontSize:isMobile ? "11px" : "14px",
+        fontWeight: "700",
+        marginBottom: "20px",
       }}
     >
-      ✨ PREMIUM KASHMIR EXPERIENCES
+      PREMIUM TOUR FEATURES
     </div>
 
-    <h1
+    <h2
       style={{
-        fontSize:isMobile ? "2.3rem" : "clamp(3rem,7vw,5.5rem)",
+        margin: 0,
+        color: "#1B3A2D",
+        fontSize: isMobile ? "2.4rem" : "3.8rem",
         fontFamily: "'Cormorant Garamond', serif",
-        marginBottom: "25px",
-        lineHeight: "1.1",
-        color: "#fff",
       }}
     >
-      Discover the Paradise
-      <br />
-      of Kashmir
-    </h1>
+      Everything Included
+    </h2>
 
     <p
       style={{
-        fontSize:isMobile ? "1rem" : "1.4rem",
-        lineHeight:isMobile ? "1.6" : "2",
-        opacity: ".95",
-        marginBottom: "40px",
-        color: "#fa8585",
+        maxWidth: "760px",
+        margin: "20px auto 0",
+        color: "#6B6258",
+        lineHeight: "1.9",
+        fontSize: "17px",
       }}
     >
-      Luxury holidays, private sightseeing, premium hotels,
-      houseboats, Shikara rides and unforgettable Himalayan
-      adventures — carefully designed for families, couples,
-      honeymooners and groups.
+      Every itinerary is carefully planned to provide comfort,
+      luxury and unforgettable experiences across Kashmir.
     </p>
+  </div>
 
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        gap: "20px",
-        flexWrap: "wrap",
-      }}
-    >
-      <Link
-        to="/?service=tour#booking"
+  {/* Cards */}
+
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit,minmax(220px,1fr))",
+      gap: "28px",
+    }}
+  >
+    {[
+      {
+        icon: "🏨",
+        title: "Luxury Hotels",
+        value: "3★ • 4★ • 5★",
+      },
+      {
+        icon: "🚗",
+        title: "Private Transport",
+        value: "Exclusive Cab",
+      },
+      {
+        icon: "🍽",
+        title: "Meals",
+        value: "Breakfast & Dinner",
+      },
+      {
+        icon: "📍",
+        title: "Destinations",
+        value: "20+ Locations",
+      },
+      {
+        icon: "🧳",
+        title: "Tour Duration",
+        value: "4–8 Days",
+      },
+      {
+        icon: "🛡️",
+        title: "24/7 Assistance",
+        value: "Always Available",
+      },
+    ].map((item) => (
+      <div
+        key={item.title}
         style={{
-          padding:isMobile ? "14px 22px" : "18px 36px",
-          background: "#1B3A2D",
-          color: "#fff",
-          borderRadius: "50px",
-          textDecoration: "none",
-          fontWeight: "600",
+          background: "#fff",
+          borderRadius: "30px",
+          padding: "35px 28px",
+          boxShadow: "0 20px 50px rgba(0,0,0,.08)",
+          border: "1px solid rgba(27,58,45,.08)",
+          transition: ".35s",
+          cursor: "pointer",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "translateY(-8px)";
+          e.currentTarget.style.boxShadow =
+            "0 35px 70px rgba(0,0,0,.14)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "translateY(0)";
+          e.currentTarget.style.boxShadow =
+            "0 20px 50px rgba(0,0,0,.08)";
         }}
       >
-        Book Your Tour
-      </Link>
+        <div
+          style={{
+            width: "78px",
+            height: "78px",
+            borderRadius: "22px",
+            background:
+              "linear-gradient(135deg,#F4F8F5,#E5F0E9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "38px",
+            marginBottom: "28px",
+          }}
+        >
+          {item.icon}
+        </div>
 
-      <Link
-        to="/custom-itinerary"
-        style={{
-          padding: "18px 36px",
-          background: "rgba(255,255,255,.18)",
-          backdropFilter: "blur(12px)",
-          color: "#fff",
-          borderRadius: "50px",
-          textDecoration: "none",
-          border: "1px solid rgba(255,255,255,.3)",
-        }}
-      >
-        Customize Tour
-      </Link>
-    </div>
+        <h3
+          style={{
+            margin: 0,
+            color: "#1B3A2D",
+            fontSize: "23px",
+            fontFamily: "'Cormorant Garamond', serif",
+          }}
+        >
+          {item.title}
+        </h3>
+
+        <p
+          style={{
+            marginTop: "14px",
+            color: "#6B6258",
+            lineHeight: "1.8",
+            fontSize: "16px",
+          }}
+        >
+          {item.value}
+        </p>
+
+        <div
+          style={{
+            width: "55px",
+            height: "4px",
+            borderRadius: "999px",
+            background: "#1B3A2D",
+            marginTop: "22px",
+          }}
+        />
+      </div>
+    ))}
   </div>
 </div>
 
-{/* Premium Quick Facts */}
-
 <div
-  style={{
-    maxWidth: "1300px",
-    margin: "0 auto 80px",
-    display: "grid",
-    gridTemplateColumns:isMobile
-    ? "1fr"
-    : "repeat(auto-fit,minmax(180px,1fr))",
-    gap: "24px",
-  }}
->
-  {[
-    {
-      icon: "📅",
-      title: "Duration",
-      value: "4–8 Days",
-    },
-    {
-      icon: "📍",
-      title: "Destinations",
-      value: "Srinagar • Gulmarg • Pahalgam • Sonamarg",
-    },
-    {
-      icon: "🏨",
-      title: "Hotels",
-      value: "3★ • 4★ • 5★",
-    },
-    {
-      icon: "🚗",
-      title: "Transport",
-      value: "Private Cab",
-    },
-    {
-      icon: "🍽️",
-      title: "Meals",
-      value: "Breakfast & Dinner",
-    },
-    {
-      icon: "🌸",
-      title: "Best Season",
-      value: "All Year Round",
-    },
-  ].map((item) => (
-    <div
-      key={item.title}
-      style={{
-        background: "rgba(255,255,255,.92)",
-        backdropFilter: "blur(20px)",
-        borderRadius: "28px",
-        padding:isMobile ? "22px" : "28px",
-        textAlign: "center",
-        boxShadow: "0 15px 40px rgba(0,0,0,.08)",
-        border: "1px solid rgba(27,58,45,.08)",
-        transition: "0.3s",
-      }}
-    >
-      <div
-        style={{
-          fontSize: "42px",
-          marginBottom: "18px",
-        }}
-      >
-        {item.icon}
-      </div>
-
-      <div
-        style={{
-          color: "#1B3A2D",
-          fontWeight: "700",
-          fontSize: "18px",
-          marginBottom: "10px",
-        }}
-      >
-        {item.title}
-      </div>
-
-      <div
-        style={{
-          color: "#6b6258",
-          lineHeight: "1.7",
-          fontSize: "15px",
-        }}
-      >
-        {item.value}
-      </div>
-    </div>
-  ))}
-</div>
-
-   <div
   style={{
     maxWidth: "1400px",
     margin: "0 auto",
@@ -630,8 +848,6 @@ export default function TourPackagesPage() {
     gridTemplateColumns:isMobile ? "1fr" : "45% 55%",
     gap:isMobile ? "25px" : "40px",
     padding:isMobile ? "20px" : "40px",
-    gap: "40px",
-    padding: "40px",
     alignItems: "start",
   }}
 >
