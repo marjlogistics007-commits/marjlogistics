@@ -371,7 +371,9 @@ itinerary: [
 
 export default function TourPackagesPage() {
 
- return (
+  const isMobile = window.innerWidth < 768;
+
+  return (
 
   
   <div
@@ -385,9 +387,9 @@ export default function TourPackagesPage() {
 <div
   style={{
     position: "relative",
-    height: "80vh",
-    minHeight: "650px",
-    borderRadius: "40px",
+    height: isMobile ? "65vh" : "80vh",
+    minHeight: isMobile ? "420px" : "650px",
+    borderRadius: isMobile ? "20px" : "40px",
     overflow: "hidden",
     marginBottom: "80px",
     display: "flex",
@@ -425,7 +427,7 @@ export default function TourPackagesPage() {
       textAlign: "center",
       color: "#fff",
       maxWidth: "900px",
-      padding: "20px",
+      padding: isMobile ? "20px 15px" : "20px",
       zIndex: 2,
     }}
   >
@@ -438,7 +440,7 @@ export default function TourPackagesPage() {
         backdropFilter: "blur(12px)",
         marginBottom: "25px",
         letterSpacing: "2px",
-        fontSize: "14px",
+        fontSize:isMobile ? "11px" : "14px",
       }}
     >
       ✨ PREMIUM KASHMIR EXPERIENCES
@@ -446,7 +448,7 @@ export default function TourPackagesPage() {
 
     <h1
       style={{
-        fontSize: "clamp(3rem,7vw,5.5rem)",
+        fontSize:isMobile ? "2.3rem" : "clamp(3rem,7vw,5.5rem)",
         fontFamily: "'Cormorant Garamond', serif",
         marginBottom: "25px",
         lineHeight: "1.1",
@@ -460,8 +462,8 @@ export default function TourPackagesPage() {
 
     <p
       style={{
-        fontSize: "1.4rem",
-        lineHeight: "2",
+        fontSize:isMobile ? "1rem" : "1.4rem",
+        lineHeight:isMobile ? "1.6" : "2",
         opacity: ".95",
         marginBottom: "40px",
         color: "#fa8585",
@@ -484,7 +486,7 @@ export default function TourPackagesPage() {
       <Link
         to="/?service=tour#booking"
         style={{
-          padding: "18px 36px",
+          padding:isMobile ? "14px 22px" : "18px 36px",
           background: "#1B3A2D",
           color: "#fff",
           borderRadius: "50px",
@@ -520,7 +522,9 @@ export default function TourPackagesPage() {
     maxWidth: "1300px",
     margin: "0 auto 80px",
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+    gridTemplateColumns:isMobile
+    ? "1fr"
+    : "repeat(auto-fit,minmax(180px,1fr))",
     gap: "24px",
   }}
 >
@@ -562,7 +566,7 @@ export default function TourPackagesPage() {
         background: "rgba(255,255,255,.92)",
         backdropFilter: "blur(20px)",
         borderRadius: "28px",
-        padding: "28px",
+        padding:isMobile ? "22px" : "28px",
         textAlign: "center",
         boxShadow: "0 15px 40px rgba(0,0,0,.08)",
         border: "1px solid rgba(27,58,45,.08)",
@@ -623,7 +627,9 @@ export default function TourPackagesPage() {
 <div
   style={{
     display: "grid",
-    gridTemplateColumns: "45% 55%",
+    gridTemplateColumns:isMobile ? "1fr" : "45% 55%",
+    gap:isMobile ? "25px" : "40px",
+    padding:isMobile ? "20px" : "40px",
     gap: "40px",
     padding: "40px",
     alignItems: "start",
@@ -632,7 +638,8 @@ export default function TourPackagesPage() {
   {/* LEFT */}
   <div
     style={{
-      position: "sticky",
+      position:isMobile ? "relative" : "sticky",
+      top:isMobile ? "0" : "100px",
       top: "100px",
     }}
   >
@@ -640,7 +647,7 @@ export default function TourPackagesPage() {
       style={{
         borderRadius: "28px",
         overflow: "hidden",
-        height: "520px",
+        height:isMobile ? "260px" : "520px",
       }}
     >
       <img
@@ -673,7 +680,7 @@ export default function TourPackagesPage() {
 
     <h2
       style={{
-        fontSize: "3rem",
+        fontSize:isMobile ? "2rem" : "3rem",
         color: "#1B3A2D",
         fontFamily: "'Cormorant Garamond', serif",
         marginBottom: "20px",
@@ -686,7 +693,7 @@ export default function TourPackagesPage() {
       style={{
         color: "#5C5246",
         lineHeight: "1.9",
-        fontSize: "17px",
+        fontSize:"17px",
         marginBottom: "30px",
       }}
     >
@@ -696,7 +703,9 @@ export default function TourPackagesPage() {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(2,1fr)",
+        gridTemplateColumns:isMobile
+        ? "1fr"
+        : "repeat(2,1fr)",
         gap: "16px",
         marginBottom: "30px",
       }}
@@ -795,12 +804,14 @@ export default function TourPackagesPage() {
 
 <div
   style={{
-    padding: "0 40px 40px",
+    padding:isMobile
+    ? "0 15px 25px"
+    : "0 40px 40px",
   }}
 >
   <h2
     style={{
-      fontSize: "2.5rem",
+      fontSize:isMobile ? "2rem" : "2.5rem",
       color: "#1B3A2D",
       fontFamily: "'Cormorant Garamond', serif",
       marginBottom: "40px",
@@ -821,7 +832,8 @@ export default function TourPackagesPage() {
     <div
       style={{
         position: "absolute",
-        left: "110px",
+        display:isMobile ? "none" : "block",
+        left:"110px",
         top: "15px",
         bottom: "15px",
         width: "3px",
@@ -834,7 +846,9 @@ export default function TourPackagesPage() {
         key={index}
         style={{
           display: "grid",
-          gridTemplateColumns: "90px 40px 1fr",
+          gridTemplateColumns:isMobile
+          ? "1fr"
+          : "90px 40px 1fr",
           gap: "25px",
           marginBottom: "35px",
           alignItems: "start",
@@ -843,7 +857,7 @@ export default function TourPackagesPage() {
         {/* Day Number */}
         <div
           style={{
-            textAlign: "right",
+            textAlign:isMobile ? "left" : "right",
             fontWeight: "700",
             color: "#1B3A2D",
             fontSize: "18px",
@@ -858,7 +872,7 @@ export default function TourPackagesPage() {
         {/* Timeline Dot */}
         <div
           style={{
-            display: "flex",
+            display:isMobile ? "none" : "flex",
             justifyContent: "center",
           }}
         >
@@ -889,7 +903,9 @@ export default function TourPackagesPage() {
       <div
   style={{
     display: "grid",
-    gridTemplateColumns: "240px 1fr",
+    gridTemplateColumns:isMobile
+    ? "1fr"
+    : "240px 1fr",
     gap: "25px",
     alignItems: "center",
   }}
@@ -899,7 +915,7 @@ export default function TourPackagesPage() {
     alt={day.title}
     style={{
       width: "100%",
-      height: "180px",
+      height:isMobile ? "220px" : "180px",
       objectFit: "cover",
       borderRadius: "18px",
     }}
@@ -910,7 +926,7 @@ export default function TourPackagesPage() {
       style={{
         marginTop: 0,
         color: "#1B3A2D",
-        fontSize: "1.5rem",
+        fontSize:isMobile ? "1.3rem" : "1.5rem",
         fontFamily: "'Cormorant Garamond', serif",
       }}
     >
