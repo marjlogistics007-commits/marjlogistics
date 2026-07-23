@@ -2,10 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
-
-
 export default function Gallery() {
   const galleryItems = [
+    
     {
       id: 1,
       title: "Gulmarg Tour",
@@ -471,8 +470,158 @@ export default function Gallery() {
         </div>
       </motion.div>
     ))}
+    
   </div>
 </section>
+
+
+
+{/* ================= DIRECTOR'S MESSAGE ================= */}
+<motion.section
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  style={{
+    maxWidth: "1200px",
+    margin: "100px auto",
+    padding: "0 20px",
+  }}
+>
+  <div
+    style={{
+      background: "rgba(255,255,255,0.75)",
+      backdropFilter: "blur(20px)",
+      WebkitBackdropFilter: "blur(20px)",
+      borderRadius: "30px",
+      border: "1px solid rgba(255,255,255,0.5)",
+      boxShadow: "0 25px 60px rgba(0,0,0,0.12)",
+      overflow: "hidden",
+      display: "grid",
+      gridTemplateColumns:
+  window.innerWidth < 768 ? "1fr" : "320px 1fr",
+    }}
+  >
+    {/* Director Image */}
+    <div
+      style={{
+        background: "#f5f5f5",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "40px",
+      }}
+    >
+      <img
+        src="/director.jpg"
+        alt="Director"
+        style={{
+          width: "240px",
+          height: "240px",
+          borderRadius: "50%",
+          objectFit: "cover",
+          border: "8px solid white",
+          boxShadow: "0 15px 40px rgba(0,0,0,0.18)",
+        }}
+      />
+    </div>
+
+    {/* Message */}
+    <div style={{ padding: "50px" }}>
+      <span
+        style={{
+          color: "#8B6B3D",
+          fontWeight: "700",
+          letterSpacing: "2px",
+          fontSize: "13px",
+          textTransform: "uppercase",
+        }}
+      >
+        Director's Message
+      </span>
+
+      <h2
+        style={{
+          fontSize: "2.2rem",
+          margin: "15px 0 25px",
+          color: "#1f2937",
+        }}
+      >
+        A Message from Our Director
+      </h2>
+
+      <p
+        style={{
+          color: "#555",
+          lineHeight: "2",
+          fontSize: "17px",
+          marginBottom: "20px",
+        }}
+      >
+        Welcome to <strong>Marj Logistics</strong>.
+        Our mission is to provide dependable logistics and travel
+        solutions with professionalism, integrity, and exceptional
+        customer service.
+      </p>
+
+      <p
+        style={{
+          color: "#555",
+          lineHeight: "2",
+          fontSize: "17px",
+          marginBottom: "20px",
+        }}
+      >
+        Whether you're booking a dream Kashmir tour, arranging courier
+        services, or planning your next journey, our dedicated team is
+        committed to delivering seamless experiences built on trust,
+        transparency, and reliability.
+      </p>
+
+      <p
+        style={{
+          color: "#555",
+          lineHeight: "2",
+          fontSize: "17px",
+        }}
+      >
+        Thank you for choosing Marj Logistics. Your confidence motivates
+        us to continuously improve and provide services that exceed your
+        expectations. We look forward to serving you for many years to
+        come.
+      </p>
+
+      <div
+        style={{
+          marginTop: "40px",
+          borderTop: "1px solid #ddd",
+          paddingTop: "20px",
+        }}
+      >
+        <h3
+          style={{
+            margin: 0,
+            fontSize: "24px",
+            color: "#222",
+          }}
+        >
+          Director
+        </h3>
+
+        <p
+          style={{
+            marginTop: "6px",
+            color: "#8B6B3D",
+            fontWeight: "600",
+            letterSpacing: "1px",
+          }}
+        >
+          Marj Logistics
+        </p>
+      </div>
+    </div>
+  </div>
+</motion.section>
 
 <AnimatePresence>
   {selectedItem && (
@@ -603,6 +752,8 @@ style={{
   >
     Privacy Policy
   </Link>
+
+
 </div>
     </section>
   )
