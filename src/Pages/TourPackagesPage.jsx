@@ -1,3 +1,5 @@
+
+import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
 const currentYear = new Date().getFullYear();
@@ -371,6 +373,9 @@ export default function TourPackagesPage() {
   const isMobile = window.innerWidth < 768;
 
   return (
+
+      <>
+      <Navbar />
 <div
   style={{
     minHeight: "50vh",
@@ -1231,7 +1236,7 @@ export default function TourPackagesPage() {
   </Link>
 </div>
 </div>
-
+</>
 );
 }
 

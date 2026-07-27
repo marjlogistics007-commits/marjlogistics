@@ -1,10 +1,20 @@
-import React from "react";
+
+import Navbar from "../components/Navbar";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+
+
 
 export default function Logistics() {
   const isMobile = window.innerWidth < 768;
+  const currentYear = new Date().getFullYear();
+  const [selectedService, setSelectedService] = useState(null);
 
   return (
+  <>
+      <Navbar />
+
     <div
       style={{
         minHeight: "100vh",
@@ -56,7 +66,7 @@ export default function Logistics() {
             width: "90%",
             maxWidth: "1300px",
             display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "1.1fr .9fr",
+            gridTemplateColumns: isMobile ? "4fr" : "1fr .9fr",
             gap: "60px",
             alignItems: "center",
             zIndex: 2,
@@ -85,6 +95,8 @@ export default function Logistics() {
                 lineHeight: 1.1,
                 fontWeight: 800,
                 marginBottom: "25px",
+                marginTop: "100px",
+                color: "white"
               }}
             >
               Fast,
@@ -151,7 +163,7 @@ export default function Logistics() {
               style={{
                 display: "flex",
                 gap: "50px",
-                marginTop: "70px",
+                marginTop: "50px",
                 flexWrap: "wrap",
               }}
             >
@@ -178,15 +190,18 @@ export default function Logistics() {
             style={{
               background: "rgba(255,255,255,.08)",
               backdropFilter: "blur(20px)",
-              padding: "45px",
-              borderRadius: "30px",
+              padding: "10px",
+              borderRadius: "100px",
               border: "1px solid rgba(255,255,255,.2)",
+              marginRight: "90px",
             }}
           >
             <h2
               style={{
                 fontSize: "34px",
                 marginBottom: "30px",
+                color: "#fff",
+                marginLeft: "75px",
               }}
             >
               Why Choose DTDC?
@@ -206,6 +221,7 @@ export default function Logistics() {
                   display: "flex",
                   alignItems: "center",
                   marginBottom: "20px",
+                  marginLeft: "80px",
                 }}
               >
                 <div
@@ -327,7 +343,7 @@ export default function Logistics() {
 
     <div>
       <img
-        src="/public/office.jpg"
+        src="/public/office.png"
         alt="DTDC Office"
         style={{
           width: "100%",
@@ -396,48 +412,73 @@ export default function Logistics() {
       }}
     >
       {[
-        {
-          title: "Domestic Express",
-          icon: "🚚",
-          desc: "Fast and secure parcel delivery across India with reliable transit times.",
-        },
-        {
-          title: "International Courier",
-          icon: "🌍",
-          desc: "Worldwide shipping with customs documentation and global tracking.",
-        },
-        {
-          title: "Air Cargo",
-          icon: "✈️",
-          desc: "Priority air freight solutions for urgent shipments.",
-        },
-        {
-          title: "Surface Cargo",
-          icon: "🚛",
-          desc: "Affordable transportation for bulk and heavy consignments.",
-        },
-        {
-          title: "Business Logistics",
-          icon: "🏢",
-          desc: "Dedicated logistics support for companies and organizations.",
-        },
-        {
-          title: "E-Commerce Shipping",
-          icon: "📦",
-          desc: "Pickup, shipping and delivery solutions for online businesses.",
-        },
+       {
+    id: 1,
+    title: "Domestic Express",
+    icon: "🚚",
+    desc: "Fast and secure delivery across India.",
+    details:
+      "Our Domestic Express service ensures quick and reliable delivery of documents, parcels, and business shipments across India with doorstep pickup, secure handling, and real-time tracking.",
+  },
+
+  {
+    id: 2,
+    title: "International Courier",
+    icon: "🌍",
+    desc: "Worldwide shipping to 220+ countries.",
+    details:
+      "Send documents, gifts, and commercial shipments to over 220 countries through DTDC's trusted international network with secure packaging, customs support, and complete shipment tracking.",
+  },
+
+  {
+    id: 3,
+    title: "Air Cargo",
+    icon: "✈️",
+    desc: "Priority air freight for urgent shipments.",
+    details:
+      "Our Air Cargo service is designed for urgent deliveries, offering fast transit, secure transportation, and dependable handling for time-sensitive consignments across domestic and international destinations.",
+  },
+
+  {
+    id: 4,
+    title: "Surface Cargo",
+    icon: "🚛",
+    desc: "Affordable transportation for heavy consignments.",
+    details:
+      "Surface Cargo provides an economical solution for transporting large, heavy, or bulk shipments with dependable nationwide coverage, professional handling, and timely delivery.",
+  },
+
+  {
+    id: 5,
+    title: "Business Logistics",
+    icon: "🏢",
+    desc: "Complete logistics solutions for businesses.",
+    details:
+      "We offer customized logistics solutions for businesses including regular pickups, bulk shipments, corporate delivery services, and efficient supply chain support tailored to your operational needs.",
+  },
+
+  {
+    id: 6,
+    title: "E-Commerce Shipping",
+    icon: "📦",
+    desc: "Reliable shipping solutions for online sellers.",
+    details:
+      "Our E-Commerce Shipping service helps online businesses with fast order fulfillment, doorstep pickup, secure transportation, last-mile delivery, and real-time shipment tracking for better customer satisfaction.",
+  },
       ].map((service) => (
         <div
-          key={service.title}
-          style={{
-            background: "#fff",
-            borderRadius: "25px",
-            padding: "40px",
-            textAlign: "left",
-            border: "1px solid #eee",
-            boxShadow: "0 20px 45px rgba(0,0,0,.08)",
-            transition: ".3s",
-          }}
+          key={service.id}
+    onClick={() => setSelectedService(service)}
+    style={{
+      background: "#fff",
+      borderRadius: "25px",
+      padding: "40px",
+      textAlign: "left",
+      border: "1px solid #eee",
+      boxShadow: "0 20px 45px rgba(0,0,0,.08)",
+      transition: ".3s",
+      cursor: "pointer",
+    }}
         >
           <div
             style={{
@@ -538,36 +579,59 @@ export default function Logistics() {
       }}
     >
       {[
-        {
-          icon: "🚚",
-          title: "Doorstep Pickup",
-          text: "Convenient pickup service from your home or business location.",
-        },
-        {
-          icon: "📍",
-          title: "Live Shipment Tracking",
-          text: "Track every shipment with real-time tracking updates.",
-        },
-        {
-          icon: "🛡️",
-          title: "Safe & Secure",
-          text: "Every parcel is handled carefully to ensure maximum safety.",
-        },
-        {
-          icon: "🌍",
-          title: "Global Network",
-          text: "Reliable domestic and international delivery solutions.",
-        },
-        {
-          icon: "⚡",
-          title: "Fast Delivery",
-          text: "Express shipping options for urgent documents and parcels.",
-        },
-        {
-          icon: "💼",
-          title: "Business Solutions",
-          text: "Dedicated logistics support for companies and e-commerce.",
-        },
+     {
+    id: 1,
+    title: "Domestic Express",
+    icon: "🚚",
+    desc: "Fast and secure delivery across India.",
+    details:
+      "Our Domestic Express service provides reliable, time-bound delivery for documents, parcels, and business consignments across India. With doorstep pickup, professional handling, and real-time shipment tracking, we ensure every package reaches its destination safely and on schedule.",
+  },
+
+  {
+    id: 2,
+    title: "International Courier",
+    icon: "🌍",
+    desc: "Worldwide shipping to 220+ countries.",
+    details:
+      "Ship important documents, gifts, samples, and commercial shipments worldwide through DTDC's trusted international network. We provide customs guidance, secure handling, and end-to-end tracking for smooth global deliveries.",
+  },
+
+  {
+    id: 3,
+    title: "Air Cargo",
+    icon: "✈️",
+    desc: "Priority air freight for urgent shipments.",
+    details:
+      "Our Air Cargo service is designed for urgent deliveries requiring the fastest possible transit. Ideal for businesses and individuals who need secure, reliable, and time-critical transportation across domestic and international destinations.",
+  },
+
+  {
+    id: 4,
+    title: "Surface Cargo",
+    icon: "🚛",
+    desc: "Affordable transportation for heavy consignments.",
+    details:
+      "Surface Cargo offers an economical solution for transporting large, bulky, or heavy shipments. With dependable logistics and extensive coverage, we deliver your consignments safely while keeping transportation costs efficient.",
+  },
+
+  {
+    id: 5,
+    title: "Business Logistics",
+    icon: "🏢",
+    desc: "Complete logistics solutions for businesses.",
+    details:
+      "We provide customized logistics support for companies, retailers, manufacturers, and corporate clients. Our services include regular pickups, scheduled deliveries, bulk shipment management, and dedicated business support to streamline your supply chain.",
+  },
+
+  {
+    id: 6,
+    title: "E-Commerce Shipping",
+    icon: "📦",
+    desc: "Reliable shipping solutions for online sellers.",
+    details:
+      "Empower your online business with efficient e-commerce logistics. From order pickups to last-mile delivery, we help ensure fast dispatch, secure transportation, and excellent customer satisfaction for every shipment.",
+  },
       ].map((item) => (
         <div
           key={item.title}
@@ -763,8 +827,8 @@ export default function Logistics() {
 
 <section
   style={{
-    background: "#1B3A2D",
-    color: "#fff",
+    background: '#f4eede',
+    color: "#173126",
     padding: "10px 20px",
   }}
 >
@@ -805,7 +869,7 @@ export default function Logistics() {
             fontSize: "58px",
             marginBottom: "12px",
             fontWeight: 100,
-            color: "#fff",
+            color: "#173126",
           }}
         >
           {item.value}
@@ -824,8 +888,139 @@ export default function Logistics() {
   </div>
 </section>
 
+<AnimatePresence>
+  {selectedService && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setSelectedService(null)}
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,0.45)",
+        backdropFilter: "blur(12px)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 9999,
+        padding: "20px",
+      }}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          width: "100%",
+          maxWidth: "550px",
+          background: "rgba(255,255,255,0.12)",
+          backdropFilter: "blur(25px)",
+          WebkitBackdropFilter: "blur(25px)",
+          border: "1px solid rgba(255,255,255,0.2)",
+          borderRadius: "28px",
+          padding: "35px",
+          color: "#fff",
+          boxShadow: "0 20px 60px rgba(0,0,0,.3)",
+        }}
+      >
+        <button
+          onClick={() => setSelectedService(null)}
+          style={{
+            float: "right",
+            background: "none",
+            border: "none",
+            color: "#fff",
+            fontSize: "28px",
+            cursor: "pointer",
+          }}
+        >
+          ×
+        </button>
+
+        <div
+          style={{
+            fontSize: "55px",
+            marginBottom: "15px",
+          }}
+        >
+          {selectedService.icon}
+        </div>
+
+        <h2
+          style={{
+            color: "#F3ECB6",
+            marginBottom: "18px",
+          }}
+        >
+          {selectedService.title}
+        </h2>
+
+        <p
+          style={{
+            lineHeight: 1.8,
+            color: "rgba(255,255,255,0.92)",
+            fontSize: "16px",
+          }}
+        >
+          {selectedService.details}
+        </p>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+{/* ================= COPYRIGHT BAR ================= */}
+
+<div
+  style={{
+    marginTop: "80px",
+    background: "#173126",
+    borderTop: "1px solid rgba(255,255,255,0.08)",
+    padding: "10px 25px",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "1300px",
+      margin: "0 auto",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      flexWrap: "wrap",
+      gap: "15px",
+    }}
+  >
+    <p
+      style={{
+        margin: 0,
+        color: "rgba(255,255,255,0.75)",
+        fontSize: "14px",
+        letterSpacing: "0.5px",
+      }}
+    >
+      © {currentYear} MARJ LOGISTICS PVT. LTD. All Rights Reserved.
+    </p>
+
+    <p
+      style={{
+        margin: 0,
+        color: "rgba(255,255,255,0.55)",
+        fontSize: "14px",
+      }}
+    >
+      Powered by DTDC • Fast • Secure • Reliable
+    </p>
+  </div>
+</div>
+
     </div>
-    
+    </>
+     
   );
 }
+ 
+
 

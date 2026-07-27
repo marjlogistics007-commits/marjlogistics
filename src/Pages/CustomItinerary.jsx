@@ -1,3 +1,5 @@
+
+import Navbar from "../components/Navbar";
 import { useState } from "react";
 
 export default function CustomItinerary() {
@@ -53,6 +55,9 @@ ${form.activities}
 
 
   return (
+
+      <>
+      <Navbar />
     <div 
       style={{
         maxWidth: "800px",
@@ -131,5 +136,6 @@ ${form.activities}
       </button>
 
     </div>
+    </>
   );
 }

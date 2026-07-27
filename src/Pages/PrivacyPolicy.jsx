@@ -1,5 +1,10 @@
+
+import Navbar from "../components/Navbar";
 export default function PrivacyPolicy() {
   return (
+
+      <>
+      <Navbar />
     <div
       style={{
         maxWidth: "1000px",
@@ -176,5 +181,7 @@ of our website and services constitutes acceptance of any updates.
         Email: marjlogistics007@gmail.com
       </p>
     </div>
+
+    </>
   );
 }

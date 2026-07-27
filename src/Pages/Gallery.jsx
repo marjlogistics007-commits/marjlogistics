@@ -1,3 +1,5 @@
+
+import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -57,6 +59,9 @@ export default function Gallery() {
   
   const [selectedItem, setSelectedItem] = useState(null);
   return (
+
+      <>
+      <Navbar />
  <section
   style={{
     background: '#f6ecd5',
@@ -756,6 +761,8 @@ style={{
 
 </div>
     </section>
+
+    </>
   )
 }
     
