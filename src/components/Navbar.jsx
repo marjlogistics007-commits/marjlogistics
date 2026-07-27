@@ -8,7 +8,7 @@ const menuItems = [
   { name: 'About', href: '/#about' },
   { name: 'Services', href: '/#services' },
   { name: 'Tour Packages', href: '/packages' },
-  { name: 'Logistics', href: '/#logistics' },
+  { name: 'Logistics', href: '/logistics' },
   { name: "Gallery", href: "/gallery",},
   { name: 'FAQs', href: '/#faq' },
   { name: 'Contact', href: '/#contact' },
@@ -40,7 +40,7 @@ export default function Navbar() {
         background: 'linear-gradient(0deg, #f4eede , rgba(27, 58, 45, 0.9))',
         backdropFilter: isScrolled ? 'blur(20px)' : 'none',
         WebkitBackdropFilter: isScrolled ? 'blur(20px)' : 'none',
-        borderBottom: isScrolled ? '1px solid rgba(208, 198, 179, 0.5)' : 'none',
+        borderBottom: isScrolled ? '1px solid rgba(249, 165, 8, 0.5)' : 'none',
         boxShadow: isScrolled ? '0 4px 30px rgba(27, 58, 45, 0.06)' : 'none',
       }}
     >
@@ -103,7 +103,9 @@ style={{
 className="hidden-mobile"
 >
           {menuItems.map((item) => (
-            item.href.startsWith('/') ? (
+      item.href === "/gallery" ||
+item.href === "/packages" ||
+item.href === "/logistics" ? (
   <Link
     key={item.name}
     to={item.href}

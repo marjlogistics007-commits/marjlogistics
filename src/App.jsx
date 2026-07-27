@@ -19,6 +19,9 @@ import AutoMusic from './components/AutoMusic';
 import CustomItinerary from "./Pages/CustomItinerary";
 import { Link } from "react-router-dom";
 import Gallery from "./Pages/Gallery";
+import LogisticsPage from "./Pages/LogisticsPage";
+
+
 
 function App() {
 
@@ -70,10 +73,13 @@ function App() {
 
 
 <Route path="/gallery" element={<Gallery />} />
+<Route path="/logistics" element={<LogisticsPage />} />
 
     </Routes>
 
   </BrowserRouter>
+
+  
 
 );
 }
