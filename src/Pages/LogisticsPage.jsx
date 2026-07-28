@@ -194,6 +194,7 @@ export default function Logistics() {
               borderRadius: "100px",
               border: "1px solid rgba(255,255,255,.2)",
               marginRight: "90px",
+              marginTop: "60px",
             }}
           >
             <h2
@@ -201,7 +202,7 @@ export default function Logistics() {
                 fontSize: "34px",
                 marginBottom: "30px",
                 color: "#fff",
-                marginLeft: "75px",
+                marginLeft: "70px",
               }}
             >
               Why Choose DTDC?
@@ -271,6 +272,30 @@ export default function Logistics() {
       >
         Authorized DTDC Channel Partner
       </span>
+
+      <h2
+        style={{
+          fontStyle: 'italic',
+          fontSize: isMobile ? "50px" : "100px",
+          marginTop: "5px",
+          marginBottom: "50px",
+          lineHeight: 1.2,
+          background: 'linear-gradient(135deg, #2D5A3D 0%, #B56B3F 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          textDecoration: "underline",
+          textDecorationColor: "#C49B63",
+          textDecorationThickness: "3px",
+          textUnderlineOffset: "8px",
+          textShadow: `1px 1px 0 #b8860b,2px 2px 0 #a67c00,3px 3px 0 #8b6508,4px 4px 10px rgba(0,0,0,.35)`,
+        }}
+      >
+        Marj Logistics
+        <br />
+    
+      </h2>
+
 
       <h2
         style={{
@@ -734,93 +759,114 @@ export default function Logistics() {
       From booking to final delivery, every shipment is processed with
       efficiency, transparency and professional handling.
     </p>
+    </div>
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: isMobile
-          ? "1fr"
-          : "repeat(5,1fr)",
-        gap: "30px",
-      }}
-    >
-      {[
-        {
-          number: "01",
-          title: "Book Pickup",
-          icon: "📞",
-        },
-        {
-          number: "02",
-          title: "Parcel Collection",
-          icon: "📦",
-        },
-        {
-          number: "03",
-          title: "Sorting Center",
-          icon: "🏢",
-        },
-        {
-          number: "04",
-          title: "In Transit",
-          icon: "🚚",
-        },
-        {
-          number: "05",
-          title: "Delivered",
-          icon: "✅",
-        },
-      ].map((step) => (
+ <div
+  style={{
+    display: "grid",
+    gridTemplateColumns: isMobile ? "1fr" : "repeat(5,1fr)",
+    gap: "30px",
+  }}
+>
+  {[
+    {
+      number: "01",
+      title: "Book Pickup",
+      icon: "📞",
+      link: "/#booking",
+    },
+    {
+      number: "02",
+      title: "Parcel Collection",
+      icon: "📦",
+      link: "/#contact",
+
+    },
+    {
+      number: "02",
+      title: "Parcel Collection",
+      icon: "📦",
+      link: "/#contact",
+    },
+ {
+  number: "04",
+  title: "In Transit",
+  icon: "🚚",
+  link: "/#tracking",
+},
+    {
+      number: "05",
+      title: "Delivered",
+      icon: "✅",
+    },
+  ].map((step) => {
+    const card = (
+      <div
+        style={{
+          background: "#F8F9FA",
+          borderRadius: "24px",
+          padding: "35px 25px",
+          border: "1px solid #ECECEC",
+          cursor: step.link ? "pointer" : "default",
+          transition: "0.3s",
+        }}
+      >
         <div
-          key={step.number}
           style={{
-            background: "#F8F9FA",
-            borderRadius: "24px",
-            padding: "35px 25px",
-            border: "1px solid #ECECEC",
+            width: "70px",
+            height: "70px",
+            margin: "0 auto 20px",
+            borderRadius: "50%",
+            background: "#1B3A2D",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "#fff",
+            fontSize: "30px",
           }}
         >
-          <div
-            style={{
-              width: "70px",
-              height: "70px",
-              margin: "0 auto 20px",
-              borderRadius: "50%",
-              background: "#1B3A2D",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#fff",
-              fontSize: "30px",
-            }}
-          >
-            {step.icon}
-          </div>
-
-          <div
-            style={{
-              color: "#1B3A2D",
-              fontWeight: "bold",
-              fontSize: "14px",
-              letterSpacing: "2px",
-              marginBottom: "10px",
-            }}
-          >
-            STEP {step.number}
-          </div>
-
-          <h3
-            style={{
-              color: "#1E293B",
-              fontSize: "22px",
-            }}
-          >
-            {step.title}
-          </h3>
+          {step.icon}
         </div>
-      ))}
-    </div>
-  </div>
+
+        <div
+          style={{
+            color: "#1B3A2D",
+            fontWeight: "bold",
+            fontSize: "14px",
+            letterSpacing: "2px",
+            marginBottom: "10px",
+          }}
+        >
+          STEP {step.number}
+        </div>
+
+        <h3
+          style={{
+            color: "#1E293B",
+            fontSize: "22px",
+          }}
+        >
+          {step.title}
+        </h3>
+      </div>
+    );
+
+    return step.link ? (
+      <Link
+        key={step.number}
+        to={step.link}
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+        }}
+      >
+        {card}
+      </Link>
+    ) : (
+      <div key={step.number}>{card}</div>
+    );
+  })}
+</div>
 </section>
 
 {/* ================= COMPANY STATS ================= */}

@@ -389,10 +389,10 @@ export default function TourPackagesPage() {
   style={{
     position: "relative",
     height: isMobile ? "48vh" : "55vh",
-    minHeight: isMobile ? "420px" : "480px",
+    minHeight: isMobile ? "480px" : "480px",
     overflow: "hidden",
     borderRadius: isMobile ? "24px" : "40px",
-    marginBottom: "60px",
+    marginBottom: "30px",
     background: "#000",
   }}
 >
@@ -496,6 +496,7 @@ export default function TourPackagesPage() {
           fontSize: "13px",
           letterSpacing: "2px",
           marginBottom: "20px",
+          marginTop: "60px",
         }}
       >
         ✨ PREMIUM KASHMIR EXPERIENCES
@@ -513,9 +514,7 @@ export default function TourPackagesPage() {
           textShadow: "0 20px 45px rgba(0,0,0,.45)",
         }}
       >
-        Kashmir
-        <br />
-        Beyond
+        Kashmir Beyond
         <br />
         Imagination
       </h1>
@@ -557,7 +556,8 @@ export default function TourPackagesPage() {
     >
       <div
         style={{
-          width: "320px",
+          width: "550px",
+          height: "350px",
           background: "rgba(255,255,255,.10)",
           backdropFilter: "blur(24px)",
           border: "1px solid rgba(255,255,255,.18)",
@@ -573,7 +573,7 @@ export default function TourPackagesPage() {
             width: "100%",
             height: "180px",
             objectFit: "cover",
-            borderRadius: "22px",
+            borderRadius: "40px",
           }}
         />
 
@@ -601,53 +601,6 @@ export default function TourPackagesPage() {
           unforgettable Himalayan scenery and personalized travel.
         </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "18px",
-          }}
-        >
-          <div>
-            <div
-              style={{
-                color: "#fff",
-                fontSize: "30px",
-                fontWeight: "700",
-              }}
-            >
-              5000+
-            </div>
-
-            <div
-              style={{
-                color: "rgba(255,255,255,.7)",
-              }}
-            >
-              Happy Guests
-            </div>
-          </div>
-
-          <div>
-            <div
-              style={{
-                color: "#fff",
-                fontSize: "30px",
-                fontWeight: "700",
-              }}
-            >
-              4.9★
-            </div>
-
-            <div
-              style={{
-                color: "rgba(255,255,255,.7)",
-              }}
-            >
-              Guest Rating
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -719,7 +672,7 @@ export default function TourPackagesPage() {
       gridTemplateColumns: isMobile
         ? "1fr"
         : "repeat(auto-fit,minmax(220px,1fr))",
-      gap: "28px",
+      gap: "55px",
     }}
   >
     {[
@@ -753,6 +706,17 @@ export default function TourPackagesPage() {
         title: "24/7 Assistance",
         value: "Always Available",
       },
+      {
+        icon: "😊",
+        title: "5000+",
+        value: "Happy Guests",
+      },
+      {
+        icon: "⭐⭐⭐⭐☆",
+        title: "4.9",
+        value: "Guest Rating",
+      }
+
     ].map((item) => (
       <div
         key={item.title}
@@ -764,6 +728,7 @@ export default function TourPackagesPage() {
           border: "1px solid rgba(27,58,45,.08)",
           transition: ".35s",
           cursor: "pointer",
+          width: "250px",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = "translateY(-8px)";
@@ -778,7 +743,7 @@ export default function TourPackagesPage() {
       >
         <div
           style={{
-            width: "78px",
+            width: "200px",
             height: "78px",
             borderRadius: "22px",
             background:

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, Leaf, Globe2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const menuItems = [
@@ -108,23 +108,23 @@ item.href === "/" ||
 item.href === "/packages" ||
 item.href === "/gallery" ||
 item.href === "/logistics" ? (
-  <Link
-    key={item.name}
-    to={item.href}
-    style={{
-      fontFamily: "'Times New Roman'",
-      fontSize: '0.6rem',
-      fontWeight: 600,
-      letterSpacing: '0.15em',
-      textTransform: 'uppercase',
-      color: '#d8f8e1',
-      textDecoration: 'none',
-      position: 'relative',
-      paddingBottom: '4px',
-    }}
-  >
-    {item.name}
-  </Link>
+<NavLink
+  key={item.name}
+  to={item.href}
+  style={({ isActive }) => ({
+    fontFamily: "'Times New Roman'",
+    fontSize: "0.6rem",
+    fontWeight: isActive ? 700 : 600,
+    letterSpacing: "0.15em",
+    textTransform: "uppercase",
+    color: isActive ? "#D4AF37" : '#1B3A2D',
+    textDecoration: "none",
+    position: "relative",
+    paddingBottom: "4px",
+  })}
+>
+  {item.name}
+</NavLink>
 ) : (
   <a
     key={item.name}
@@ -135,7 +135,7 @@ item.href === "/logistics" ? (
       fontWeight: 600,
       letterSpacing: '0.15em',
       textTransform: 'uppercase',
-      color: '#3D2314',
+      color: '#1B3A2D',
       textDecoration: 'none',
       position: 'relative',
       paddingBottom: '4px',
