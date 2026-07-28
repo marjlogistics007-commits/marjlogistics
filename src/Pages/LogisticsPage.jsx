@@ -343,7 +343,7 @@ export default function Logistics() {
 
     <div>
       <img
-        src="/public/office.png"
+        src="/office.png"
         alt="DTDC Office"
         style={{
           width: "100%",
