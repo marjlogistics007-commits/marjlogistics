@@ -23,17 +23,18 @@ export default function Logistics() {
     >
       {/* ================= PREMIUM HERO ================= */}
 
-      <div
-        style={{
-          position: "relative",
-          height: isMobile ? "75vh" : "90vh",
-          overflow: "hidden",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "#f3ecb6",
-        }}
-      >
+   <div
+  style={{
+    position: "relative",
+    minHeight: isMobile ? "100vh" : "90vh",
+    overflow: "hidden",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#f3ecb6",
+    padding: isMobile ? "90px 20px 40px" : "0",
+  }}
+>
         {/* Background */}
 <img
   src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=2400&q=100"
@@ -66,38 +67,38 @@ export default function Logistics() {
             width: "90%",
             maxWidth: "1300px",
             display: "grid",
-            gridTemplateColumns: isMobile ? "4fr" : "1fr .9fr",
-            gap: "60px",
+            gridTemplateColumns: isMobile ? "1fr" : "1fr .9fr",
+            gap: isMobile ? "30px" : "60px",
             alignItems: "center",
             zIndex: 2,
           }}
-        >
+>
           {/* LEFT */}
 
-          <div>
-            <div
-              style={{
-                display: "inline-block",
-                padding: "10px 20px",
-                borderRadius: "50px",
-                background: "rgba(255,255,255,.15)",
-                backdropFilter: "blur(15px)",
-                marginBottom: "25px",
-                fontWeight: 600,
-              }}
-            >
-              AUTHORIZED DTDC CHANNEL PARTNER
-            </div>
+      <div>
+        <div
+          style={{
+            display: "inline-block",
+            padding: isMobile ? "8px 16px" : "10px 20px",
+            borderRadius: "50px",
+            background: "rgba(255,255,255,.15)",
+            backdropFilter: "blur(15px)",
+            marginBottom: isMobile ? "18px" : "25px",
+            fontWeight: 600,
+            fontSize: isMobile ? "12px" : "15px",
+          }}
+>
+        </div>
 
             <h1
-              style={{
-                fontSize: isMobile ? "42px" : "72px",
-                lineHeight: 1.1,
-                fontWeight: 800,
-                marginBottom: "25px",
-                marginTop: "100px",
-                color: "white"
-              }}
+            style={{
+            fontSize: isMobile ? "34px" : "72px",
+            lineHeight: 1.15,
+            fontWeight: 800,
+            marginBottom: "25px",
+            marginTop: isMobile ? "10px" : "10px",
+            color: "white",
+            }}
             >
               Fast,
               <br />
@@ -108,38 +109,42 @@ export default function Logistics() {
 
             <p
               style={{
-                fontSize: "20px",
-                lineHeight: 1.8,
-                color: "#E5E7EB",
-                maxWidth: "650px",
-                marginBottom: "40px",
-              }}
+              fontSize: isMobile ? "16px" : "20px",
+              lineHeight: 1.7,
+              color: "#E5E7EB",
+              maxWidth: "650px",
+              marginBottom: isMobile ? "30px" : "40px",
+            }}
             >
               Domestic Express • International Shipping • Air Cargo • Surface
               Cargo • Business Logistics • E-Commerce Solutions
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                gap: "20px",
-                flexWrap: "wrap",
-              }}
-            >
-      <Link
-  to="/?service=courier#booking"
-  style={{
-    background: "#1B3A2D",
-    color: "#fff",
-    padding: "18px 40px",
-    borderRadius: "50px",
-    textDecoration: "none",
-    fontWeight: "bold",
-    display: "inline-block",
-  }}
+          <div
+            style={{
+              display: "flex",
+              gap: "15px",
+              flexWrap: "wrap",
+              justifyContent: isMobile ? "center" : "flex-start",
+            }}
 >
-  Book Pickup
-</Link>
+        <Link
+          to="/?service=courier#booking"
+            style={{
+              background: "#1B3A2D",
+              color: "#fff",
+              padding: "18px 40px",
+              borderRadius: "50px",
+              textDecoration: "none",
+              fontWeight: "bold",
+              display: "inline-block",
+              padding: isMobile ? "14px 28px" : "18px 40px",
+              fontSize: isMobile ? "15px" : "16px",
+              marginBottom: isMobile ? "30px" : "40px",
+            }}
+>
+             Book Pickup
+        </Link>
               <a
                 href="https://www.dtdc.in/tracking/tracking_results.asp"
                 target="_blank"
@@ -151,36 +156,13 @@ export default function Logistics() {
                   borderRadius: "50px",
                   textDecoration: "none",
                   border: "1px solid rgba(255,255,255,.3)",
+                  padding: isMobile ? "14px 28px" : "18px 40px",
+                  fontSize: isMobile ? "15px" : "16px",
+                  marginBottom: isMobile ? "30px" : "40px",
                 }}
               >
                 Track Shipment
               </a>
-            </div>
-
-            {/* Stats */}
-
-            <div
-              style={{
-                display: "flex",
-                gap: "50px",
-                marginTop: "50px",
-                flexWrap: "wrap",
-              }}
-            >
-              <div>
-                <h2 style={{ color: "#FDB913", fontSize: "42px" }}>1000+</h2>
-                <p>Happy Customers</p>
-              </div>
-
-              <div>
-                <h2 style={{ color: "#FDB913", fontSize: "42px" }}>220+</h2>
-                <p>Countries</p>
-              </div>
-
-              <div>
-                <h2 style={{ color: "#FDB913", fontSize: "42px" }}>99%</h2>
-                <p>On-Time Delivery</p>
-              </div>
             </div>
           </div>
 
@@ -244,12 +226,12 @@ export default function Logistics() {
 
       {/* ================= ABOUT DTDC ================= */}
 
-<section
-  style={{
-    maxWidth: "1300px",
-    margin: "100px auto",
-    padding: "0 25px",
-  }}
+    <section
+      style={{
+        maxWidth: "1300px",
+        margin: "100px auto",
+        padding: "0 25px",
+      }}
 >
   <div
     style={{
