@@ -388,7 +388,8 @@ export default function TourPackagesPage() {
 <div
   style={{
     position: "relative",
-    height: isMobile ? "48vh" : "55vh",
+    height: isMobile ? "60vh" : "55vh",
+    minHeight: isMobile ? "560px" : "480px",
     minHeight: isMobile ? "480px" : "480px",
     overflow: "hidden",
     borderRadius: isMobile ? "24px" : "40px",
@@ -485,7 +486,8 @@ export default function TourPackagesPage() {
       <div
         style={{
           display: "inline-flex",
-          alignItems: "center",
+          alignItems: isMobile ? "start" : "center",
+          padding: isMobile ? "35px 20px 20px" : "28px 40px",
           gap: "10px",
           padding: "10px 22px",
           borderRadius: "999px",
@@ -496,7 +498,7 @@ export default function TourPackagesPage() {
           fontSize: "13px",
           letterSpacing: "2px",
           marginBottom: "20px",
-          marginTop: "60px",
+          marginTop: isMobile ? "25px" : "120px",
         }}
       >
         ✨ PREMIUM KASHMIR EXPERIENCES
@@ -523,9 +525,10 @@ export default function TourPackagesPage() {
         style={{
           color: "rgba(255,255,255,.92)",
           fontSize: isMobile ? "1rem" : "1.25rem",
-          lineHeight: "2",
+          lineHeight: "1.25",
           maxWidth: "620px",
           marginTop: "22px",
+          
         }}
       >
         Curated luxury holidays featuring premium hotels, elegant
