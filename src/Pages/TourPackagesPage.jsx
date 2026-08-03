@@ -489,6 +489,7 @@ export default function TourPackagesPage() {
           letterSpacing: "2px",
           fontWeight: 600,
           marginBottom: "24px",
+          marginTop: "24px"
         }}
       >
         ✨ PREMIUM KASHMIR EXPERIENCES
