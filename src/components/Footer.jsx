@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Leaf, Send, Check } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   Services: [
@@ -22,7 +23,7 @@ const footerLinks = {
   ],
   Legal: [
     { label: 'Terms of Service', href: '#' },
-    { label: 'Privacy Policy', href: '#' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Cargo Claims SLA', href: '#' },
     { label: 'Cookie Settings', href: '#' },
   ],
@@ -193,24 +194,49 @@ export default function Footer() {
                 {category}
               </h4>
               <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.href}
-                      style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: '0.82rem',
-                        color: 'rgba(244, 239, 230, 0.55)',
-                        textDecoration: 'none',
-                        transition: 'color 0.2s',
-                      }}
-                      onMouseEnter={(e) => { e.target.style.color = '#A8D5B5'; }}
-                      onMouseLeave={(e) => { e.target.style.color = 'rgba(244, 239, 230, 0.55)'; }}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+           {links.map((link, i) => (
+  <li key={i}>
+    {link.href.startsWith("/") ? (
+      <Link
+        to={link.href}
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: "0.82rem",
+          color: "rgba(244, 239, 230, 0.55)",
+          textDecoration: "none",
+          transition: "color 0.2s",
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.color = "#A8D5B5";
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.color = "rgba(244, 239, 230, 0.55)";
+        }}
+      >
+        {link.label}
+      </Link>
+    ) : (
+      <a
+        href={link.href}
+        style={{
+          fontFamily: "'Inter', sans-serif",
+          fontSize: "0.82rem",
+          color: "rgba(244, 239, 230, 0.55)",
+          textDecoration: "none",
+          transition: "color 0.2s",
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.color = "#A8D5B5";
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.color = "rgba(244, 239, 230, 0.55)";
+        }}
+      >
+        {link.label}
+      </a>
+    )}
+  </li>
+))}
               </ul>
             </div>
           ))}

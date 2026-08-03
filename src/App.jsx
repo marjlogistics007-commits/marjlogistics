@@ -20,6 +20,7 @@ import CustomItinerary from "./Pages/CustomItinerary";
 import { Link } from "react-router-dom";
 import Gallery from "./Pages/Gallery";
 import LogisticsPage from "./Pages/LogisticsPage";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 
 
@@ -77,6 +78,8 @@ function App() {
 
     </Routes>
 
+<FloatingWhatsApp />
+<Footer />
   </BrowserRouter>
 
   
