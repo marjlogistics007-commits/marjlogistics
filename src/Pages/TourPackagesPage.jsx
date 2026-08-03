@@ -388,16 +388,15 @@ export default function TourPackagesPage() {
 <div
   style={{
     position: "relative",
-    height: isMobile ? "auto" : "55vh",
-    minHeight: isMobile ? "820px" : "480px",
-    overflow: "visible",
-    paddingBottom: isMobile ? "30px" : "0",
-    borderRadius: isMobile ? "24px" : "40px",
-    marginBottom: "30px",
+    width: "100%",
+    minHeight: isMobile ? "980px" : "560px",
+    overflow: "hidden",
+    borderRadius: isMobile ? "22px" : "40px",
+    marginBottom: "40px",
     background: "#000",
   }}
 >
-  {/* Background */}
+  {/* Background Image */}
 
   <img
     src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?auto=format&fit=crop&w=2400&q=100"
@@ -406,34 +405,26 @@ export default function TourPackagesPage() {
       position: "absolute",
       inset: 0,
       width: "100%",
-      height: "auto",
-      alignItems: "center",
+      height: "100%",
       objectFit: "cover",
-      transform: "scale(1.20)",
-      filter: "brightness(.82) saturate(1.2)",
+      transform: "scale(1.12)",
+      filter: "brightness(.78) saturate(1.15)",
       animation: "heroZoom 35s ease-in-out infinite alternate",
     }}
   />
 
-  {/* Luxury Overlay */}
+  {/* Dark Overlay */}
 
   <div
     style={{
       position: "absolute",
       inset: 0,
-      background: `
-      linear-gradient(
-      480deg,
-      rgba(0,0,0,.18) 0%,
-      rgba(0,0,0,.32) 25%,
-      rgba(0,0,0,.55) 55%,
-      rgba(0,0,0,.82) 100%
-      )
-      `,
+      background:
+        "linear-gradient(110deg, rgba(0,0,0,.60) 0%, rgba(0,0,0,.42) 45%, rgba(0,0,0,.70) 100%)",
     }}
   />
 
-  {/* Golden Light */}
+  {/* Golden Glow */}
 
   <div
     style={{
@@ -441,65 +432,63 @@ export default function TourPackagesPage() {
       width: "700px",
       height: "700px",
       borderRadius: "50%",
+      top: "-220px",
+      right: "-180px",
+      filter: "blur(40px)",
       background:
-        "radial-gradient(circle,rgba(255,220,140,.28),transparent 60%)",
-      top: "-180px",
-      right: "-120px",
-      filter: "blur(15px)",
+        "radial-gradient(circle, rgba(255,210,120,.28), transparent 70%)",
     }}
   />
 
-  {/* Floating Blur */}
+  {/* Green Glow */}
 
   <div
     style={{
       position: "absolute",
-      width: isMobile ? "100%" : "550px",
-      maxWidth: "550px",
-      height: "auto",
+      width: "500px",
+      height: "500px",
       borderRadius: "50%",
+      bottom: "-220px",
+      left: "-150px",
+      filter: "blur(45px)",
       background:
-        "radial-gradient(circle,rgba(255, 60, 60, 0.15),transparent 70%)",
-      bottom: "-200px",
-      left: "-140px",
-      filter: "blur(40px)",
+        "radial-gradient(circle, rgba(50,140,100,.22), transparent 70%)",
     }}
   />
 
-  {/* Main Content */}
+  {/* Hero Content */}
 
   <div
     style={{
       position: "relative",
-      zIndex: 10,
-      maxWidth: "1350px",
+      zIndex: 5,
+      maxWidth: "1400px",
       margin: "0 auto",
-      height: "100%",
       display: "grid",
-      gridTemplateColumns: isMobile ? "1fr" : "1.1fr .9fr",
+      gridTemplateColumns: isMobile ? "1fr" : "1.15fr .85fr",
+      gap: isMobile ? "35px" : "50px",
       alignItems: "center",
-      padding: isMobile ? "20px" : "28px 40px",
-      gap: "30px",
+      padding: isMobile ? "45px 22px" : "70px 55px",
     }}
   >
-    {/* LEFT */}
+    {/* LEFT CONTENT */}
 
     <div>
       <div
         style={{
           display: "inline-flex",
-          alignItems: isMobile ? "start" : "center",
-          padding: isMobile ? "35px 20px 20px" : "28px 40px",
+          alignItems: "center",
           gap: "10px",
+          padding: "10px 20px",
           borderRadius: "999px",
-          background: "rgba(255,255,255,.12)",
-          backdropFilter: "blur(20px)",
+          background: "rgba(255,255,255,.10)",
+          backdropFilter: "blur(18px)",
           border: "1px solid rgba(255,255,255,.18)",
           color: "#fff",
-          fontSize: "13px",
+          fontSize: isMobile ? "12px" : "13px",
           letterSpacing: "2px",
-          marginBottom: "20px",
-          marginTop: isMobile ? "25px" : "120px",
+          fontWeight: 600,
+          marginBottom: "24px",
         }}
       >
         ✨ PREMIUM KASHMIR EXPERIENCES
@@ -508,13 +497,13 @@ export default function TourPackagesPage() {
       <h1
         style={{
           margin: 0,
-          color: "#fcfaf9",
+          color: "#fff",
           fontFamily: "'Cormorant Garamond', serif",
-          fontWeight: "600",
-          lineHeight: 1,
-          letterSpacing: "-3px",
-          fontSize: isMobile ? "2.2rem" : "4rem",
-          textShadow: "0 20px 45px rgba(0,0,0,.45)",
+          fontWeight: 600,
+          letterSpacing: "-2px",
+          lineHeight: 1.02,
+          textShadow: "0 10px 35px rgba(0,0,0,.45)",
+          fontSize: isMobile ? "2.7rem" : "4.6rem",
         }}
       >
         Kashmir Beyond
@@ -525,72 +514,68 @@ export default function TourPackagesPage() {
       <p
         style={{
           color: "rgba(255,255,255,.92)",
-          fontSize: isMobile ? "1rem" : "1.25rem",
-          lineHeight: "1.25",
+          marginTop: "24px",
           maxWidth: "620px",
-          marginTop: "22px",
-          
+          fontSize: isMobile ? "1.05rem" : "1.25rem",
+          lineHeight: 1.8,
         }}
       >
         Curated luxury holidays featuring premium hotels, elegant
         houseboats, private sightseeing, breathtaking Himalayan
-        landscapes, and unforgettable memories crafted exclusively
-        for discerning travelers.
+        landscapes and unforgettable memories crafted exclusively for
+        discerning travellers.
       </p>
-
       <div
         style={{
           display: "flex",
-          marginTop: isMobile ? "30px" : "0",
           flexWrap: "wrap",
-          gap: "18px",
-          marginTop: "45px",
+          gap: "16px",
+          marginTop: "35px",
         }}
       >
       </div>
     </div>
 
-    {/* RIGHT */}
+    {/* RIGHT CARD */}
 
     <div
       style={{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        marginTop: isMobile ? "25px" : "0",
       }}
     >
       <div
         style={{
-          width: isMobile ? "100%" : "550px",
-          height: isMobile ? "auto" : "350px",
-          padding: isMobile ? "18px" : "26px",
+          width: isMobile ? "100%" : "520px",
+          maxWidth: "520px",
           background: "rgba(255,255,255,.10)",
           backdropFilter: "blur(24px)",
           border: "1px solid rgba(255,255,255,.18)",
-          borderRadius: "35px",
-          boxShadow: "0 30px 60px rgba(0,0,0,.35)",
+          borderRadius: "30px",
+          padding: isMobile ? "18px" : "24px",
+          boxShadow: "0 25px 60px rgba(0,0,0,.35)",
         }}
       >
         <img
           src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=900&q=100"
-          alt=""
+          alt="Luxury Kashmir"
           style={{
             width: "100%",
-            height: isMobile ? "180px" : "180px",
+            height: isMobile ? "190px" : "220px",
             objectFit: "cover",
-            borderRadius: "40px",
+            borderRadius: "22px",
           }}
         />
 
         <h3
           style={{
             color: "#fff",
-            marginTop: "25px",
-            marginBottom: "5px",
-            fontSize: "28px",
-            fontFamily:
-              "'Cormorant Garamond', serif",
+            marginTop: "22px",
+            marginBottom: "10px",
+            fontSize: isMobile ? "1.8rem" : "2rem",
+            fontFamily: "'Cormorant Garamond', serif",
+            fontWeight: 600,
           }}
         >
           Luxury Escape
@@ -598,19 +583,50 @@ export default function TourPackagesPage() {
 
         <p
           style={{
-            color: "rgba(255,255,255,.82)",
-            lineHeight: "1.8",
-            marginBottom: "25px",
+            color: "rgba(255,255,255,.86)",
+            lineHeight: 1.8,
+            fontSize: isMobile ? "0.98rem" : "1.05rem",
+            marginBottom: "22px",
           }}
         >
-          Premium hotels, luxury transport, private guides,
-          unforgettable Himalayan scenery and personalized travel.
+          Experience Kashmir with premium hotels, luxury transport,
+          private sightseeing, personalized itineraries and breathtaking
+          Himalayan landscapes designed for unforgettable journeys.
         </p>
 
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2,1fr)",
+            gap: "12px",
+          }}
+        >
+          {[
+            "★★★★★ Luxury Hotels",
+            "🚗 Private Transport",
+            "🏔 Scenic Tours",
+            "🛎 24×7 Assistance",
+          ].map((item) => (
+            <div
+              key={item}
+              style={{
+                background: "rgba(255,255,255,.08)",
+                border: "1px solid rgba(255,255,255,.15)",
+                borderRadius: "14px",
+                padding: "12px",
+                color: "#fff",
+                fontSize: isMobile ? "13px" : "14px",
+                textAlign: "center",
+              }}
+            >
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
 {/* ================= PREMIUM QUICK FACTS ================= */}
 
