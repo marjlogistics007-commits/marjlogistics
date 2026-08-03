@@ -388,9 +388,10 @@ export default function TourPackagesPage() {
 <div
   style={{
     position: "relative",
-    height: isMobile ? "60vh" : "55vh",
-    minHeight: isMobile ? "560px" : "520px",
-    overflow: "hidden",
+    height: isMobile ? "auto" : "55vh",
+    minHeight: isMobile ? "820px" : "480px",
+    overflow: "visible",
+    paddingBottom: isMobile ? "30px" : "0",
     borderRadius: isMobile ? "24px" : "40px",
     marginBottom: "30px",
     background: "#000",
@@ -405,7 +406,8 @@ export default function TourPackagesPage() {
       position: "absolute",
       inset: 0,
       width: "100%",
-      height: "100%",
+      height: "auto",
+      alignItems: "center",
       objectFit: "cover",
       transform: "scale(1.20)",
       filter: "brightness(.82) saturate(1.2)",
@@ -452,8 +454,9 @@ export default function TourPackagesPage() {
   <div
     style={{
       position: "absolute",
-      width: "520px",
-      height: "520px",
+      width: isMobile ? "100%" : "550px",
+      maxWidth: "550px",
+      height: "auto",
       borderRadius: "50%",
       background:
         "radial-gradient(circle,rgba(255, 60, 60, 0.15),transparent 70%)",
@@ -538,6 +541,7 @@ export default function TourPackagesPage() {
       <div
         style={{
           display: "flex",
+          marginTop: isMobile ? "30px" : "0",
           flexWrap: "wrap",
           gap: "18px",
           marginTop: "45px",
@@ -573,7 +577,7 @@ export default function TourPackagesPage() {
           alt=""
           style={{
             width: "100%",
-            height: isMobile ? "160px" : "180px",
+            height: isMobile ? "180px" : "180px",
             objectFit: "cover",
             borderRadius: "40px",
           }}
