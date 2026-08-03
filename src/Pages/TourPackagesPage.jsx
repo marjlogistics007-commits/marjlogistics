@@ -489,7 +489,7 @@ export default function TourPackagesPage() {
           letterSpacing: "2px",
           fontWeight: 600,
           marginBottom: "24px",
-          marginTop: "24px"
+          marginTop: "96px"
         }}
       >
         ✨ PREMIUM KASHMIR EXPERIENCES
@@ -594,36 +594,6 @@ export default function TourPackagesPage() {
           private sightseeing, personalized itineraries and breathtaking
           Himalayan landscapes designed for unforgettable journeys.
         </p>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2,1fr)",
-            gap: "12px",
-          }}
-        >
-          {[
-            "★★★★★ Luxury Hotels",
-            "🚗 Private Transport",
-            "🏔 Scenic Tours",
-            "🛎 24×7 Assistance",
-          ].map((item) => (
-            <div
-              key={item}
-              style={{
-                background: "rgba(255,255,255,.08)",
-                border: "1px solid rgba(255,255,255,.15)",
-                borderRadius: "14px",
-                padding: "12px",
-                color: "#fff",
-                fontSize: isMobile ? "13px" : "14px",
-                textAlign: "center",
-              }}
-            >
-              {item}
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   </div>
