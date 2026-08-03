@@ -168,7 +168,7 @@ export default function Gallery() {
         textTransform: "uppercase",
         marginBottom: "28px",
         fontWeight: 600,
-        marginTop: "36px"
+        marginTop: "72px"
       }}
     >
       ✦ Marj Logistics ✦ 
