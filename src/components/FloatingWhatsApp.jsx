@@ -16,7 +16,7 @@ export default function FloatingWhatsApp() {
         display: "flex",
         alignItems: "center",
         gap: "10px",
-        background: "#25D366",
+        background: '#1B3A2D',
         color: "#fff",
         padding: "14px 18px",
         borderRadius: "50px",
