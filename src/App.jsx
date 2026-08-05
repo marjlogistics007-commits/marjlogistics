@@ -79,7 +79,6 @@ function App() {
     </Routes>
 
 <FloatingWhatsApp />
-<Footer />
   </BrowserRouter>
 
   

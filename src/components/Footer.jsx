@@ -83,8 +83,8 @@ export default function Footer() {
     <footer style={{
       backgroundColor: '#1B3A2D',
       borderTop: '1px solid rgba(74, 124, 89, 0.2)',
-      paddingTop: '80px',
-      paddingBottom: '40px',
+      paddingTop: '20px',
+      paddingBottom: '10px',
       position: 'relative',
       overflow: 'hidden',
     }}>
@@ -104,12 +104,12 @@ export default function Footer() {
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 1 }}>
         {/* Top: Brand + Newsletter */}
-        <div style={{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '64px', paddingBottom: '60px', borderBottom: '1px solid rgba(168, 213, 181, 0.1)' }}
+        <div style={{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '40px', paddingBottom: '35px', borderBottom: '1px solid rgba(168, 213, 181, 0.1)' }}
           className="footer-top">
           {/* Brand */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-              <img src="/logo.jpg" alt="MARJ Logistics Tour and Travel Logo" style={{ height: '52px', width: 'auto', objectFit: 'contain', borderRadius: '8px', padding: '2px', background: '#FFFFFF' }} />
+              <img src="/logo.jpg" alt="MARJ Logistics Tour and Travel Logo" style={{ height: '22px', width: 'auto', objectFit: 'contain', borderRadius: '8px', padding: '2px', background: '#FFFFFF' }} />
             </a>
             <p style={{
               fontFamily: "'Inter', sans-serif",
@@ -124,8 +124,8 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.3rem', fontWeight: 600, color: '#F4EFE6', margin: 0, lineHeight: 1.3 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.05rem', fontWeight: 600, color: '#F4EFE6', margin: 0, lineHeight: 1.3 }}>
               Subscribe to Exclusive Travel Alerts & Logistics Insights
             </h4>
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'rgba(244,239,230,0.5)', margin: 0, lineHeight: 1.6 }}>
@@ -140,7 +140,7 @@ export default function Footer() {
                 placeholder="Enter email address"
                 style={{
                   flex: 1,
-                  padding: '12px 16px',
+                  padding: '10px 14px',
                   borderRadius: '12px',
                   background: 'rgba(255,255,255,0.08)',
                   border: '1px solid rgba(168,213,181,0.2)',
@@ -156,7 +156,7 @@ export default function Footer() {
                 type="submit"
                 disabled={subscribed}
                 style={{
-                  padding: '12px 20px',
+                  padding: '10px 18px',
                   borderRadius: '12px',
                   background: subscribed ? 'rgba(45,90,61,0.5)' : '#D4865A',
                   color: 'white',
@@ -179,7 +179,7 @@ export default function Footer() {
         </div>
 
         {/* Middle: Links */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '32px', padding: '56px 0' }} className="footer-links">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', padding: '30px 0' }} className="footer-links">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <h4 style={{
@@ -193,7 +193,7 @@ export default function Footer() {
               }}>
                 {category}
               </h4>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
            {links.map((link, i) => (
   <li key={i}>
     {link.href.startsWith("/") ? (
@@ -245,7 +245,7 @@ export default function Footer() {
         {/* Bottom: Socials + Copyright */}
         <div style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          paddingTop: '28px',
+          paddingTop: '18px',
           borderTop: '1px solid rgba(168, 213, 181, 0.1)',
           flexWrap: 'wrap', gap: '16px',
         }}>
