@@ -1,258 +1,485 @@
-import React, { useState } from 'react';
-import { Leaf, Send, Check } from 'lucide-react';
+import React, { useState } from "react";
+import { Leaf, Send, Check, Truck, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const footerLinks = {
   Services: [
-    { label: 'Courier Dispatch', href: '#services' },
-    { label: 'Air Freight & Bulk', href: '#services' },
-    { label: 'Featured Tours', href: '#tours' },
-    { label: 'Flight Booking', href: '#booking' },
+    { label: "Courier Dispatch", href: "#services" },
+    { label: "Business Logistics", href: "#services" },
+    { label: "Shipment Tracking", href: "#logistics" },
+    { label: "Rate Estimator", href: "#logistics" },
   ],
+
   Company: [
-    { label: 'About Story', href: '#about' },
-    { label: 'Our Team', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Safety Standards', href: '#' },
+    { label: "About MARJ", href: "#about" },
+    { label: "Why Choose Us", href: "#why-choose-us" },
+    { label: "Customer Reviews", href: "#testimonials" },
+    { label: "Contact Us", href: "#contact" },
   ],
+
   Resources: [
-    { label: 'Help Center / FAQs', href: '#faq' },
-    { label: 'Rate Estimator', href: '#logistics' },
-    { label: 'Courier Tracking', href: '#logistics' },
-    { label: 'Documentation', href: '#' },
+    { label: "Help Center / FAQs", href: "#faq" },
+    { label: "Track Shipment", href: "#logistics" },
+    { label: "Courier Booking", href: "#booking" },
+    { label: "Delivery Support", href: "#contact" },
   ],
+
   Legal: [
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Privacy Policy', href: '/privacy-policy' },
-    { label: 'Cargo Claims SLA', href: '#' },
-    { label: 'Cookie Settings', href: '#' },
+    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Shipping Claims", href: "#" },
+    { label: "Cookie Settings", href: "#" },
   ],
 };
 
 const socialLinks = [
   {
-    label: 'Facebook',
-    url: 'https://www.facebook.com',
+    label: "Facebook",
+    url: "https://www.facebook.com",
     icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" />
       </svg>
     ),
   },
+
   {
-    label: 'Twitter',
+    label: "Instagram",
+    url: "https://www.instagram.com",
     icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
       </svg>
     ),
   },
-  {
-    label: 'Instagram',
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'LinkedIn',
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-      </svg>
-    ),
-  },
+
 ];
 
 export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
+
   const currentYear = new Date().getFullYear();
 
   const handleSubscribe = (e) => {
     e.preventDefault();
+
     if (!email.trim()) return;
+
     setSubscribed(true);
-    setEmail('');
+    setEmail("");
   };
 
   return (
-    <footer style={{
-      backgroundColor: '#1B3A2D',
-      borderTop: '1px solid rgba(74, 124, 89, 0.2)',
-      paddingTop: '20px',
-      paddingBottom: '10px',
-      position: 'relative',
-      overflow: 'hidden',
-    }}>
-      {/* Background accents */}
-      <div style={{
-        position: 'absolute', bottom: 0, left: 0,
-        width: '400px', height: '400px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(181,107,63,0.08) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
-      <div style={{
-        position: 'absolute', top: 0, right: 0,
-        width: '350px', height: '350px', borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(74,124,89,0.1) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
+    <footer
+      style={{
+        backgroundColor: "#1B3A2D",
+        borderTop: "1px solid rgba(74,124,89,0.2)",
+        paddingTop: "20px",
+        paddingBottom: "10px",
+        position: "relative",
+        overflow: "hidden",
+      }}
+    >
+      {/* Background Glow */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "400px",
+          height: "400px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(181,107,63,0.08) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
 
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 32px', position: 'relative', zIndex: 1 }}>
-        {/* Top: Brand + Newsletter */}
-        <div style={{ display: 'grid', gridTemplateColumns: '5fr 7fr', gap: '40px', paddingBottom: '35px', borderBottom: '1px solid rgba(168, 213, 181, 0.1)' }}
-          className="footer-top">
-          {/* Brand */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-              <img src="/logo.jpg" alt="MARJ Logistics Tour and Travel Logo" style={{ height: '22px', width: 'auto', objectFit: 'contain', borderRadius: '8px', padding: '2px', background: '#FFFFFF' }} />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: "350px",
+          height: "350px",
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, rgba(74,124,89,0.1) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+
+      <div
+        style={{
+          maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "0 32px",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* TOP */}
+        <div
+          className="footer-top"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "5fr 7fr",
+            gap: "40px",
+            paddingBottom: "35px",
+            borderBottom:
+              "1px solid rgba(168,213,181,0.1)",
+          }}
+        >
+          {/* BRAND */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+            }}
+          >
+            <a
+              href="#"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+              }}
+            >
+              <img
+                src="/logo.jpg"
+                alt="MARJ Logistics Logo"
+                style={{
+                  height: "32px",
+                  width: "auto",
+                  objectFit: "contain",
+                  borderRadius: "8px",
+                  padding: "2px",
+                  background: "#FFFFFF",
+                }}
+              />
             </a>
-            <p style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: '0.85rem',
-              color: 'rgba(244, 239, 230, 0.6)',
-              lineHeight: 1.75,
-              margin: 0,
-              maxWidth: '320px',
-            }}>
-              Experience modern, priority shipping networks and luxury customized holiday packages across India. Designed for reliability, built for speed.
+
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                marginTop: "4px",
+              }}
+            >
+              <Truck size={15} color="#A8D5B5" />
+
+              <span
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                  fontSize: "0.65rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: "#A8D5B5",
+                }}
+              >
+                Courier & Logistics
+              </span>
+            </div>
+
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "0.85rem",
+                color: "rgba(244,239,230,0.6)",
+                lineHeight: 1.75,
+                margin: 0,
+                maxWidth: "320px",
+              }}
+            >
+              Reliable courier and logistics solutions built
+              around speed, security, accountability, and
+              dependable customer service.
             </p>
           </div>
 
-          {/* Newsletter */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.05rem', fontWeight: 600, color: '#F4EFE6', margin: 0, lineHeight: 1.3 }}>
-              Subscribe to Exclusive Travel Alerts & Logistics Insights
-            </h4>
-            <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.8rem', color: 'rgba(244,239,230,0.5)', margin: 0, lineHeight: 1.6 }}>
-              Stay up to date with seasonal flight deals, tour itinerary releases, and shipping rate adjustments.
+          {/* NEWSLETTER */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <ShieldCheck size={16} color="#A8D5B5" />
+
+              <h4
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', serif",
+                  fontSize: "1.05rem",
+                  fontWeight: 600,
+                  color: "#F4EFE6",
+                  margin: 0,
+                  lineHeight: 1.3,
+                }}
+              >
+                Stay Connected With MARJ
+              </h4>
+            </div>
+
+            <p
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "0.8rem",
+                color: "rgba(244,239,230,0.5)",
+                margin: 0,
+                lineHeight: 1.6,
+              }}
+            >
+              Receive logistics updates, service information,
+              delivery tips, and important announcements from
+              MARJ.
             </p>
-            <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '10px', maxWidth: '440px' }}>
+
+            <form
+              onSubmit={handleSubscribe}
+              style={{
+                display: "flex",
+                gap: "10px",
+                maxWidth: "440px",
+              }}
+            >
               <input
                 type="email"
                 required
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) =>
+                  setEmail(e.target.value)
+                }
                 placeholder="Enter email address"
                 style={{
                   flex: 1,
-                  padding: '10px 14px',
-                  borderRadius: '12px',
-                  background: 'rgba(255,255,255,0.08)',
-                  border: '1px solid rgba(168,213,181,0.2)',
-                  color: '#F4EFE6',
+                  padding: "10px 14px",
+                  borderRadius: "12px",
+                  background:
+                    "rgba(255,255,255,0.08)",
+                  border:
+                    "1px solid rgba(168,213,181,0.2)",
+                  color: "#F4EFE6",
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: '0.82rem',
-                  outline: 'none',
+                  fontSize: "0.82rem",
+                  outline: "none",
                 }}
-                onFocus={(e) => { e.target.style.borderColor = 'rgba(168,213,181,0.45)'; }}
-                onBlur={(e) => { e.target.style.borderColor = 'rgba(168,213,181,0.2)'; }}
+                onFocus={(e) => {
+                  e.target.style.borderColor =
+                    "rgba(168,213,181,0.45)";
+                }}
+                onBlur={(e) => {
+                  e.target.style.borderColor =
+                    "rgba(168,213,181,0.2)";
+                }}
               />
+
               <button
                 type="submit"
                 disabled={subscribed}
                 style={{
-                  padding: '10px 18px',
-                  borderRadius: '12px',
-                  background: subscribed ? 'rgba(45,90,61,0.5)' : '#D4865A',
-                  color: 'white',
+                  padding: "10px 18px",
+                  borderRadius: "12px",
+                  background: subscribed
+                    ? "rgba(45,90,61,0.5)"
+                    : "#D4865A",
+                  color: "white",
                   fontFamily: "'Inter', sans-serif",
-                  fontSize: '0.75rem',
+                  fontSize: "0.75rem",
                   fontWeight: 600,
-                  border: 'none',
-                  cursor: subscribed ? 'default' : 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  transition: 'background 0.25s',
+                  border: "none",
+                  cursor: subscribed
+                    ? "default"
+                    : "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  transition: "background 0.25s",
                   flexShrink: 0,
                 }}
               >
-                {subscribed ? (<><Check size={13} /><span>Subscribed</span></>) : (<><span>Join List</span><Send size={12} /></>)}
+                {subscribed ? (
+                  <>
+                    <Check size={13} />
+                    <span>Subscribed</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Join List</span>
+                    <Send size={12} />
+                  </>
+                )}
               </button>
             </form>
           </div>
         </div>
 
-        {/* Middle: Links */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', padding: '30px 0' }} className="footer-links">
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <h4 style={{
-                fontFamily: "'Inter', sans-serif",
-                fontSize: '0.62rem',
-                fontWeight: 700,
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                color: '#7FAF8A',
-                margin: 0,
-              }}>
-                {category}
-              </h4>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '6px' }}>
-           {links.map((link, i) => (
-  <li key={i}>
-    {link.href.startsWith("/") ? (
-      <Link
-        to={link.href}
-        style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: "0.82rem",
-          color: "rgba(244, 239, 230, 0.55)",
-          textDecoration: "none",
-          transition: "color 0.2s",
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.color = "#A8D5B5";
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.color = "rgba(244, 239, 230, 0.55)";
-        }}
-      >
-        {link.label}
-      </Link>
-    ) : (
-      <a
-        href={link.href}
-        style={{
-          fontFamily: "'Inter', sans-serif",
-          fontSize: "0.82rem",
-          color: "rgba(244, 239, 230, 0.55)",
-          textDecoration: "none",
-          transition: "color 0.2s",
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.color = "#A8D5B5";
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.color = "rgba(244, 239, 230, 0.55)";
-        }}
-      >
-        {link.label}
-      </a>
-    )}
-  </li>
-))}
-              </ul>
-            </div>
-          ))}
+        {/* LINKS */}
+        <div
+          className="footer-links"
+          style={{
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(4, 1fr)",
+            gap: "20px",
+            padding: "30px 0",
+          }}
+        >
+          {Object.entries(footerLinks).map(
+            ([category, links]) => (
+              <div
+                key={category}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "16px",
+                }}
+              >
+                <h4
+                  style={{
+                    fontFamily:
+                      "'Inter', sans-serif",
+                    fontSize: "0.62rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    color: "#7FAF8A",
+                    margin: 0,
+                  }}
+                >
+                  {category}
+                </h4>
+
+                <ul
+                  style={{
+                    listStyle: "none",
+                    margin: 0,
+                    padding: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "7px",
+                  }}
+                >
+                  {links.map((link, i) => (
+                    <li key={i}>
+                      {link.href.startsWith("/") ? (
+                        <Link
+                          to={link.href}
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontSize: "0.82rem",
+                            color:
+                              "rgba(244,239,230,0.55)",
+                            textDecoration: "none",
+                            transition:
+                              "color 0.2s",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.color =
+                              "#A8D5B5";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.color =
+                              "rgba(244,239,230,0.55)";
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={link.href}
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                            fontSize: "0.82rem",
+                            color:
+                              "rgba(244,239,230,0.55)",
+                            textDecoration: "none",
+                            transition:
+                              "color 0.2s",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.color =
+                              "#A8D5B5";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.color =
+                              "rgba(244,239,230,0.55)";
+                          }}
+                        >
+                          {link.label}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          )}
         </div>
 
-        {/* Bottom: Socials + Copyright */}
-        <div style={{
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          paddingTop: '18px',
-          borderTop: '1px solid rgba(168, 213, 181, 0.1)',
-          flexWrap: 'wrap', gap: '16px',
-        }}>
-          <p style={{ fontFamily: "'Inter', sans-serif", fontSize: '0.75rem', color: 'rgba(244, 239, 230, 0.4)', margin: 0 }}>
-            © {currentYear} MARJ LOGISTICS PVT LTD. All rights reserved.
+        {/* BOTTOM */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            paddingTop: "18px",
+            borderTop:
+              "1px solid rgba(168,213,181,0.1)",
+            flexWrap: "wrap",
+            gap: "16px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "0.75rem",
+              color:
+                "rgba(244,239,230,0.4)",
+              margin: 0,
+            }}
+          >
+            © {currentYear} MARJ LOGISTICS PVT LTD.
+            All rights reserved.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -261,23 +488,36 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={social.label}
                 style={{
-                  width: '34px', height: '34px', borderRadius: '10px',
-                  background: 'rgba(255,255,255,0.05)',
-                  border: '1px solid rgba(168,213,181,0.12)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'rgba(244,239,230,0.6)',
-                  textDecoration: 'none',
-                  transition: 'all 0.25s',
+                  width: "34px",
+                  height: "34px",
+                  borderRadius: "10px",
+                  background:
+                    "rgba(255,255,255,0.05)",
+                  border:
+                    "1px solid rgba(168,213,181,0.12)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color:
+                    "rgba(244,239,230,0.6)",
+                  textDecoration: "none",
+                  transition: "all 0.25s",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(168,213,181,0.4)';
-                  e.currentTarget.style.color = '#A8D5B5';
-                  e.currentTarget.style.background = 'rgba(168,213,181,0.1)';
+                  e.currentTarget.style.borderColor =
+                    "rgba(168,213,181,0.4)";
+                  e.currentTarget.style.color =
+                    "#A8D5B5";
+                  e.currentTarget.style.background =
+                    "rgba(168,213,181,0.1)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(168,213,181,0.12)';
-                  e.currentTarget.style.color = 'rgba(244,239,230,0.6)';
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                  e.currentTarget.style.borderColor =
+                    "rgba(168,213,181,0.12)";
+                  e.currentTarget.style.color =
+                    "rgba(244,239,230,0.6)";
+                  e.currentTarget.style.background =
+                    "rgba(255,255,255,0.05)";
                 }}
               >
                 {social.icon}
@@ -289,11 +529,27 @@ export default function Footer() {
 
       <style>{`
         @media (max-width: 1023px) {
-          .footer-top { grid-template-columns: 1fr !important; }
-          .footer-links { grid-template-columns: repeat(2, 1fr) !important; }
+          .footer-top {
+            grid-template-columns: 1fr !important;
+          }
+
+          .footer-links {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
         }
+
         @media (max-width: 640px) {
-          .footer-links { grid-template-columns: 1fr !important; }
+          .footer-links {
+            grid-template-columns: 1fr !important;
+          }
+
+          .footer-top form {
+            flex-direction: column !important;
+          }
+
+          .footer-top form button {
+            justify-content: center !important;
+          }
         }
       `}</style>
     </footer>

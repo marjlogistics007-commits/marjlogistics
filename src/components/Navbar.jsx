@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { ArrowRight } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const menuItems = [
   { name: "Home", path: "/" },
   { name: "About", path: "/#about" },
   { name: "Services", path: "/#services" },
-  { name: "Tour Packages", path: "/packages" },
   { name: "Logistics", path: "/logistics" },
   { name: "Gallery", path: "/gallery" },
   { name: "FAQs", path: "/#faq" },
@@ -15,20 +13,17 @@ const menuItems = [
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  /* =========================================
-     SCROLL
-  ========================================== */
-
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
+
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
@@ -37,25 +32,7 @@ export default function Navbar() {
     };
   }, []);
 
-  /* =========================================
-     LOCK BODY SCROLL
-  ========================================== */
-
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
-  /* =========================================
-     NAVIGATION
-  ========================================== */
-
   const handleNavigation = (path) => {
-    setIsOpen(false);
-
     const [pathname, hash] = path.split("#");
 
     if (hash) {
@@ -96,13 +73,7 @@ export default function Navbar() {
     });
   };
 
-  /* =========================================
-     BOOK SERVICE
-  ========================================== */
-
   const handleBooking = () => {
-    setIsOpen(false);
-
     navigate("/?service=courier#booking");
 
     setTimeout(() => {
@@ -117,34 +88,38 @@ export default function Navbar() {
     }, 500);
   };
 
+  const isActive = (path) => {
+    const [pathname, hash] = path.split("#");
+
+    if (hash) {
+      if (location.pathname !== (pathname || "/")) {
+        return false;
+      }
+
+      return window.location.hash === `#${hash}`;
+    }
+
+    if (path === "/") {
+      return location.pathname === "/" && !window.location.hash;
+    }
+
+    return location.pathname === path;
+  };
+
   return (
     <>
-      {/* =========================================
-          MAIN NAVBAR
-      ========================================== */}
-
-      <motion.nav
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          ease: [0.16, 1, 0.3, 1],
-        }}
-        className={`premium-navbar ${
-          isScrolled ? "navbar-scrolled" : ""
+      <nav
+        className={`compact-navbar ${
+          isScrolled ? "compact-navbar-scrolled" : ""
         }`}
       >
-        <div className="navbar-inner">
+        <div className="compact-navbar-inner">
 
-          {/* =====================================
-              LOGO
-          ====================================== */}
-
+          {/* LOGO */}
           <Link
             to="/"
-            className="logo-area"
+            className="compact-logo"
             onClick={() => {
-              setIsOpen(false);
               window.scrollTo({
                 top: 0,
                 behavior: "smooth",
@@ -153,898 +128,502 @@ export default function Navbar() {
           >
             <img
               src="/logo.jpg"
-              alt="MARJ Logistics Tour and Travel"
-              className="navbar-logo"
+              alt="MARJ Logistics"
             />
 
-            <span className="navbar-title">
-              MARJ LOGISTICS
-            </span>
+            <span>MARJ LOGISTICS</span>
           </Link>
 
-          {/* =====================================
-              HAMBURGER
-          ====================================== */}
+          {/* MENU */}
+          <div className="compact-menu">
+            {menuItems.map((item) => (
+              <button
+                key={item.name}
+                type="button"
+                className={
+                  isActive(item.path)
+                    ? "compact-menu-link active"
+                    : "compact-menu-link"
+                }
+                onClick={() =>
+                  handleNavigation(item.path)
+                }
+              >
+                {item.name}
+              </button>
+            ))}
 
-          <button
-            className={`hamburger-button ${
-              isOpen ? "hamburger-open" : ""
-            }`}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={
-              isOpen ? "Close menu" : "Open menu"
-            }
-          >
-            {isOpen ? (
-              <X size={28} strokeWidth={1.5} />
-            ) : (
-              <Menu size={28} strokeWidth={1.5} />
-            )}
-          </button>
-
-        </div>
-      </motion.nav>
-
-      {/* =========================================
-          MENU
-      ========================================== */}
-
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            {/* BACKDROP */}
-
-            <motion.div
-              className="menu-backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              onClick={() => setIsOpen(false)}
-            />
-
-            {/* =====================================
-                MENU PANEL
-            ====================================== */}
-
-            <motion.div
-              className="menu-panel"
-              initial={{
-                opacity: 0,
-                y: -20,
-                scale: 0.97,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-                scale: 0.97,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: [0.16, 1, 0.3, 1],
-              }}
+            {/* BOOK BUTTON */}
+            <button
+              type="button"
+              className="compact-book"
+              onClick={handleBooking}
             >
+              Book
+              <ArrowRight size={13} />
+            </button>
+          </div>
+        </div>
+      </nav>
 
-              {/* MENU TOP */}
-
-              <div className="menu-panel-header">
-
-                <div>
-                  <div className="menu-label">
-                    NAVIGATION
-                  </div>
-
-                  <div className="menu-title">
-                    Explore
-                  </div>
-                </div>
-
-                <button
-                  className="menu-close"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <X size={23} strokeWidth={1.5} />
-                </button>
-
-              </div>
-
-              {/* MENU ITEMS */}
-
-              <div className="menu-items">
-
-                {menuItems.map((item, index) => (
-                  <motion.button
-                    key={item.name}
-                    className="menu-item"
-                    onClick={() =>
-                      handleNavigation(item.path)
-                    }
-                    initial={{
-                      opacity: 0,
-                      x: -15,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      delay: 0.04 * index,
-                      duration: 0.25,
-                    }}
-                  >
-                    <span>
-                      {item.name}
-                    </span>
-
-                    <ArrowRight
-                      size={17}
-                      strokeWidth={1.5}
-                    />
-                  </motion.button>
-                ))}
-
-              </div>
-
-              {/* BOOK BUTTON */}
-
-              <div className="menu-bottom">
-
-                <button
-                  className="book-button"
-                  onClick={handleBooking}
-                >
-                  <span>
-                    Book a Service
-                  </span>
-
-                  <ArrowRight
-                    size={17}
-                    strokeWidth={1.5}
-                  />
-                </button>
-
-              </div>
-
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
-
-      {/* =========================================
-          CSS
-      ========================================== */}
+      <div className="compact-navbar-space" />
 
       <style>{`
 
-        /* =========================================
-           NAVBAR
-        ========================================== */
+        /* =====================================================
+           COMPACT PREMIUM NAVBAR
+        ===================================================== */
 
-        .premium-navbar {
+        .compact-navbar {
           position: fixed;
-
           top: 0;
           left: 0;
 
           width: 100%;
-
-          height: 98px;
+          height: 68px;
 
           z-index: 9999;
 
-          background:
-            linear-gradient(
-              180deg,
-              #1B3A2D 0%,
-              rgba(27, 58, 45, 0.72) 38%,
-              rgba(244, 238, 222, 0.96) 100%
-            );
+          background: rgba(244, 239, 230, 0.94);
 
-          border-top:
+          border-bottom:
             1px solid
-            rgba(255,255,255,0.25);
+            rgba(27, 58, 45, 0.09);
+
+          box-sizing: border-box;
 
           transition:
-            height 0.3s ease,
-            box-shadow 0.3s ease,
-            backdrop-filter 0.3s ease;
+            height 0.25s ease,
+            background 0.25s ease,
+            box-shadow 0.25s ease;
 
-          box-sizing:
-            border-box;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
         }
 
-        .navbar-scrolled {
-          height: 86px;
+        .compact-navbar-scrolled {
+          height: 60px;
 
-          backdrop-filter:
-            blur(14px);
-
-          -webkit-backdrop-filter:
-            blur(14px);
+          background:
+            rgba(244, 239, 230, 0.97);
 
           box-shadow:
-            0 5px 25px
-            rgba(27,58,45,0.12);
+            0 6px 24px
+            rgba(27, 58, 45, 0.09);
         }
 
-        /* =========================================
+        /* =====================================================
            INNER
-        ========================================== */
+        ===================================================== */
 
-        .navbar-inner {
+        .compact-navbar-inner {
           width: 100%;
-
           height: 100%;
 
           padding:
-            0 40px;
+            0 28px;
 
           display: flex;
-
           align-items: center;
-
           justify-content: space-between;
 
-          box-sizing:
-            border-box;
+          gap: 25px;
+
+          box-sizing: border-box;
         }
 
-        /* =========================================
-           LOGO AREA
-        ========================================== */
+        /* =====================================================
+           LOGO
+        ===================================================== */
 
-        .logo-area {
+        .compact-logo {
           display: flex;
-
           align-items: center;
 
-          gap: 27px;
+          gap: 10px;
 
-          text-decoration: none;
+          flex-shrink: 0;
 
           height: 100%;
+
+          text-decoration: none;
         }
 
-        .navbar-logo {
-          width: 78px;
-
-          height: 78px;
+        .compact-logo img {
+          width: 44px;
+          height: 44px;
 
           object-fit: contain;
 
           display: block;
 
-          background: #ffffff;
+          background: #fff;
 
-          flex-shrink: 0;
+          border-radius: 3px;
+
+          transition:
+            width 0.25s ease,
+            height 0.25s ease;
         }
 
-        .navbar-title {
+        .compact-navbar-scrolled
+        .compact-logo img {
+          width: 39px;
+          height: 39px;
+        }
+
+        .compact-logo span {
+          color: #1B3A2D;
+
           font-family:
             "Times New Roman",
             Times,
             serif;
 
-          font-size:
-            clamp(2rem, 3vw, 3rem);
+          font-size: 1.15rem;
 
-          font-weight:
-            500;
+          font-weight: 600;
 
-          letter-spacing:
-            0.035em;
+          letter-spacing: 0.025em;
+
+          white-space: nowrap;
+        }
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        .compact-menu {
+          display: flex;
+
+          align-items: center;
+
+          justify-content: flex-end;
+
+          gap: 1px;
+
+          min-width: 0;
+        }
+
+        /* =====================================================
+           MENU LINKS
+        ===================================================== */
+
+        .compact-menu-link {
+          position: relative;
+
+          padding:
+            7px 9px;
+
+          border: none;
+
+          background: transparent;
+
+          color: #4D5A53;
+
+          font-family:
+            Arial,
+            sans-serif;
+
+          font-size: 12px;
+
+          font-weight: 600;
+
+          white-space: nowrap;
+
+          cursor: pointer;
+
+          transition:
+            color 0.2s ease;
+        }
+
+        .compact-menu-link::after {
+          content: "";
+
+          position: absolute;
+
+          left: 9px;
+          right: 9px;
+
+          bottom: 1px;
+
+          height: 1.5px;
+
+          background: #D4AF37;
+
+          transform:
+            scaleX(0);
+
+          transition:
+            transform 0.2s ease;
+        }
+
+        .compact-menu-link:hover {
+          color: #1B3A2D;
+        }
+
+        .compact-menu-link:hover::after,
+        .compact-menu-link.active::after {
+          transform:
+            scaleX(1);
+        }
+
+        .compact-menu-link.active {
+          color: #1B3A2D;
+        }
+
+        /* =====================================================
+           BOOK BUTTON
+        ===================================================== */
+
+        .compact-book {
+          height: 34px;
+
+          margin-left: 8px;
+
+          padding:
+            0 13px;
+
+          display: inline-flex;
+
+          align-items: center;
+          justify-content: center;
+
+          gap: 5px;
+
+          border:
+            1px solid
+            #1B3A2D;
+
+          border-radius:
+            999px;
+
+          background:
+            #1B3A2D;
 
           color:
-            #1B3A2D;
+            #F7F4EC;
+
+          font-family:
+            Arial,
+            sans-serif;
+
+          font-size:
+            11px;
+
+          font-weight:
+            700;
+
+          cursor:
+            pointer;
 
           white-space:
             nowrap;
 
-          line-height:
-            1;
-        }
-
-        /* =========================================
-           HAMBURGER
-        ========================================== */
-
-        .hamburger-button {
-          width: 56px;
-
-          height: 56px;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-          border:
-            1px solid
-            rgba(27,58,45,0.18);
-
-          border-radius:
-            50%;
-
-          background:
-            rgba(247,244,236,0.70);
-
-          color:
-            #1B3A2D;
-
-          cursor:
-            pointer;
-
-          backdrop-filter:
-            blur(8px);
-
-          -webkit-backdrop-filter:
-            blur(8px);
-
           transition:
-            all 0.25s ease;
+            all 0.2s ease;
         }
 
-        .hamburger-button:hover {
+        .compact-book:hover {
           background:
             #D4AF37;
 
           border-color:
             #D4AF37;
 
-          transform:
-            scale(1.05);
-        }
-
-        .hamburger-open {
-          background:
-            #D4AF37;
-
-          border-color:
-            #D4AF37;
-        }
-
-        /* =========================================
-           BACKDROP
-        ========================================== */
-
-        .menu-backdrop {
-          position: fixed;
-
-          inset: 0;
-
-          z-index: 9990;
-
-          background:
-            rgba(20,35,28,0.28);
-
-          backdrop-filter:
-            blur(3px);
-
-          -webkit-backdrop-filter:
-            blur(3px);
-        }
-
-        /* =========================================
-           MENU PANEL
-        ========================================== */
-
-        .menu-panel {
-          position: fixed;
-
-          top: 112px;
-
-          right: 40px;
-
-          width: 380px;
-
-          max-height:
-            calc(100vh - 140px);
-
-          overflow-y:
-            auto;
-
-          z-index: 9995;
-
-          padding: 27px;
-
-          background:
-            rgba(248,246,239,0.98);
-
-          border:
-            1px solid
-            rgba(27,58,45,0.12);
-
-          border-radius:
-            18px;
-
-          box-shadow:
-            0 25px 70px
-            rgba(27,58,45,0.20);
-
-          backdrop-filter:
-            blur(22px);
-
-          -webkit-backdrop-filter:
-            blur(22px);
-
-          box-sizing:
-            border-box;
-        }
-
-        /* =========================================
-           MENU HEADER
-        ========================================== */
-
-        .menu-panel-header {
-          display:
-            flex;
-
-          align-items:
-            center;
-
-          justify-content:
-            space-between;
-
-          padding-bottom:
-            20px;
-
-          border-bottom:
-            1px solid
-            rgba(27,58,45,0.10);
-        }
-
-        .menu-label {
-          font-family:
-            "Inter",
-            Arial,
-            sans-serif;
-
-          font-size:
-            0.58rem;
-
-          font-weight:
-            600;
-
-          letter-spacing:
-            0.25em;
-
-          color:
-            #A48645;
-
-          text-transform:
-            uppercase;
-
-          margin-bottom:
-            5px;
-        }
-
-        .menu-title {
-          font-family:
-            "Times New Roman",
-            Times,
-            serif;
-
-          font-size:
-            1.9rem;
-
           color:
             #1B3A2D;
-
-          font-weight:
-            500;
         }
 
-        /* =========================================
-           CLOSE
-        ========================================== */
+        /* =====================================================
+           SPACER
+        ===================================================== */
 
-        .menu-close {
-          width: 42px;
-
-          height: 42px;
-
-          display: flex;
-
-          align-items: center;
-
-          justify-content: center;
-
-          border:
-            1px solid
-            rgba(27,58,45,0.15);
-
-          border-radius:
-            50%;
-
-          background:
-            transparent;
-
-          color:
-            #1B3A2D;
-
-          cursor:
-            pointer;
-
-          transition:
-            all 0.25s ease;
+        .compact-navbar-space {
+          height: 68px;
         }
 
-        .menu-close:hover {
-          background:
-            #1B3A2D;
-
-          color:
-            #F7F4EC;
-
-          transform:
-            rotate(90deg);
-        }
-
-        /* =========================================
-           MENU ITEMS
-        ========================================== */
-
-        .menu-items {
-          display:
-            flex;
-
-          flex-direction:
-            column;
-        }
-
-        .menu-item {
-          width: 100%;
-
-          min-height: 55px;
-
-          padding:
-            10px 4px;
-
-          display:
-            flex;
-
-          align-items:
-            center;
-
-          justify-content:
-            space-between;
-
-          border:
-            none;
-
-          border-bottom:
-            1px solid
-            rgba(27,58,45,0.08);
-
-          background:
-            transparent;
-
-          color:
-            #1B3A2D;
-
-          cursor:
-            pointer;
-
-          text-align:
-            left;
-
-          transition:
-            color 0.25s ease,
-            padding 0.25s ease;
-        }
-
-        .menu-item:hover {
-          color:
-            #A48645;
-
-          padding-left:
-            10px;
-        }
-
-        .menu-item span {
-          font-family:
-            "Times New Roman",
-            Times,
-            serif;
-
-          font-size:
-            1.15rem;
-
-          font-weight:
-            500;
-
-          letter-spacing:
-            0.02em;
-        }
-
-        .menu-item svg {
-          opacity:
-            0.35;
-
-          transition:
-            all 0.25s ease;
-        }
-
-        .menu-item:hover svg {
-          opacity:
-            1;
-
-          transform:
-            translateX(4px);
-        }
-
-        /* =========================================
-           BOOK BUTTON
-        ========================================== */
-
-        .menu-bottom {
-          padding-top:
-            22px;
-        }
-
-        .book-button {
-          width: 100%;
-
-          height: 52px;
-
-          display:
-            flex;
-
-          align-items:
-            center;
-
-          justify-content:
-            center;
-
-          gap:
-            12px;
-
-          border:
-            none;
-
-          border-radius:
-            4px;
-
-          background:
-            #1B3A2D;
-
-          color:
-            #F7F4EC;
-
-          cursor:
-            pointer;
-
-          font-family:
-            "Inter",
-            Arial,
-            sans-serif;
-
-          font-size:
-            0.65rem;
-
-          font-weight:
-            600;
-
-          letter-spacing:
-            0.15em;
-
-          text-transform:
-            uppercase;
-
-          transition:
-            all 0.25s ease;
-        }
-
-        .book-button:hover {
-          background:
-            #D4AF37;
-
-          color:
-            #1B3A2D;
-
-          transform:
-            translateY(-2px);
-        }
-
-        /* =========================================
+        /* =====================================================
            TABLET
-        ========================================== */
+        ===================================================== */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1050px) {
 
-          .premium-navbar {
-            height:
-              88px;
-          }
-
-          .navbar-scrolled {
-            height:
-              78px;
-          }
-
-          .navbar-inner {
+          .compact-navbar-inner {
             padding:
-              0 25px;
-          }
+              0 20px;
 
-          .navbar-logo {
-            width:
-              68px;
-
-            height:
-              68px;
-          }
-
-          .logo-area {
             gap:
-              18px;
+              15px;
           }
 
-          .navbar-title {
+          .compact-logo span {
             font-size:
-              2rem;
+              1.05rem;
           }
 
-          .hamburger-button {
-            width:
-              50px;
+          .compact-menu-link {
+            padding:
+              7px 6px;
 
-            height:
-              50px;
+            font-size:
+              11px;
           }
 
-          .menu-panel {
-            top:
-              100px;
+          .compact-menu-link::after {
+            left:
+              6px;
 
             right:
-              25px;
+              6px;
+          }
+
+          .compact-book {
+            margin-left:
+              5px;
+
+            padding:
+              0 11px;
           }
         }
 
-        /* =========================================
+        /* =====================================================
            MOBILE
-        ========================================== */
+        ===================================================== */
 
-        @media (max-width: 600px) {
+        @media (max-width: 760px) {
 
-          .premium-navbar {
+          .compact-navbar {
             height:
-              76px;
+              62px;
           }
 
-          .navbar-scrolled {
+          .compact-navbar-scrolled {
             height:
-              70px;
-          }
-
-          .navbar-inner {
-            padding:
-              0 16px;
-          }
-
-          .navbar-logo {
-            width:
-              55px;
-
-            height:
-              55px;
-          }
-
-          .logo-area {
-            gap:
-              12px;
-          }
-
-          .navbar-title {
-            font-size:
-              1.45rem;
-
-            letter-spacing:
-              0.025em;
-          }
-
-          .hamburger-button {
-            width:
-              45px;
-
-            height:
-              45px;
-          }
-
-          /* Fullscreen menu on mobile */
-
-          .menu-panel {
-            top:
-              0;
-
-            right:
-              0;
-
-            width:
-              100%;
-
-            height:
-              100vh;
-
-            max-height:
-              none;
-
-            padding:
-              24px 20px;
-
-            border:
-              none;
-
-            border-radius:
-              0;
-
-            background:
-              #F7F4EC;
-
-            box-shadow:
-              none;
-          }
-
-          .menu-panel-header {
-            padding-bottom:
-              18px;
-          }
-
-          .menu-title {
-            font-size:
-              1.7rem;
-          }
-
-          .menu-item {
-            min-height:
               58px;
           }
 
-          .menu-item span {
-            font-size:
-              1.35rem;
+          .compact-navbar-inner {
+            padding:
+              0 12px;
+
+            gap:
+              10px;
           }
 
-          .menu-bottom {
-            padding-top:
+          .compact-logo {
+            gap:
+              7px;
+          }
+
+          .compact-logo img {
+            width:
+              38px;
+
+            height:
+              38px;
+          }
+
+          .compact-navbar-scrolled
+          .compact-logo img {
+            width:
+              35px;
+
+            height:
+              35px;
+          }
+
+          .compact-logo span {
+            font-size:
+              0.85rem;
+          }
+
+          .compact-menu {
+            overflow-x:
+              auto;
+
+            justify-content:
+              flex-start;
+
+            scrollbar-width:
+              none;
+
+            -ms-overflow-style:
+              none;
+          }
+
+          .compact-menu::-webkit-scrollbar {
+            display:
+              none;
+          }
+
+          .compact-menu-link {
+            padding:
+              6px 7px;
+
+            font-size:
+              10px;
+          }
+
+          .compact-menu-link::after {
+            left:
+              7px;
+
+            right:
+              7px;
+          }
+
+          .compact-book {
+            height:
               30px;
+
+            padding:
+              0 10px;
+
+            font-size:
+              10px;
+
+            flex-shrink:
+              0;
+          }
+
+          .compact-navbar-space {
+            height:
+              62px;
           }
         }
 
-        /* =========================================
-           SMALL PHONES
-        ========================================== */
+        /* =====================================================
+           VERY SMALL MOBILE
+        ===================================================== */
 
-        @media (max-width: 400px) {
+        @media (max-width: 480px) {
 
-          .navbar-title {
+          .compact-logo span {
+            display:
+              none;
+          }
+
+          .compact-logo img {
+            width:
+              37px;
+
+            height:
+              37px;
+          }
+
+          .compact-menu-link {
+            padding:
+              6px;
+
             font-size:
-              1.25rem;
+              9.5px;
           }
 
-          .navbar-logo {
-            width:
-              50px;
-
-            height:
-              50px;
+          .compact-book {
+            padding:
+              0 9px;
           }
-
-          .hamburger-button {
-            width:
-              43px;
-
-            height:
-              43px;
-          }
-
         }
 
       `}</style>
