@@ -175,12 +175,6 @@ const networkHubs = [
   },
 ];
 
-/*
-  Every connection is defined by the IDs of two hubs.
-  Because the lines are rendered inside the same SVG coordinate
-  system as the nodes, they remain correctly connected.
-*/
-
 const networkConnections = [
   ["srinagar", "delhi"],
   ["srinagar", "mumbai"],
@@ -271,8 +265,7 @@ export default function LogisticsPage() {
                   padding: "10px 18px",
                   borderRadius: "999px",
                   background: "rgba(255,255,255,.12)",
-                  border:
-                    "1px solid rgba(255,255,255,.18)",
+                  border: "1px solid rgba(255,255,255,.18)",
                   backdropFilter: "blur(12px)",
                   marginBottom: "26px",
                   fontSize: "13px",
@@ -312,8 +305,7 @@ export default function LogisticsPage() {
 
               <p
                 style={{
-                  fontSize:
-                    "clamp(1rem, 1.6vw, 1.25rem)",
+                  fontSize: "clamp(1rem, 1.6vw, 1.25rem)",
                   lineHeight: 1.75,
                   color: "rgba(255,255,255,.82)",
                   maxWidth: "680px",
@@ -355,14 +347,12 @@ export default function LogisticsPage() {
                   target="_blank"
                   rel="noreferrer"
                   style={{
-                    background:
-                      "rgba(255,255,255,.1)",
+                    background: "rgba(255,255,255,.1)",
                     color: "#fff",
                     padding: "15px 28px",
                     borderRadius: "999px",
                     textDecoration: "none",
-                    border:
-                      "1px solid rgba(255,255,255,.28)",
+                    border: "1px solid rgba(255,255,255,.28)",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "9px",
@@ -377,17 +367,13 @@ export default function LogisticsPage() {
 
             <div
               style={{
-                background:
-                  "rgba(255,255,255,.08)",
+                background: "rgba(255,255,255,.08)",
                 backdropFilter: "blur(22px)",
-                WebkitBackdropFilter:
-                  "blur(22px)",
+                WebkitBackdropFilter: "blur(22px)",
                 padding: "34px",
                 borderRadius: "30px",
-                border:
-                  "1px solid rgba(255,255,255,.18)",
-                boxShadow:
-                  "0 25px 70px rgba(0,0,0,.22)",
+                border: "1px solid rgba(255,255,255,.18)",
+                boxShadow: "0 25px 70px rgba(0,0,0,.22)",
               }}
             >
               <p
@@ -418,8 +404,7 @@ export default function LogisticsPage() {
                     alignItems: "center",
                     gap: "13px",
                     padding: "13px 0",
-                    borderBottom:
-                      "1px solid rgba(255,255,255,.1)",
+                    borderBottom: "1px solid rgba(255,255,255,.1)",
                   }}
                 >
                   <div
@@ -435,8 +420,7 @@ export default function LogisticsPage() {
                   <span
                     style={{
                       fontSize: "16px",
-                      color:
-                        "rgba(255,255,255,.9)",
+                      color: "rgba(255,255,255,.9)",
                     }}
                   >
                     {item}
@@ -473,8 +457,7 @@ export default function LogisticsPage() {
                   color: "#1B3A2D",
                   fontWeight: 700,
                   letterSpacing: "2px",
-                  textTransform:
-                    "uppercase",
+                  textTransform: "uppercase",
                   fontSize: "13px",
                 }}
               >
@@ -483,8 +466,7 @@ export default function LogisticsPage() {
 
               <h2
                 style={{
-                  fontSize:
-                    "clamp(2.8rem, 6vw, 5.5rem)",
+                  fontSize: "clamp(2.8rem, 6vw, 5.5rem)",
                   margin: "12px 0 28px",
                   lineHeight: 0.98,
                   color: "#1B3A2D",
@@ -517,8 +499,7 @@ export default function LogisticsPage() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns:
-                    "repeat(2, 1fr)",
+                  gridTemplateColumns: "repeat(2, 1fr)",
                   gap: "16px",
                 }}
               >
@@ -559,8 +540,7 @@ export default function LogisticsPage() {
                   width: "100%",
                   display: "block",
                   borderRadius: "30px",
-                  boxShadow:
-                    "0 25px 60px rgba(0,0,0,.15)",
+                  boxShadow: "0 25px 60px rgba(0,0,0,.15)",
                 }}
               />
             </div>
@@ -597,8 +577,7 @@ export default function LogisticsPage() {
 
             <h2
               style={{
-                fontSize:
-                  "clamp(2.3rem, 5vw, 3.5rem)",
+                fontSize: "clamp(2.3rem, 5vw, 3.5rem)",
                 marginTop: "18px",
                 color: "#1E293B",
                 marginBottom: 0,
@@ -638,21 +617,16 @@ export default function LogisticsPage() {
                   <motion.button
                     key={service.id}
                     type="button"
-                    onClick={() =>
-                      setSelectedService(service)
-                    }
+                    onClick={() => setSelectedService(service)}
                     whileHover={{ y: -7 }}
-                    whileTap={{
-                      scale: 0.98,
-                    }}
+                    whileTap={{ scale: 0.98 }}
                     style={{
                       background: "#fff",
                       borderRadius: "25px",
                       padding: "36px",
                       textAlign: "left",
                       border: "1px solid #eee",
-                      boxShadow:
-                        "0 20px 45px rgba(0,0,0,.08)",
+                      boxShadow: "0 20px 45px rgba(0,0,0,.08)",
                       cursor: "pointer",
                       fontFamily: "inherit",
                     }}
@@ -665,8 +639,7 @@ export default function LogisticsPage() {
                         background: "#1B3A2D",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent:
-                          "center",
+                        justifyContent: "center",
                         marginBottom: "24px",
                       }}
                     >
@@ -743,8 +716,7 @@ export default function LogisticsPage() {
                   color: "#1B3A2D",
                   fontWeight: 700,
                   letterSpacing: "2px",
-                  textTransform:
-                    "uppercase",
+                  textTransform: "uppercase",
                   fontSize: "13px",
                 }}
               >
@@ -753,8 +725,7 @@ export default function LogisticsPage() {
 
               <h2
                 style={{
-                  fontSize:
-                    "clamp(2.3rem, 5vw, 3.5rem)",
+                  fontSize: "clamp(2.3rem, 5vw, 3.5rem)",
                   marginTop: "18px",
                   color: "#1E293B",
                   marginBottom: "20px",
@@ -798,8 +769,7 @@ export default function LogisticsPage() {
                       background: "#fff",
                       borderRadius: "24px",
                       padding: "34px",
-                      boxShadow:
-                        "0 15px 40px rgba(0,0,0,.07)",
+                      boxShadow: "0 15px 40px rgba(0,0,0,.07)",
                       border: "1px solid #eee",
                     }}
                   >
@@ -812,8 +782,7 @@ export default function LogisticsPage() {
                         color: "#fff",
                         display: "flex",
                         alignItems: "center",
-                        justifyContent:
-                          "center",
+                        justifyContent: "center",
                         marginBottom: "24px",
                       }}
                     >
@@ -878,8 +847,7 @@ export default function LogisticsPage() {
                   fontSize: "12px",
                   fontWeight: 800,
                   letterSpacing: "0.16em",
-                  textTransform:
-                    "uppercase",
+                  textTransform: "uppercase",
                   marginBottom: "14px",
                 }}
               >
@@ -891,8 +859,7 @@ export default function LogisticsPage() {
                 style={{
                   margin: 0,
                   color: "#1B3A2D",
-                  fontSize:
-                    "clamp(2.4rem, 5vw, 4.5rem)",
+                  fontSize: "clamp(2.4rem, 5vw, 4.5rem)",
                   lineHeight: 1,
                   letterSpacing: "-0.045em",
                 }}
@@ -925,8 +892,7 @@ export default function LogisticsPage() {
                 height: "620px",
                 overflow: "hidden",
                 borderRadius: "38px",
-                border:
-                  "1px solid rgba(27,58,45,.12)",
+                border: "1px solid rgba(27,58,45,.12)",
                 background:
                   "linear-gradient(135deg, #F7F3E8, #EDE8D8)",
                 boxShadow:
@@ -941,8 +907,7 @@ export default function LogisticsPage() {
                   inset: 0,
                   backgroundImage:
                     "linear-gradient(rgba(27,58,45,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(27,58,45,.055) 1px, transparent 1px)",
-                  backgroundSize:
-                    "78px 78px",
+                  backgroundSize: "78px 78px",
                   pointerEvents: "none",
                 }}
               />
@@ -957,8 +922,7 @@ export default function LogisticsPage() {
                   left: "35%",
                   top: "18%",
                   borderRadius: "50%",
-                  background:
-                    "rgba(196,155,99,.08)",
+                  background: "rgba(196,155,99,.08)",
                   filter: "blur(45px)",
                   pointerEvents: "none",
                 }}
@@ -980,17 +944,13 @@ export default function LogisticsPage() {
               >
                 {networkConnections.map(
                   ([fromId, toId], index) => {
-                    const from =
-                      networkHubs.find(
-                        (hub) =>
-                          hub.id === fromId
-                      );
+                    const from = networkHubs.find(
+                      (hub) => hub.id === fromId
+                    );
 
-                    const to =
-                      networkHubs.find(
-                        (hub) =>
-                          hub.id === toId
-                      );
+                    const to = networkHubs.find(
+                      (hub) => hub.id === toId
+                    );
 
                     if (!from || !to) {
                       return null;
@@ -1030,8 +990,7 @@ export default function LogisticsPage() {
                     position: "absolute",
                     left: `${hub.x}%`,
                     top: `${hub.y}%`,
-                    transform:
-                      "translate(-50%, -50%)",
+                    transform: "translate(-50%, -50%)",
                     zIndex: 5,
                     textAlign: "center",
                   }}
@@ -1045,8 +1004,7 @@ export default function LogisticsPage() {
                       height: "46px",
                       left: "50%",
                       top: "50%",
-                      transform:
-                        "translate(-50%, -50%)",
+                      transform: "translate(-50%, -50%)",
                       borderRadius: "50%",
                       border:
                         "1px solid rgba(196,155,99,.45)",
@@ -1065,8 +1023,7 @@ export default function LogisticsPage() {
                       margin: "0 auto 13px",
                       borderRadius: "50%",
                       background: "#173126",
-                      border:
-                        "5px solid #E9D69A",
+                      border: "5px solid #E9D69A",
                       boxShadow:
                         "0 5px 18px rgba(27,58,45,.18)",
                     }}
@@ -1074,13 +1031,11 @@ export default function LogisticsPage() {
 
                   <div
                     style={{
-                      fontSize:
-                        "clamp(15px, 1.4vw, 20px)",
+                      fontSize: "clamp(15px, 1.4vw, 20px)",
                       fontWeight: 800,
                       color: "#173126",
                       whiteSpace: "nowrap",
-                      letterSpacing:
-                        "-0.02em",
+                      letterSpacing: "-0.02em",
                     }}
                   >
                     {hub.name}
@@ -1089,8 +1044,7 @@ export default function LogisticsPage() {
                   <div
                     style={{
                       marginTop: "5px",
-                      fontSize:
-                        "clamp(10px, .9vw, 13px)",
+                      fontSize: "clamp(10px, .9vw, 13px)",
                       color: "#85877F",
                       whiteSpace: "nowrap",
                     }}
@@ -1111,22 +1065,16 @@ export default function LogisticsPage() {
                   display: "flex",
                   alignItems: "center",
                   gap: "9px",
-                  padding:
-                    "10px 15px",
+                  padding: "10px 15px",
                   borderRadius: "999px",
-                  background:
-                    "rgba(255,255,255,.68)",
-                  border:
-                    "1px solid rgba(27,58,45,.1)",
-                  backdropFilter:
-                    "blur(10px)",
+                  background: "rgba(255,255,255,.68)",
+                  border: "1px solid rgba(27,58,45,.1)",
+                  backdropFilter: "blur(10px)",
                   color: "#5E655E",
                   fontSize: "11px",
                   fontWeight: 700,
-                  letterSpacing:
-                    "0.08em",
-                  textTransform:
-                    "uppercase",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
                 }}
               >
                 <span
@@ -1134,8 +1082,7 @@ export default function LogisticsPage() {
                     width: "7px",
                     height: "7px",
                     borderRadius: "50%",
-                    background:
-                      "#C49B63",
+                    background: "#C49B63",
                   }}
                 />
 
@@ -1167,8 +1114,7 @@ export default function LogisticsPage() {
                 color: "#1B3A2D",
                 fontWeight: 700,
                 letterSpacing: "2px",
-                textTransform:
-                  "uppercase",
+                textTransform: "uppercase",
                 fontSize: "13px",
               }}
             >
@@ -1177,8 +1123,7 @@ export default function LogisticsPage() {
 
             <h2
               style={{
-                fontSize:
-                  "clamp(2.3rem, 5vw, 3.5rem)",
+                fontSize: "clamp(2.3rem, 5vw, 3.5rem)",
                 marginTop: "18px",
                 color: "#1E293B",
               }}
@@ -1189,8 +1134,7 @@ export default function LogisticsPage() {
             <p
               style={{
                 maxWidth: "700px",
-                margin:
-                  "25px auto 70px",
+                margin: "25px auto 70px",
                 color: "#666",
                 lineHeight: 1.8,
               }}
@@ -1204,8 +1148,7 @@ export default function LogisticsPage() {
               className="logistics-process-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns:
-                  "repeat(5, 1fr)",
+                gridTemplateColumns: "repeat(5, 1fr)",
                 gap: "20px",
               }}
             >
@@ -1216,26 +1159,20 @@ export default function LogisticsPage() {
                       height: "100%",
                       background: "#F8F9FA",
                       borderRadius: "24px",
-                      padding:
-                        "30px 20px",
-                      border:
-                        "1px solid #ECECEC",
+                      padding: "30px 20px",
+                      border: "1px solid #ECECEC",
                     }}
                   >
                     <div
                       style={{
                         width: "66px",
                         height: "66px",
-                        margin:
-                          "0 auto 20px",
+                        margin: "0 auto 20px",
                         borderRadius: "50%",
-                        background:
-                          "#1B3A2D",
+                        background: "#1B3A2D",
                         display: "flex",
-                        alignItems:
-                          "center",
-                        justifyContent:
-                          "center",
+                        alignItems: "center",
+                        justifyContent: "center",
                         color: "#fff",
                         fontSize: "27px",
                       }}
@@ -1245,15 +1182,11 @@ export default function LogisticsPage() {
 
                     <div
                       style={{
-                        color:
-                          "#1B3A2D",
-                        fontWeight:
-                          "bold",
+                        color: "#1B3A2D",
+                        fontWeight: "bold",
                         fontSize: "13px",
-                        letterSpacing:
-                          "2px",
-                        marginBottom:
-                          "9px",
+                        letterSpacing: "2px",
+                        marginBottom: "9px",
                       }}
                     >
                       STEP {step.number}
@@ -1261,8 +1194,7 @@ export default function LogisticsPage() {
 
                     <h3
                       style={{
-                        color:
-                          "#1E293B",
+                        color: "#1E293B",
                         fontSize: "19px",
                         margin: 0,
                       }}
@@ -1277,20 +1209,14 @@ export default function LogisticsPage() {
                     key={step.number}
                     to={step.link}
                     style={{
-                      textDecoration:
-                        "none",
-                      color:
-                        "inherit",
+                      textDecoration: "none",
+                      color: "inherit",
                     }}
                   >
                     {card}
                   </Link>
                 ) : (
-                  <div
-                    key={step.number}
-                  >
-                    {card}
-                  </div>
+                  <div key={step.number}>{card}</div>
                 );
               })}
             </div>
@@ -1314,8 +1240,7 @@ export default function LogisticsPage() {
               maxWidth: "1300px",
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns:
-                "repeat(4, 1fr)",
+              gridTemplateColumns: "repeat(4, 1fr)",
               gap: "40px",
               textAlign: "center",
             }}
@@ -1323,37 +1248,28 @@ export default function LogisticsPage() {
             {[
               {
                 value: "1000+",
-                label:
-                  "Customers Served",
+                label: "Customers Served",
               },
               {
                 value: "25+",
-                label:
-                  "Logistics Services",
+                label: "Logistics Services",
               },
               {
                 value: "220+",
-                label:
-                  "Countries Connected",
+                label: "Countries Connected",
               },
               {
                 value: "99%",
-                label:
-                  "Delivery Reliability",
+                label: "Delivery Reliability",
               },
             ].map((item) => (
-              <div
-                key={item.label}
-              >
+              <div key={item.label}>
                 <h2
                   style={{
-                    fontSize:
-                      "clamp(2.8rem, 5vw, 4rem)",
-                    margin:
-                      "0 0 10px",
+                    fontSize: "clamp(2.8rem, 5vw, 4rem)",
+                    margin: "0 0 10px",
                     fontWeight: 700,
-                    color:
-                      "#173126",
+                    color: "#173126",
                   }}
                 >
                   {item.value}
@@ -1389,23 +1305,15 @@ export default function LogisticsPage() {
               exit={{
                 opacity: 0,
               }}
-              onClick={() =>
-                setSelectedService(
-                  null
-                )
-              }
+              onClick={() => setSelectedService(null)}
               style={{
                 position: "fixed",
                 inset: 0,
-                background:
-                  "rgba(0,0,0,.58)",
-                backdropFilter:
-                  "blur(12px)",
+                background: "rgba(0,0,0,.58)",
+                backdropFilter: "blur(12px)",
                 display: "flex",
-                justifyContent:
-                  "center",
-                alignItems:
-                  "center",
+                justifyContent: "center",
+                alignItems: "center",
                 zIndex: 9999,
                 padding: "20px",
               }}
@@ -1426,78 +1334,59 @@ export default function LogisticsPage() {
                 transition={{
                   duration: 0.25,
                 }}
-                onClick={(e) =>
-                  e.stopPropagation()
-                }
+                onClick={(e) => e.stopPropagation()}
                 style={{
                   width: "100%",
                   maxWidth: "560px",
-                  background:
-                    "#173126",
-                  borderRadius:
-                    "28px",
+                  background: "#173126",
+                  borderRadius: "28px",
                   padding: "38px",
                   color: "#fff",
                   boxShadow:
                     "0 30px 90px rgba(0,0,0,.35)",
-                  position:
-                    "relative",
+                  position: "relative",
                 }}
               >
                 <button
                   type="button"
-                  onClick={() =>
-                    setSelectedService(
-                      null
-                    )
-                  }
+                  onClick={() => setSelectedService(null)}
                   aria-label="Close"
                   style={{
-                    position:
-                      "absolute",
+                    position: "absolute",
                     top: "18px",
                     right: "18px",
                     width: "38px",
                     height: "38px",
-                    borderRadius:
-                      "50%",
+                    borderRadius: "50%",
                     background:
                       "rgba(255,255,255,.1)",
                     border:
                       "1px solid rgba(255,255,255,.15)",
                     color: "#fff",
                     display: "flex",
-                    alignItems:
-                      "center",
-                    justifyContent:
-                      "center",
-                    cursor:
-                      "pointer",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
                   }}
                 >
                   <X size={19} />
                 </button>
 
                 {(() => {
-                  const Icon =
-                    selectedService.icon;
+                  const Icon = selectedService.icon;
 
                   return (
                     <div
                       style={{
                         width: "68px",
                         height: "68px",
-                        borderRadius:
-                          "20px",
+                        borderRadius: "20px",
                         background:
                           "rgba(255,255,255,.1)",
                         display: "flex",
-                        alignItems:
-                          "center",
-                        justifyContent:
-                          "center",
-                        marginBottom:
-                          "22px",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginBottom: "22px",
                       }}
                     >
                       <Icon
@@ -1512,8 +1401,7 @@ export default function LogisticsPage() {
                   style={{
                     color: "#F3ECB6",
                     fontSize: "32px",
-                    margin:
-                      "0 0 18px",
+                    margin: "0 0 18px",
                   }}
                 >
                   {selectedService.title}
@@ -1522,40 +1410,27 @@ export default function LogisticsPage() {
                 <p
                   style={{
                     lineHeight: 1.8,
-                    color:
-                      "rgba(255,255,255,.86)",
+                    color: "rgba(255,255,255,.86)",
                     fontSize: "16px",
                     margin: 0,
                   }}
                 >
-                  {
-                    selectedService.details
-                  }
+                  {selectedService.details}
                 </p>
 
                 <Link
                   to="/?service=courier#booking"
-                  onClick={() =>
-                    setSelectedService(
-                      null
-                    )
-                  }
+                  onClick={() => setSelectedService(null)}
                   style={{
                     marginTop: "28px",
-                    display:
-                      "inline-flex",
-                    alignItems:
-                      "center",
+                    display: "inline-flex",
+                    alignItems: "center",
                     gap: "8px",
-                    background:
-                      "#C49B63",
+                    background: "#C49B63",
                     color: "#173126",
-                    padding:
-                      "13px 22px",
-                    borderRadius:
-                      "999px",
-                    textDecoration:
-                      "none",
+                    padding: "13px 22px",
+                    borderRadius: "999px",
+                    textDecoration: "none",
                     fontWeight: 700,
                   }}
                 >
@@ -1567,6 +1442,24 @@ export default function LogisticsPage() {
           )}
         </AnimatePresence>
       </main>
+
+      {/* =================================================
+          COPYRIGHT BOTTOM LINE
+      ================================================= */}
+
+      <div
+        style={{
+          background: "#173126",
+          color: "rgba(255,255,255,.7)",
+          textAlign: "center",
+          padding: "18px 20px",
+          fontSize: "13px",
+          borderTop: "1px solid rgba(255,255,255,.08)",
+          fontFamily: "inherit",
+        }}
+      >
+        © {new Date().getFullYear()} MARJ Logistics. All Rights Reserved.
+      </div>
 
       {/* =================================================
           PAGE STYLE
