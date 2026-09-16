@@ -49,7 +49,7 @@ export default function Hero() {
       style={{
         position: "relative",
         minHeight: "100vh",
-        paddingTop: "120px",
+        paddingTop: "80px",
         paddingBottom: "80px",
         display: "flex",
         alignItems: "center",

@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   Mail,
@@ -73,9 +72,28 @@ export default function Contact() {
     }
   };
 
+  /*
+    EXACT MARJ LOGISTICS LOCATION
+
+    Google Maps listing:
+    MARJ LOGISTICS
+
+    Latitude: 34.1725146
+    Longitude: 74.4736963
+
+    Google Place ID:
+    ChIJCfj-ZESn4TgRWeBfh5PwpZk
+  */
+
+  const MARJ_LATITUDE = "34.1725146";
+  const MARJ_LONGITUDE = "74.4736963";
+
+  const MARJ_PLACE_ID =
+    "ChIJCfj-ZESn4TgRWeBfh5PwpZk";
+
   const openGoogleMaps = () => {
     window.open(
-      "https://www.google.com/maps/search/?api=1&query=Near+Post+Office+Kreeri+Baramulla+Jammu+and+Kashmir+193108",
+      `https://www.google.com/maps/search/?api=1&query=MARJ%20LOGISTICS%2C%20${MARJ_LATITUDE}%2C${MARJ_LONGITUDE}&query_place_id=${MARJ_PLACE_ID}`,
       "_blank",
       "noopener,noreferrer"
     );
@@ -151,6 +169,8 @@ export default function Contact() {
                 <span>OFFICE</span>
 
                 <p>
+                  MARJ Logistics
+                  <br />
                   Near Post Office Kreeri,
                   <br />
                   Baramulla, Jammu & Kashmir
@@ -163,7 +183,7 @@ export default function Contact() {
                   className="marj-map-button"
                   onClick={openGoogleMaps}
                 >
-                  Open in Google Maps
+                  Open MARJ Logistics in Google Maps
                   <ExternalLink size={14} />
                 </button>
               </div>
@@ -299,7 +319,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* REAL GOOGLE MAP */}
+        {/* GOOGLE MAP */}
         <div className="marj-network">
 
           <div className="marj-network-heading">
@@ -316,7 +336,7 @@ export default function Contact() {
 
             <iframe
               title="MARJ Logistics Office - Kreeri Baramulla"
-              src="https://www.google.com/maps?q=Near%20Post%20Office%20Kreeri%2C%20Baramulla%2C%20Jammu%20and%20Kashmir%20193108&output=embed"
+              src={`https://www.google.com/maps?q=MARJ%20LOGISTICS%2C${MARJ_LATITUDE}%2C${MARJ_LONGITUDE}&z=17&output=embed`}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
@@ -345,6 +365,7 @@ export default function Contact() {
                 <ArrowRight size={15} />
               </button>
             </div>
+
           </div>
         </div>
       </div>
@@ -354,7 +375,7 @@ export default function Contact() {
 
         .marj-contact {
           position: relative;
-          padding: 120px 24px;
+          padding: 60px 24px;
           background:
             radial-gradient(
               circle at 10% 10%,
