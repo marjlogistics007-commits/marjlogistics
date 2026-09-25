@@ -116,23 +116,26 @@ export default function Navbar() {
         <div className="compact-navbar-inner">
 
           {/* LOGO */}
-          <Link
-            to="/"
-            className="compact-logo"
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }}
-          >
-            <img
-              src="/logo.jpg"
-              alt="MARJ Logistics"
-            />
+      <Link
+  to="/"
+  className="compact-logo"
+  onClick={() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }}
+>
+  <img
+    src="/logo.jpg"
+    alt="MARJ Logistics"
+  />
 
-            <span>MARJ LOGISTICS</span>
-          </Link>
+  <span className="logo-text">
+    <span className="logo-marj">MARJ</span>
+    <span className="logo-logistics">LOGISTICS</span>
+  </span>
+</Link>
 
           {/* MENU */}
           <div className="compact-menu">
@@ -272,22 +275,44 @@ export default function Navbar() {
           height: 39px;
         }
 
-        .compact-logo span {
-          color: #1B3A2D;
-
-          font-family:
-            "Times New Roman",
-            Times,
-            serif;
-
-          font-size: 1.15rem;
-
-          font-weight: 600;
-
-          letter-spacing: 0.025em;
-
-          white-space: nowrap;
+   
         }
+
+        .compact-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.compact-logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 0.9;
+}
+
+.logo-marj {
+  font-size: 30px;
+      font-family: High Tower Text,
+            sans-serif;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.logo-logistics {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 4px;
+  margin-left: 10px;
+}
 
         /* =====================================================
            MENU
